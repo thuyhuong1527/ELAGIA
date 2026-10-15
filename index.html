@@ -1,0 +1,2179 @@
+<!doctype html><html lang="vi"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Elagia Comics — Bản xem trước</title><style>/*
+Theme Name: Elagia Comics — Modern Purple v1.7
+Theme URI: https://example.com/elagia-comics
+Author: Elagia Comics
+Description: Giao diện đọc truyện Elagia Comics phong cách tím đen hiện đại, chuyên nghiệp, responsive.
+Version: 1.8.0
+Requires at least: 6.0
+Tested up to: 6.8
+Requires PHP: 7.4
+Text Domain: elagia-comics
+*/
+
+:root{color-scheme:dark;--bg:#17131f;--panel:#211a2b;--panel2:#2b2238;--line:#40334f;--purple:#c9a7f5;--purple2:#eadcff;--text:#f7f1ff;--muted:#b7a8c9;--pink:#f0b8dc;--green:#bfe6d0}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:radial-gradient(ellipse at 80% -10%,#49335e 0,transparent 36%),var(--bg);font-family:Inter,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;color:var(--text);line-height:1.5}button,input,select{font:inherit}a{color:inherit;text-decoration:none}.wrap{width:min(1120px,calc(100% - 32px));margin:auto}.topline{height:4px;background:linear-gradient(90deg,#b58ae9,#f0b8dc,#c9a7f5)}header{position:sticky;top:0;z-index:5;background:#17131fee;backdrop-filter:blur(16px);border-bottom:1px solid #ffffff12}.nav{min-height:76px;display:flex;align-items:center;gap:22px}.brand{display:flex;align-items:center;gap:10px;font-weight:900;letter-spacing:.06em;white-space:nowrap}.brandmark{width:42px;height:42px;display:grid;place-items:center;border-radius:14px;background:linear-gradient(145deg,#eadcff,#b58ae9);color:#241a30;font-size:22px;box-shadow:0 7px 24px #b58ae933}.brand small{display:block;color:var(--muted);font-size:9px;letter-spacing:.17em;font-weight:700}.navlinks{display:flex;align-items:center;gap:20px;margin-left:auto;color:var(--muted);font-size:14px}.navlinks a:hover,.navlinks a.active{color:var(--purple2)}.search{display:flex;gap:8px;align-items:center;background:#241d30;border:1px solid var(--line);border-radius:13px;padding:9px 12px;max-width:220px}.search input{background:transparent;border:0;outline:0;color:var(--text);width:100%;min-width:0}.search span{color:var(--purple);font-size:18px}.menuBtn{display:none;background:var(--panel2);border:1px solid var(--line);color:var(--text);border-radius:10px;padding:8px 11px}.hero{padding:42px 0 28px}.heroBox{position:relative;overflow:hidden;border:1px solid #ffffff19;border-radius:28px;padding:clamp(24px,5vw,56px);background:linear-gradient(112deg,#2b203b 0%,#30223f 48%,#533b65 100%);min-height:300px;display:flex;align-items:center}.heroBox:before,.heroBox:after{content:"✦";position:absolute;color:#f0dcff66;font-size:110px;right:8%;top:4%;transform:rotate(12deg)}.heroBox:after{content:"☾";font-size:160px;right:18%;top:37%;color:#e4ccff25}.heroCopy{position:relative;z-index:1;max-width:620px}.eyebrow{display:inline-flex;align-items:center;gap:8px;border:1px solid #eadcff45;background:#17131f66;color:var(--purple2);border-radius:999px;padding:7px 12px;font-size:11px;font-weight:800;letter-spacing:.12em}.hero h1{font-size:clamp(32px,5vw,58px);line-height:1.08;letter-spacing:-.04em;margin:18px 0 14px}.hero h1 em{font-style:normal;color:var(--purple)}.hero p{max-width:490px;color:#d5c8e3;margin:0 0 23px}.btn{border:0;border-radius:12px;padding:12px 17px;display:inline-flex;align-items:center;justify-content:center;gap:8px;background:var(--purple);color:#251830;font-weight:850;cursor:pointer;transition:transform .18s,filter .18s}.btn:hover{transform:translateY(-2px);filter:brightness(1.07)}.btn.secondary{background:#17131f66;border:1px solid #eadcff55;color:var(--purple2)}.heroNote{position:absolute;right:5%;bottom:24px;color:#e8d9fa99;font-size:12px;letter-spacing:.1em}.stats{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:16px}.stat{padding:15px 18px;background:#211a2bcc;border:1px solid #ffffff12;border-radius:16px}.stat strong{display:block;color:var(--purple2);font-size:19px}.stat span{font-size:12px;color:var(--muted)}section{padding:26px 0}.sectionHead{display:flex;align-items:end;justify-content:space-between;gap:14px;margin-bottom:18px}.kicker{font-size:10px;color:var(--purple);font-weight:900;letter-spacing:.17em;text-transform:uppercase}.sectionHead h2{font-size:clamp(22px,3vw,30px);letter-spacing:-.025em;margin:4px 0 0}.sectionHead p{margin:4px 0 0;color:var(--muted);font-size:13px}.filters{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:18px}.chip{border:1px solid var(--line);background:#211a2b;color:var(--muted);border-radius:999px;padding:8px 13px;font-size:12px;font-weight:750;cursor:pointer}.chip.active,.chip:hover{background:var(--purple);border-color:var(--purple);color:#241a30}.grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:18px}.card{min-width:0;background:var(--panel);border:1px solid #ffffff12;border-radius:17px;overflow:hidden;transition:transform .2s,border-color .2s;cursor:pointer}.card:hover{transform:translateY(-4px);border-color:#c9a7f577}.cover{position:relative;aspect-ratio:3/4;display:grid;place-items:center;overflow:hidden;background:var(--cover)}.cover:before{content:"";position:absolute;inset:0;background:radial-gradient(circle at 30% 25%,#ffffff2a,transparent 25%),linear-gradient(180deg,transparent 50%,#17131f88)}.cover .moon{font-size:clamp(44px,7vw,78px);filter:drop-shadow(0 5px 20px #17131f77);z-index:1}.cover .coverText{position:absolute;z-index:1;left:12px;right:12px;bottom:13px;font-family:Inter,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;font-weight:bold;font-size:clamp(18px,2vw,25px);line-height:1.05;text-shadow:0 2px 8px #17131f99}.tag{position:absolute;z-index:2;top:10px;left:10px;background:#17131fc9;border:1px solid #ffffff30;color:var(--purple2);padding:5px 8px;border-radius:7px;font-size:9px;font-weight:900;letter-spacing:.06em}.cardBody{padding:12px}.cardTitle{font-weight:850;font-size:14px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}.meta{display:flex;align-items:center;justify-content:space-between;gap:6px;margin-top:6px;font-size:11px;color:var(--muted)}.status{color:var(--green)}.chapter{margin-top:11px;padding-top:10px;border-top:1px solid #ffffff10;font-size:12px;color:var(--purple2)}.empty{grid-column:1/-1;padding:28px;text-align:center;color:var(--muted);border:1px dashed var(--line);border-radius:16px}.updateList{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}.update{display:flex;align-items:center;gap:12px;padding:12px;background:var(--panel);border:1px solid #ffffff10;border-radius:14px;cursor:pointer}.miniCover{width:47px;height:61px;border-radius:8px;display:grid;place-items:center;background:var(--cover);font-size:22px;flex:none}.updateInfo{min-width:0;flex:1}.updateInfo strong{display:block;font-size:13px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}.updateInfo span{display:block;font-size:11px;color:var(--muted);margin-top:4px}.update .new{color:var(--pink);font-size:10px;font-weight:800}.genreGrid{display:grid;grid-template-columns:repeat(4,1fr);gap:12px}.genre{border:1px solid #ffffff12;border-radius:15px;padding:18px;background:linear-gradient(135deg,#30233f,#211a2b);cursor:pointer;text-align:left;color:var(--text)}.genre:hover{border-color:#c9a7f577}.genre b{display:block;font-size:14px}.genre span{font-size:11px;color:var(--muted)}.about{display:grid;grid-template-columns:1.2fr .8fr;gap:20px}.aboutBox{padding:24px;border-radius:20px;background:var(--panel);border:1px solid #ffffff12}.aboutBox h3{margin:0 0 8px}.aboutBox p{color:var(--muted);font-size:13px;margin:0}.note{padding:18px;border:1px solid #c9a7f533;background:#c9a7f50c;border-radius:16px;color:var(--muted);font-size:12px}footer{margin-top:28px;border-top:1px solid #ffffff14;padding:27px 0 38px;color:var(--muted);font-size:12px}.footerInner{display:flex;justify-content:space-between;gap:15px;flex-wrap:wrap}.modal{position:fixed;inset:0;z-index:20;background:#0c0912cc;display:none;align-items:center;justify-content:center;padding:18px}.modal.open{display:flex}.modalBox{width:min(560px,100%);max-height:85vh;overflow:auto;background:#211a2b;border:1px solid #6d5684;border-radius:22px;padding:24px;box-shadow:0 30px 100px #0008}.modalTop{display:flex;justify-content:space-between;align-items:start;gap:12px}.close{border:1px solid var(--line);background:transparent;color:var(--text);border-radius:10px;padding:7px 11px;cursor:pointer}.modalBox h2{margin:8px 0}.modalBox p{color:var(--muted);font-size:14px}.chapterLinks{display:grid;gap:8px;margin-top:16px}.chapterLinks button{display:flex;justify-content:space-between;gap:10px;background:#2b2238;border:1px solid var(--line);color:var(--text);border-radius:11px;padding:12px;text-align:left;cursor:pointer}.reader{display:none;margin-top:18px;padding:14px;border-radius:13px;background:#17131f;border:1px solid var(--line)}.reader.show{display:block}.reader .fakePage{min-height:180px;display:grid;place-items:center;text-align:center;color:var(--purple2);background:linear-gradient(145deg,#332541,#17131f);border-radius:10px;padding:20px}.readerNav{display:flex;gap:8px;flex-wrap:wrap;margin-top:12px}.readerNav button{flex:1}.toast{position:fixed;bottom:20px;left:50%;transform:translateX(-50%);background:#eadcff;color:#241a30;padding:10px 15px;border-radius:12px;font-size:13px;font-weight:750;display:none;z-index:30}.toast.show{display:block}
+@media(max-width:800px){.nav{gap:12px;min-height:68px}.navlinks{gap:12px}.search{max-width:160px}.grid{grid-template-columns:repeat(3,minmax(0,1fr));gap:12px}.genreGrid{grid-template-columns:repeat(2,1fr)}.heroBox{min-height:280px}.heroNote{display:none}}
+@media(max-width:580px){.wrap{width:calc(100% - 24px)}.nav{flex-wrap:wrap;padding:11px 0}.brand{flex:1}.menuBtn{display:block}.navlinks{display:none;order:3;width:100%;margin:0;padding:8px 0 3px;flex-wrap:wrap}.navlinks.open{display:flex}.search{order:2;width:100%;max-width:none}.hero{padding-top:20px}.heroBox{padding:24px 20px;min-height:310px}.heroBox:before{font-size:78px;right:2%}.heroBox:after{font-size:120px;right:9%}.hero h1{font-size:36px}.stats{gap:7px}.stat{padding:11px}.stat strong{font-size:16px}.stat span{font-size:10px}.grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:11px}.cardBody{padding:10px}.cardTitle{font-size:13px}.updateList{grid-template-columns:1fr}.about{grid-template-columns:1fr}.sectionHead{align-items:start;flex-direction:column}.sectionHead .btn{width:100%}}
+
+/* Elagia Comics refinements */
+:root{--bg:#100d16;--panel:#1b1624;--panel2:#282035;--line:#40314f;--purple:#c7a0f4;--purple2:#eee2ff;--text:#fbf7ff;--muted:#b9abc9;--pink:#efb9df;--green:#bfe6d0}
+html{scroll-padding-top:90px}
+::selection{background:#c7a0f4;color:#171020}
+:focus-visible{outline:2px solid var(--purple);outline-offset:3px}
+button:disabled{opacity:.45;cursor:not-allowed;transform:none}
+.brandmark{font-size:20px;box-shadow:0 0 0 1px #ffffff20 inset,0 7px 24px #b58ae933}
+.brand{letter-spacing:.045em}
+.heroBox{box-shadow:0 22px 70px #0002}
+.card{box-shadow:0 8px 22px #00000012}
+.card:focus-within,.card:focus{outline:2px solid var(--purple);outline-offset:2px}
+.cover{isolation:isolate}
+.cover .coverText{overflow-wrap:anywhere}
+.chapterLinks button:hover{border-color:var(--purple);background:#342744}
+.update:hover,.genre:focus-visible{border-color:var(--purple)}
+.modalBox{scrollbar-color:#755b91 #211a2b;scrollbar-width:thin}
+.reader .fakePage{line-height:1.8}
+.toast{box-shadow:0 8px 28px #0005}
+@media(max-width:580px){
+  .brandmark{width:38px;height:38px;border-radius:12px}
+  .brand{font-size:13px}
+  .brand small{font-size:8px}
+  .heroBox{border-radius:22px}
+  .modalBox{padding:18px;border-radius:18px}
+}
+@media(prefers-reduced-motion:reduce){
+  *,*::before,*::after{scroll-behavior:auto!important;animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important}
+}
+
+
+/* WordPress theme layout */
+.wp-site{min-height:100vh}
+.site-main{padding-bottom:28px}
+.content-panel{background:var(--panel);border:1px solid #ffffff12;border-radius:18px;padding:22px;margin:20px 0}
+.entry-content{color:var(--text)}
+.entry-content img{max-width:100%;height:auto;border-radius:8px}
+.comic-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:18px}
+.comic-card{background:var(--panel);border:1px solid #ffffff12;border-radius:17px;overflow:hidden;transition:transform .2s,border-color .2s}
+.comic-card:hover{transform:translateY(-4px);border-color:#c9a7f577}
+.comic-card a{display:block}
+.comic-card img{width:100%;aspect-ratio:3/4;object-fit:cover;display:block}
+.comic-placeholder{aspect-ratio:3/4;display:grid;place-items:center;background:linear-gradient(150deg,#9876ba,#3d2b58);font-size:48px;color:#eee2ff}
+.comic-card .cardBody{padding:12px}
+.comic-card h2{font-size:14px;margin:0;font-weight:850}
+.comic-card p{font-size:12px;color:var(--muted);margin:7px 0 0}
+.pagination{display:flex;gap:8px;flex-wrap:wrap;margin:22px 0}
+.pagination a,.pagination span{padding:8px 12px;border-radius:10px;background:var(--panel2);border:1px solid var(--line)}
+.pagination .current{background:var(--purple);color:#241a30}
+.reader-images img{display:block;width:100%;height:auto;margin:0 auto;border-radius:0}
+.reader-images{max-width:900px;margin:0 auto}
+.chapter-nav{display:flex;justify-content:space-between;gap:10px;flex-wrap:wrap;margin:18px 0}
+.chapter-nav a,.text-link{color:var(--purple2);text-decoration:underline;text-underline-offset:3px}
+.archive-description{color:var(--muted)}
+input[type="search"],input[type="text"],textarea,select{max-width:100%;background:#241d30;border:1px solid var(--line);color:var(--text);border-radius:10px;padding:10px}
+.search-form{display:flex;gap:8px}
+.search-form label{flex:1;min-width:0}
+.search-form input[type="search"]{width:100%}
+@media(max-width:800px){.comic-grid{grid-template-columns:repeat(3,minmax(0,1fr));gap:12px}}
+@media(max-width:580px){.comic-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:11px}.content-panel{padding:16px}.comic-card .cardBody{padding:10px}}
+
+/* Custom logo uploaded from WordPress */
+.custom-logo-link{display:flex;align-items:center}.custom-logo{max-width:210px;max-height:58px;width:auto;height:auto;object-fit:contain}.brand .custom-logo-link{display:flex}.brand:has(.custom-logo){gap:0}
+
+
+/* Elagia Comics 1.2 — account and reader tools */
+.account-links{display:flex;gap:10px;align-items:center;white-space:nowrap;font-size:12px;color:var(--muted)}
+.account-links a:hover{color:var(--purple2)}
+.elagia-reader-tools{display:flex;gap:8px;align-items:center;flex-wrap:wrap;margin:16px 0}
+.elagia-tool-message{font-size:12px;color:var(--purple2)}
+.comment-panel{margin-top:18px}
+.comment-panel .comment-form input,.comment-panel .comment-form textarea{width:100%;max-width:100%;padding:11px;border-radius:10px;background:var(--panel2);border:1px solid var(--line);color:var(--text)}
+.comment-panel .form-submit input{width:auto;background:var(--purple);color:#241a30;border:0;border-radius:10px;padding:10px 16px;font-weight:800}
+#elagia-favorites-list,#elagia-history-list{display:flex;gap:8px;flex-wrap:wrap;color:var(--muted);font-size:13px}
+#elagia-favorites-list a,#elagia-history-list a{padding:8px 11px;background:var(--panel2);border:1px solid var(--line);border-radius:10px}
+@media(max-width:980px){.account-links{font-size:11px;gap:6px}.nav{flex-wrap:wrap;padding:10px 0}.account-links{margin-left:auto}}
+@media(max-width:600px){.account-links{order:3;width:100%;justify-content:flex-end}.search{max-width:none;width:100%;order:4}}
+
+/* Elagia Comics custom E-cat logo */
+.elagia-logo-e{width:48px;height:48px;object-fit:contain;display:block;flex:none;border-radius:12px}
+@media(max-width:580px){.elagia-logo-e{width:42px;height:42px}}
+
+/* Genre filter */
+.genre-filter{display:flex;align-items:center;gap:10px;flex-wrap:wrap;margin:0 0 18px;padding:14px 16px;background:var(--panel);border:1px solid #ffffff12;border-radius:14px}.genre-filter label{font-size:13px;font-weight:800;color:var(--purple2)}.genre-filter select{background:#211a2b;color:var(--text);border:1px solid var(--line);border-radius:10px;padding:9px 12px;min-width:190px}.genre-filter button{font:inherit}
+.genre-toggle{width:100%;display:flex;align-items:center;justify-content:space-between;gap:12px;padding:15px 17px;border:1px solid var(--line);border-radius:15px;background:linear-gradient(120deg,#251c31,#1a1522);color:var(--text);font-weight:850;cursor:pointer;text-align:left}
+.genre-toggle span:first-child{display:flex;align-items:center;gap:10px}.genre-toggle .arrow{color:var(--purple);transition:transform .2s}.genre-details.is-open .arrow{transform:rotate(180deg)}
+.genre-options{display:flex;flex-wrap:wrap;gap:8px;padding:14px 2px 4px}.genre-options[hidden]{display:none!important}.genre-options .chip{font-size:12px}.genre-options .chip.active{background:var(--purple);color:#241a30}
+
+/* v1.5: ensure comic card links are independently clickable */
+.comic-card-link{display:block;position:relative;z-index:1;color:inherit;text-decoration:none;cursor:pointer}.comic-card-actions{position:relative;z-index:2;padding:0 16px 16px}.comic-card-actions button{cursor:pointer}.comic-card-link .cardBody{pointer-events:none}
+
+
+/* Elagia Comics v1.6 — modern professional refresh */
+:root{--bg:#100d17;--panel:#1a1522;--panel2:#251c31;--line:#3a2c4c;--purple:#c5a0f4;--purple2:#eee3ff;--text:#faf7ff;--muted:#b8adc7;--pink:#d9b7f2;--green:#bfe6d0}
+body{background:radial-gradient(ellipse at 85% -12%,#3b2850 0,transparent 32%),var(--bg);letter-spacing:.005em}
+.topline{height:3px;background:linear-gradient(90deg,#a97be6,#d7b9f8,#8b64c3)}
+header{background:rgba(16,13,23,.94);border-bottom:1px solid rgba(197,160,244,.16);box-shadow:0 8px 28px #09060f22}
+.nav{min-height:72px;gap:18px}.brand{letter-spacing:.075em}.brandmark{border-radius:13px;box-shadow:0 6px 22px #b58ae922}
+.search{background:#191421;border-color:#3a2c4c;border-radius:11px}.search:focus-within{border-color:#c5a0f4;box-shadow:0 0 0 3px #c5a0f41c}
+.hero{padding:32px 0 22px}.heroBox{border-radius:22px;border-color:#c5a0f42b;background:linear-gradient(115deg,#21182d 0%,#2b1e3a 55%,#402a54 100%);min-height:285px;box-shadow:0 18px 50px #08050d2b}
+.heroBox:before{font-size:92px;right:7%;top:2%;color:#eadcff40}.heroBox:after{font-size:135px;right:17%;top:39%;color:#eadcff17}
+.eyebrow{background:#100d1766;border-color:#c5a0f44d;border-radius:8px;letter-spacing:.1em}
+.hero h1{letter-spacing:-.045em}.hero h1 em{color:#d6b8ff}
+.btn{border-radius:10px;background:linear-gradient(135deg,#d7bafa,#b98bea);box-shadow:0 5px 16px #a97be622}.btn.secondary{background:#17111f88;border-color:#c5a0f455}
+.stats{gap:10px}.stat{border-radius:13px;background:#1a1522;border-color:#ffffff12}.stat strong{color:#d9c2ff}
+section{padding:23px 0}.sectionHead h2{letter-spacing:-.035em}.kicker{letter-spacing:.14em}
+.chip{border-radius:9px;background:#1a1522}.chip.active,.chip:hover{background:#c5a0f4;border-color:#c5a0f4}
+.grid{gap:16px}.card{background:#1a1522;border-color:#ffffff10;border-radius:13px;box-shadow:0 5px 18px #08050d14;transition:transform .2s,border-color .2s,box-shadow .2s}.card:hover{transform:translateY(-3px);border-color:#c5a0f477;box-shadow:0 12px 28px #08050d38}
+.cover{background-color:#251c31}.cover .coverText{letter-spacing:-.02em}.tag{border-radius:6px;background:#100d17df;border-color:#ffffff24}
+.cardBody{padding:13px}.cardTitle{font-size:14px;letter-spacing:-.01em}.meta{font-size:11px}.chapter{border-top-color:#ffffff12}
+input,select,textarea{border-radius:9px}button:focus-visible,a:focus-visible{outline:2px solid #d7bafa;outline-offset:3px}
+footer{border-top:1px solid #c5a0f41c}
+@media(max-width:900px){.nav{gap:12px}.navlinks{gap:13px}.search{max-width:180px}.grid{grid-template-columns:repeat(3,minmax(0,1fr));gap:13px}}
+@media(max-width:640px){.nav{min-height:64px;flex-wrap:wrap;padding-top:10px;padding-bottom:10px}.brand{margin-right:auto}.search{order:5;max-width:none;width:100%}.hero{padding-top:20px}.heroBox{min-height:260px;border-radius:17px}.heroNote{display:none}.stats{gap:8px}.stat{padding:12px}.grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:11px}.card{border-radius:11px}.cardBody{padding:10px}.sectionHead{align-items:start}}
+
+/* v1.7: account actions and front-end account pages */
+.account-links a{display:inline-flex;align-items:center;justify-content:center;padding:8px 12px;border:1px solid var(--line);border-radius:10px;background:#211a2b;font-weight:800;color:var(--text)}
+.account-links a:first-child{background:var(--purple);border-color:var(--purple);color:#241a30}
+.account-links a:hover{transform:translateY(-1px);border-color:var(--purple)}
+.account-page{max-width:520px;margin:44px auto;padding:clamp(22px,5vw,36px);background:var(--panel);border:1px solid var(--line);border-radius:22px;box-shadow:0 20px 60px #0003}
+.account-page h1{margin:0 0 8px;font-size:clamp(26px,4vw,34px)}
+.account-page .account-intro{color:var(--muted);margin:0 0 22px}
+.account-page label{display:block;font-weight:750;font-size:13px;margin:12px 0 6px}
+.account-page input[type=text],.account-page input[type=password],.account-page input[type=email]{width:100%;max-width:100%;padding:12px;border:1px solid var(--line);border-radius:10px;background:#15111d;color:var(--text)}
+.account-page input[type=submit],.account-page button{width:100%;margin-top:16px;padding:12px 16px;border:0;border-radius:11px;background:var(--purple);color:#241a30;font-weight:900;cursor:pointer}
+.account-page .account-links-bottom{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;margin-top:18px;font-size:13px;color:var(--purple2)}
+.account-notice{padding:12px 14px;border:1px solid var(--line);border-radius:11px;background:#17131f;margin:14px 0;color:var(--muted)}
+.account-notice.error{border-color:#b96d88;color:#ffd5e2}
+@media(max-width:600px){.account-links{order:3;width:auto;justify-content:flex-end}.account-links a{padding:7px 9px}.account-page{margin:24px auto}}
+.account-page #loginform p{margin:12px 0}.account-page #loginform label{display:block;font-weight:750;font-size:13px;margin:12px 0 6px}.account-page #loginform input[type=text],.account-page #loginform input[type=password]{width:100%;max-width:100%;padding:12px;border:1px solid var(--line);border-radius:10px;background:#15111d;color:var(--text)}.account-page #loginform p.login-remember label{display:flex;align-items:center;gap:8px;font-weight:500}.account-page #loginform input[type=submit]{width:100%;margin-top:12px;padding:12px 16px;border:0;border-radius:11px;background:var(--purple);color:#241a30;font-weight:900;cursor:pointer}
+
+/* preview-only */
+.preview-badge{font-size:11px;color:#eadcff;background:#342744;border:1px solid #6b5283;padding:6px 10px;border-radius:999px;display:inline-block;margin-bottom:12px}.comic-card{cursor:pointer}.preview-cover{aspect-ratio:3/4;display:grid;place-items:center;text-align:center;padding:12px;font-weight:900;font-size:24px;letter-spacing:-.03em;background:linear-gradient(145deg,var(--c1),var(--c2));color:#fff;text-shadow:0 2px 12px #0008}.comic-card:nth-child(4n+1) .preview-cover{--c1:#6d4d8b;--c2:#251b36}.comic-card:nth-child(4n+2) .preview-cover{--c1:#9b6d9c;--c2:#412b58}.comic-card:nth-child(4n+3) .preview-cover{--c1:#5b668f;--c2:#24223d}.comic-card:nth-child(4n) .preview-cover{--c1:#b16f9c;--c2:#3c244b}.comic-card .cover-tag{font-size:10px;letter-spacing:.16em;margin-top:10px;color:#f2e5ff}.search button{background:transparent;border:0;color:var(--purple);cursor:pointer}.modalBox .preview-cover{width:110px;float:left;margin:0 16px 12px 0;border-radius:10px}.preview-note{font-size:12px;color:var(--muted);margin-top:8px}.hide{display:none!important}
+.stats{grid-template-columns:repeat(4,minmax(0,1fr))}.stat{font:inherit;text-align:left;cursor:pointer;color:inherit}.stat strong{display:block}.stat span{display:block}@media(max-width:600px){.stats{grid-template-columns:repeat(2,minmax(0,1fr))}}
+.kittyMascot{position:relative;width:54px;height:54px;display:grid;place-items:center;flex:none;border-radius:18px;background:linear-gradient(145deg,#fff0f6,#eee3ff);box-shadow:0 5px 16px #8b5cc722;animation:kittyBob 3s ease-in-out infinite}.kittyMascot svg{width:45px;height:45px;overflow:visible}.kittySparkle{position:absolute;right:-3px;top:0;color:#d99c38;font-size:15px;animation:sparkleTwinkle 1.8s ease-in-out infinite}.chatShell{position:relative}.chatShell:after{content:"🐾";position:absolute;right:15px;bottom:64px;font-size:27px;opacity:.16;pointer-events:none;animation:pawDrift 4s ease-in-out infinite}.chatMessage{animation:chatPop .22s ease-out both}@keyframes kittyBob{0%,100%{transform:translateY(0) rotate(-2deg)}50%{transform:translateY(-4px) rotate(2deg)}}@keyframes sparkleTwinkle{0%,100%{opacity:.45;transform:scale(.8) rotate(0)}50%{opacity:1;transform:scale(1.15) rotate(20deg)}}@keyframes pawDrift{0%,100%{transform:translateY(0) rotate(-12deg)}50%{transform:translateY(-8px) rotate(4deg)}}@keyframes chatPop{from{opacity:0;transform:translateY(5px)}to{opacity:1;transform:translateY(0)}}@media(prefers-reduced-motion:reduce){.kittyMascot,.kittySparkle,.chatShell:after,.chatMessage{animation:none!important}}main.site-main.personal-view>:not(#me){display:none!important}main.site-main.personal-view>#me{display:block;min-height:calc(100vh - 190px);padding-top:38px}.navlinks a.active{color:var(--purple2);font-weight:800}</style><style id="elagia-bright-theme">
+:root{color-scheme:light;--bg:#faf7ff;--panel:#ffffff;--panel2:#f1eafd;--line:#e2d7ef;--purple:#8b5cc7;--purple2:#68409e;--text:#2b2335;--muted:#766b80;--pink:#b34d91;--green:#24734c}
+body{background:radial-gradient(ellipse at 85% -12%,#eee2ff 0,transparent 36%),var(--bg);color:var(--text)}
+header{background:rgba(250,247,255,.94);border-bottom-color:#e2d7ef;box-shadow:0 8px 28px #38224d0d}
+.search,input[type="search"],input[type="text"],textarea,select{background:#fff;color:var(--text);border-color:var(--line)}
+.search input{color:var(--text)}
+.heroBox{border-color:#e5d8f2;background:linear-gradient(115deg,#f4edff 0%,#eee3fb 55%,#e3d4f2 100%);box-shadow:0 18px 50px #68409e12}
+.heroBox:before,.heroBox:after{color:#8b5cc733}.eyebrow{background:#ffffffa8;border-color:#d9c5ee;color:#68409e}
+.hero p{color:#665a70}.heroNote{color:#68409e99}
+.btn{background:linear-gradient(135deg,#c9a8ee,#a77bda);color:#261b33}.btn.secondary{background:#ffffffb8;border-color:#cbb3e5;color:#68409e}
+.stat,.card,.update,.aboutBox,.content-panel,.genre-filter{background:var(--panel);border-color:var(--line)}
+.stat strong{color:#68409e}.chip{background:#fff;color:#665a70;border-color:var(--line)}
+.chip.active,.chip:hover{background:#8b5cc7;border-color:#8b5cc7;color:#fff}
+.card{box-shadow:0 5px 18px #38224d0c}.card:hover{border-color:#a77bda;box-shadow:0 12px 28px #38224d18}
+.cover:before{background:radial-gradient(circle at 30% 25%,#ffffff55,transparent 25%),linear-gradient(180deg,transparent 50%,#24172f70)}
+.tag{background:#ffffffeb;border-color:#ffffff;color:#68409e}.chapter{color:#68409e;border-top-color:var(--line)}
+.genre{background:linear-gradient(135deg,#f4edff,#fff);border-color:var(--line);color:var(--text)}
+.note{border-color:#c9a7f555;background:#f2eafd;color:var(--muted)}
+footer{border-top-color:var(--line)}.modal{background:#21172f88}.modalBox{background:#fff;border-color:#d5c1e9}.chapterLinks button{background:#f5f0fa;border-color:var(--line);color:var(--text)}.chapterLinks button:hover{background:#eee3fb}
+.reader{background:#f7f2fb;border-color:var(--line)}.reader .fakePage{background:linear-gradient(145deg,#eee3fb,#fff);color:#68409e}
+.genre-toggle{background:linear-gradient(120deg,#f4edff,#fff);color:var(--text)}.genre-filter select{background:#fff;color:var(--text)}
+.preview-badge,.preview-note{color:#766b80}
+</style>
+<style id="theme-forum-demo">
+.themeToggle{white-space:nowrap;border:1px solid var(--line);background:var(--panel);color:var(--text);border-radius:10px;padding:9px 11px;cursor:pointer;font-size:12px;font-weight:750}
+#forum{scroll-margin-top:90px}.forumIntro{color:var(--muted);font-size:13px;margin:4px 0 16px}.forumComposer{display:grid;grid-template-columns:190px 1fr auto;gap:9px;padding:14px;background:var(--panel);border:1px solid var(--line);border-radius:15px;margin-bottom:14px}.forumComposer input,.forumComposer textarea{width:100%;min-width:0;background:var(--panel2);color:var(--text);border:1px solid var(--line);border-radius:10px;padding:11px}.forumComposer textarea{grid-column:1/3;min-height:76px;resize:vertical}.forumComposer button{grid-column:3;grid-row:1/3;align-self:stretch}.forumPosts{display:grid;gap:10px}.forumPost{padding:15px 17px;background:var(--panel);border:1px solid var(--line);border-radius:14px}.forumPost h3{margin:0 0 5px;font-size:15px}.forumPost p{margin:8px 0;color:var(--text);white-space:pre-wrap;overflow-wrap:anywhere}.forumPost small{color:var(--muted)}.forumEmpty{padding:18px;text-align:center;color:var(--muted);border:1px dashed var(--line);border-radius:14px}
+:root[data-theme="dark"]{color-scheme:dark;--bg:#100d17;--panel:#1a1522;--panel2:#251c31;--line:#3a2c4c;--purple:#c5a0f4;--purple2:#eee3ff;--text:#faf7ff;--muted:#b8adc7;--pink:#d9b7f2;--green:#bfe6d0}
+:root[data-theme="dark"] body{background:radial-gradient(ellipse at 85% -12%,#3b2850 0,transparent 32%),var(--bg);color:var(--text)}
+:root[data-theme="dark"] header{background:rgba(16,13,23,.94);border-bottom-color:#c5a0f429}
+:root[data-theme="dark"] .heroBox{background:linear-gradient(115deg,#21182d 0%,#2b1e3a 55%,#402a54 100%);border-color:#c5a0f42b}
+:root[data-theme="dark"] .hero p{color:#d5c8e3}:root[data-theme="dark"] .heroNote{color:#e8d9fa99}
+:root[data-theme="dark"] .stat,:root[data-theme="dark"] .card,:root[data-theme="dark"] .update,:root[data-theme="dark"] .aboutBox,:root[data-theme="dark"] .content-panel{background:var(--panel);border-color:#ffffff12}
+:root[data-theme="dark"] .chip{background:var(--panel);color:var(--muted);border-color:var(--line)}
+:root[data-theme="dark"] .genre{background:linear-gradient(135deg,#30233f,#211a2b);color:var(--text)}
+:root[data-theme="dark"] .modalBox{background:#211a2b;border-color:#6d5684}:root[data-theme="dark"] .chapterLinks button{background:#2b2238;color:var(--text)}
+:root[data-theme="dark"] .reader{background:#17131f}:root[data-theme="dark"] .reader .fakePage{background:linear-gradient(145deg,#332541,#17131f);color:var(--purple2)}
+:root[data-theme="dark"] input,:root[data-theme="dark"] select,:root[data-theme="dark"] textarea{background:var(--panel2);color:var(--text);border-color:var(--line)}
+:root[data-theme="dark"] .note{background:#c5a0f410;color:var(--muted)}
+@media(max-width:640px){.forumComposer{grid-template-columns:1fr}.forumComposer textarea,.forumComposer button{grid-column:1;grid-row:auto}}
+</style>
+<style id="chat-demo-styles">
+.chatShell{overflow:hidden;border:1px solid var(--line);border-radius:18px;background:var(--panel);box-shadow:0 8px 28px #38224d10}.chatTop{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:15px 18px;background:var(--panel2);border-bottom:1px solid var(--line)}.chatTop strong,.chatTop small{display:block}.chatTop strong{font-size:14px}.chatTop small{margin-top:3px;font-size:11px;color:var(--muted)}.chatStatus{font-size:11px;color:var(--green);white-space:nowrap}.chatMessages{height:300px;overflow:auto;display:flex;flex-direction:column;gap:12px;padding:18px;background:color-mix(in srgb,var(--panel) 94%,var(--purple) 6%)}.chatMessage{max-width:min(78%,520px);align-self:flex-start}.chatMessage.mine{align-self:flex-end}.chatMeta{display:flex;gap:8px;align-items:center;margin:0 8px 4px;font-size:10px;color:var(--muted)}.chatMessage.mine .chatMeta{justify-content:flex-end}.chatBubble{padding:10px 13px;border:1px solid var(--line);border-radius:15px 15px 15px 4px;background:var(--panel2);color:var(--text);font-size:13px;white-space:pre-wrap;overflow-wrap:anywhere}.chatMessage.mine .chatBubble{border-color:#b695dc;background:#eee3fb;color:#39234d;border-radius:15px 15px 4px 15px}.chatComposer{display:grid;grid-template-columns:170px 1fr auto;gap:9px;padding:12px;border-top:1px solid var(--line)}.chatComposer input{min-width:0;width:100%;border:1px solid var(--line);border-radius:11px;background:var(--panel);color:var(--text);padding:11px 12px}.chatComposer button{white-space:nowrap}.chatNotice{margin:0;padding:0 14px 12px;color:var(--muted);font-size:10px}.chatEmpty{margin:auto;text-align:center;color:var(--muted);font-size:13px}@media(max-width:640px){.chatMessages{height:280px;padding:13px}.chatComposer{grid-template-columns:1fr auto}.chatComposer input:first-child{grid-column:1/-1}.chatComposer button{grid-column:2;grid-row:2}.chatMessage{max-width:88%}}
+:root[data-theme="dark"] .chatMessage.mine .chatBubble{background:#39284d;border-color:#735794;color:#faf7ff}
+</style>
+<style id="personal-page-styles">
+.personalCard{background:var(--panel);border:1px solid var(--line);border-radius:22px;padding:22px 28px;box-shadow:0 8px 28px #38224d0c}.profileHead{display:flex;align-items:center;gap:18px;padding-bottom:22px}.profileAvatar,.profileAvatar svg{display:block;width:82px;height:82px;flex:none}.profileInfo h3{font-size:22px;margin:0 0 4px}.profileInfo p{margin:0 0 7px;color:var(--muted)}.profileEdit{padding:0;border:0;background:none;color:#8b5cc7;font:inherit;cursor:pointer}.profileStats{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin:0 0 18px}.profileStat{display:flex;flex-direction:column;align-items:center;gap:5px;padding:12px 8px;border:0;border-radius:13px;background:transparent;color:var(--text);cursor:pointer}.profileStat:hover{background:var(--panel2)}.profileIcon{font-size:25px;line-height:1}.profileStat strong{font-size:20px}.profileStat>span:last-child{font-size:12px;color:var(--muted)}.personalMenu{display:grid}.personalRow{display:grid;grid-template-columns:36px 1fr 20px;align-items:center;gap:12px;text-align:left;padding:13px 4px;border:0;border-top:1px solid color-mix(in srgb,var(--line) 65%,transparent);background:transparent;color:var(--text);cursor:pointer}.personalRow:hover{background:color-mix(in srgb,var(--panel2) 55%,transparent)}.personalRowIcon{font-size:22px;color:var(--muted);text-align:center}.personalRow strong,.personalRow small{display:block}.personalRow strong{font-size:15px}.personalRow small{margin-top:3px;font-size:12px;color:var(--muted)}.personalChevron{font-size:25px;color:var(--muted);text-align:right}.personalNote{margin:14px 0 0;color:var(--muted);font-size:11px}@media(max-width:580px){.personalCard{padding:18px 14px}.profileAvatar,.profileAvatar svg{width:64px;height:64px}.profileInfo h3{font-size:19px}.personalRow{grid-template-columns:30px 1fr 18px;padding:12px 2px}}
+</style>
+<style id="genre-archive-styles">
+.genreHub{display:none}main.site-main.genre-view>:not(#the-loai){display:none!important}main.site-main.genre-view>#the-loai{display:block;min-height:calc(100vh - 190px);padding-top:30px}.genreIndexCard,.genreAside{background:var(--panel);border:1px solid var(--line);border-radius:18px;padding:18px}.genreIndexHead{display:flex;align-items:center;gap:12px;margin-bottom:15px}.genreIndexIcon{width:42px;height:42px;display:grid;place-items:center;border-radius:13px;background:#eee3fb;color:#75539d;font-size:23px}.genreIndexHead strong,.genreIndexHead small{display:block}.genreIndexHead small{color:var(--muted);font-size:12px;margin-top:3px}.genreBrowseGrid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:10px}.genreBrowseItem{display:flex;align-items:center;justify-content:space-between;gap:8px;min-height:48px;padding:10px 12px;border:1px solid var(--line);border-radius:11px;background:var(--panel);color:var(--text);font:inherit;font-size:13px;font-weight:750;text-align:left;cursor:pointer;transition:transform .16s,border-color .16s,background .16s}.genreBrowseItem:hover{transform:translateY(-2px);border-color:var(--purple);background:var(--panel2)}.genreBrowseItem span:last-child{color:var(--muted)}.genreBack{margin-bottom:14px}.genreArchiveHero{display:grid;grid-template-columns:190px 1fr;gap:24px;align-items:center;padding:22px;background:var(--panel);border:1px solid var(--line);border-radius:18px;margin-bottom:20px}.genreArchiveArt{aspect-ratio:3/4;max-height:260px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:12px;border-radius:14px;background:linear-gradient(145deg,#d9c3f0,#8c6aac);color:#fff;box-shadow:0 8px 24px #4e346622}.genreArchiveArt span{font-size:60px}.genreArchiveArt small{text-align:center;font-weight:900;letter-spacing:.15em;font-size:13px}.genreArchiveInfo h1{font-size:clamp(28px,4vw,42px);margin:5px 0 10px}.genreArchiveInfo p{color:var(--muted);max-width:620px}.genreArchiveMeta{display:flex;flex-wrap:wrap;gap:16px;color:var(--muted);font-size:12px}.genreArchiveLayout{display:grid;grid-template-columns:minmax(0,1fr) 250px;gap:20px;align-items:start}.genreAside h3{margin:0 0 5px}.genreAside>p{margin:0 0 12px;color:var(--muted);font-size:12px}.genreAsideLinks{display:grid;gap:7px}.genreAsideLinks button{display:flex;justify-content:space-between;align-items:center;gap:8px;text-align:left;padding:9px 10px;border:1px solid var(--line);border-radius:9px;background:var(--panel);color:var(--text);cursor:pointer}.genreAsideLinks button:hover{border-color:var(--purple)}.genreAsideLinks small{color:var(--muted)}.genreEmpty{grid-column:1/-1;padding:24px;text-align:center;background:var(--panel);border:1px dashed var(--line);border-radius:14px;color:var(--muted)}
+:root[data-theme="dark"] .genreArchiveHero,:root[data-theme="dark"] .genreIndexCard,:root[data-theme="dark"] .genreAside{background:var(--panel);border-color:var(--line)}
+@media(max-width:800px){.genreBrowseGrid{grid-template-columns:repeat(3,minmax(0,1fr))}.genreArchiveLayout{grid-template-columns:1fr}.genreAside{order:-1}}@media(max-width:580px){.genreBrowseGrid{grid-template-columns:repeat(2,minmax(0,1fr));gap:8px}.genreArchiveHero{grid-template-columns:96px 1fr;gap:14px;padding:14px}.genreArchiveArt{max-height:150px}.genreArchiveArt span{font-size:38px}.genreArchiveArt small{font-size:9px}.genreArchiveInfo h1{font-size:25px}.genreArchiveMeta{gap:7px}.genreArchiveLayout .comic-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
+</style>
+<style id="personal-dashboard-frame-styles">
+#me.personalSection{display:none;padding:0}#me.personalSection iframe{display:block;width:100%;height:calc(100vh - 76px);min-height:600px;border:0;border-radius:18px;background:#fff}main.site-main.personal-view>#me.personalSection{display:block;padding:0}@media(max-width:640px){#me.personalSection iframe{height:calc(100vh - 128px);min-height:520px}}
+</style>
+<style id="story-shelf-styles">
+    .elagia-home {
+      --purple: #8964c7;
+      --ink: #29243a;
+      --muted: #827b91;
+      --line: #e8e0f4;
+      color: var(--ink);
+      font-family: inherit;
+    }
+
+    .elagia-home * { box-sizing: border-box; }
+    .elagia-home button,
+    .elagia-home input,
+    .elagia-home select { font: inherit; }
+
+    .elagia-home .story-heading {
+      display: flex;
+      justify-content: space-between;
+      align-items: end;
+      gap: 20px;
+      flex-wrap: wrap;
+      margin-bottom: 24px;
+    }
+
+    .elagia-home .eyebrow {
+      color: var(--purple);
+      font-size: 12px;
+      font-weight: 800;
+      letter-spacing: 2px;
+    }
+
+    .elagia-home h1 {
+      font-size: clamp(28px, 4vw, 38px);
+      margin: 10px 0;
+      letter-spacing: -1px;
+    }
+
+    .elagia-home .subtitle {
+      color: var(--muted);
+      margin: 0;
+      line-height: 1.7;
+    }
+
+    .elagia-home .featured {
+      position: relative;
+      display: grid;
+      grid-template-columns: 1.05fr 1fr;
+      gap: 30px;
+      align-items: center;
+      padding: 28px;
+      margin-bottom: 32px;
+      border: 1px solid var(--line);
+      border-radius: 24px;
+      overflow: hidden;
+      background: linear-gradient(120deg, #f0e8fc, #fff 75%);
+    }
+
+    .elagia-home .featured-cover {
+      min-height: 235px;
+      border-radius: 17px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      color: white;
+      padding: 24px;
+      background: linear-gradient(145deg, #a88bd2, #40314f);
+    }
+
+    .elagia-home .featured-cover .sparkle {
+      font-size: 35px;
+      margin-bottom: 15px;
+    }
+
+    .elagia-home .featured-cover strong {
+      font-size: clamp(23px, 3vw, 35px);
+    }
+
+    .elagia-home .featured-cover small {
+      margin-top: 12px;
+      letter-spacing: 3px;
+    }
+
+    .elagia-home .featured-copy h2 {
+      font-size: clamp(23px, 3vw, 31px);
+      margin: 12px 0;
+    }
+
+    .elagia-home .featured-copy p {
+      color: var(--muted);
+      line-height: 1.8;
+    }
+
+    .elagia-home .tag {
+      display: inline-flex;
+      padding: 6px 10px;
+      background: #eee6fb;
+      color: #7450aa;
+      border-radius: 8px;
+      font-size: 11px;
+      font-weight: 750;
+    }
+
+    .elagia-home .btn-primary {
+      background: var(--purple);
+      color: white;
+      border: 1px solid var(--purple);
+      border-radius: 11px;
+      padding: 12px 20px;
+      cursor: pointer;
+      font-weight: 700;
+    }
+
+    .elagia-home .btn-primary:hover {
+      background: #7450ad;
+    }
+
+    .elagia-home .section-title {
+      font-size: 22px;
+      margin: 0 0 7px;
+    }
+
+    .elagia-home .section-desc {
+      color: var(--muted);
+      font-size: 13px;
+      margin: 0 0 20px;
+    }
+
+    .elagia-home .filters {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 9px;
+      margin-bottom: 18px;
+    }
+
+    .elagia-home .filter-btn {
+      background: white;
+      color: #625b71;
+      border: 1px solid var(--line);
+      border-radius: 11px;
+      padding: 10px 16px;
+      cursor: pointer;
+      font-weight: 650;
+      font-size: 13px;
+    }
+
+    .elagia-home .filter-btn.active,
+    .elagia-home .filter-btn:hover {
+      color: white;
+      background: var(--purple);
+      border-color: var(--purple);
+    }
+
+    .elagia-home .search-row {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) auto;
+      gap: 12px;
+      margin-bottom: 14px;
+    }
+
+    .elagia-home .search-box {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      background: white;
+      border: 1px solid var(--line);
+      border-radius: 12px;
+      padding: 0 14px;
+      min-width: 0;
+    }
+
+    .elagia-home .search-box input {
+      width: 100%;
+      min-width: 0;
+      padding: 13px 0;
+      border: 0;
+      outline: none;
+      background: transparent;
+      color: var(--ink);
+    }
+
+    .elagia-home .sort-select {
+      border: 1px solid var(--line);
+      background: white;
+      border-radius: 12px;
+      padding: 0 12px;
+      color: var(--ink);
+      max-width: 190px;
+    }
+
+    .elagia-home .genre-panel {
+      border: 1px solid var(--line);
+      border-radius: 15px;
+      background: white;
+      margin-bottom: 25px;
+      overflow: hidden;
+    }
+
+    .elagia-home .genre-toggle {
+      width: 100%;
+      padding: 17px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 12px;
+      border: 0;
+      background: linear-gradient(100deg, #f2ebfc, white);
+      color: var(--ink);
+      font-weight: 750;
+      text-align: left;
+      cursor: pointer;
+    }
+
+    .elagia-home .genre-options {
+      padding: 15px;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 9px;
+    }
+
+    .elagia-home .genre-options[hidden] { display: none; }
+
+    .elagia-home .genre-chip {
+      border: 1px solid var(--line);
+      border-radius: 30px;
+      padding: 8px 13px;
+      background: white;
+      color: #625b71;
+      cursor: pointer;
+      font-size: 12px;
+    }
+
+    .elagia-home .genre-chip.active {
+      background: #eee6fb;
+      color: #7049a7;
+      border-color: #cbb6eb;
+    }
+
+    .elagia-home .results-line {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 16px;
+      color: var(--muted);
+      font-size: 12px;
+    }
+
+    .elagia-home .story-grid {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 20px;
+    }
+
+    .elagia-home .story-card {
+      background: white;
+      border: 1px solid #eee9f5;
+      border-radius: 19px;
+      overflow: hidden;
+      min-width: 0;
+      transition: transform .2s, box-shadow .2s;
+    }
+
+    .elagia-home .story-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 12px 28px #4a31520e;
+    }
+
+    .elagia-home .story-cover {
+      width: 100%;
+      aspect-ratio: 3 / 4;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 16px;
+      color: white;
+      position: relative;
+      overflow: hidden;
+      background: linear-gradient(150deg, #80649b, #302441);
+    }
+
+    .elagia-home .story-cover::before {
+      content: "";
+      position: absolute;
+      width: 180px;
+      height: 180px;
+      border: 1px solid #ffffff20;
+      border-radius: 50%;
+      top: -65px;
+      right: -70px;
+    }
+
+    .elagia-home .story-cover .cover-symbol {
+      font-size: 27px;
+      margin-bottom: 12px;
+    }
+
+    .elagia-home .story-cover strong {
+      font-size: clamp(15px, 1.5vw, 21px);
+      line-height: 1.4;
+      text-shadow: 0 3px 8px #0005;
+    }
+
+    .elagia-home .story-cover small {
+      margin-top: 12px;
+      font-size: 10px;
+      font-weight: 800;
+      letter-spacing: 2px;
+    }
+
+    .elagia-home .story-cover.c2 {
+      background: linear-gradient(145deg, #a57c9f, #44304f);
+    }
+
+    .elagia-home .story-cover.c3 {
+      background: linear-gradient(145deg, #687094, #292b43);
+    }
+
+    .elagia-home .story-cover.c4 {
+      background: linear-gradient(145deg, #bd91ad, #563752);
+    }
+
+    .elagia-home .story-cover.c5 {
+      background: linear-gradient(145deg, #bf9a72, #62402f);
+    }
+
+    .elagia-home .story-cover.c6 {
+      background: linear-gradient(145deg, #659a9b, #284b56);
+    }
+
+    .elagia-home .cover-label {
+      position: absolute;
+      top: 12px;
+      left: 12px;
+      padding: 6px 8px;
+      border-radius: 7px;
+      background: #ffffffeb;
+      color: #63458b;
+      font-size: 10px;
+      font-weight: 800;
+    }
+
+    .elagia-home .story-info { padding: 15px; }
+
+    .elagia-home .story-title {
+      display: block;
+      color: var(--ink);
+      font-size: 15px;
+      line-height: 1.5;
+      font-weight: 800;
+      margin-bottom: 7px;
+      overflow-wrap: anywhere;
+    }
+
+    .elagia-home .story-meta {
+      color: var(--muted);
+      font-size: 11px;
+      line-height: 1.8;
+    }
+
+    .elagia-home .story-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 5px;
+      margin-top: 10px;
+    }
+
+    .elagia-home .story-tags span {
+      color: #7654a7;
+      background: #f3eefb;
+      border-radius: 6px;
+      padding: 4px 7px;
+      font-size: 10px;
+    }
+
+    .elagia-home .card-actions {
+      display: flex;
+      align-items: center;
+      gap: 7px;
+      margin-top: 13px;
+    }
+
+    .elagia-home .favorite-btn {
+      flex: 1;
+      border: 1px solid var(--line);
+      background: white;
+      color: #716880;
+      padding: 9px 5px;
+      border-radius: 9px;
+      font-size: 11px;
+      cursor: pointer;
+    }
+
+    .elagia-home .favorite-btn.active {
+      color: #b44d83;
+      border-color: #e6b5ce;
+      background: #fff3f8;
+    }
+
+    .elagia-home .detail-btn {
+      border: 0;
+      background: #eee6fb;
+      color: #7049a7;
+      padding: 10px 12px;
+      border-radius: 9px;
+      font-size: 11px;
+      font-weight: 750;
+      cursor: pointer;
+    }
+
+    .elagia-home .empty-state {
+      grid-column: 1 / -1;
+      text-align: center;
+      padding: 50px 20px;
+      color: var(--muted);
+      border: 1px dashed var(--line);
+      border-radius: 18px;
+      background: white;
+    }
+
+    .elagia-home .more-row {
+      text-align: center;
+      margin-top: 28px;
+    }
+
+    .elagia-home .more-btn {
+      padding: 12px 23px;
+      background: white;
+      border: 1px solid var(--line);
+      border-radius: 12px;
+      color: var(--purple);
+      font-weight: 750;
+      cursor: pointer;
+    }
+
+    .elagia-home .story-dialog {
+      width: min(540px, calc(100% - 28px));
+      border: 1px solid var(--line);
+      border-radius: 22px;
+      padding: 25px;
+      color: var(--ink);
+      background: white;
+      box-shadow: 0 20px 70px #21172d30;
+    }
+
+    .elagia-home .story-dialog::backdrop {
+      background: #21172d80;
+      backdrop-filter: blur(4px);
+    }
+
+    .elagia-home .dialog-close {
+      float: right;
+      border: 0;
+      background: #f2edf9;
+      border-radius: 50%;
+      width: 35px;
+      height: 35px;
+      cursor: pointer;
+    }
+
+    .elagia-home .dialog-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 20px;
+    }
+
+    @media (max-width: 1000px) {
+      .elagia-home .story-grid {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 15px;
+      }
+    }
+
+    @media (max-width: 650px) {
+      .elagia-home .featured {
+        grid-template-columns: 1fr;
+        gap: 18px;
+        padding: 16px;
+        border-radius: 19px;
+      }
+
+      .elagia-home .featured-cover { min-height: 190px; }
+      .elagia-home .story-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 11px;
+      }
+
+      .elagia-home .story-info { padding: 11px; }
+      .elagia-home .story-title { font-size: 13px; }
+      .elagia-home .story-cover { padding: 10px; }
+      .elagia-home .story-cover strong { font-size: 15px; }
+      .elagia-home .search-row {
+        grid-template-columns: 1fr;
+      }
+
+      .elagia-home .sort-select {
+        width: 100%;
+        max-width: none;
+        min-height: 44px;
+      }
+
+      .elagia-home .filter-btn { padding: 9px 12px; }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      .elagia-home .story-card { transition: none; }
+    }
+  </style><style id="community-view-styles">main.site-main:not(.community-view)>#forum{display:none!important}main.site-main.community-view>:not(#forum){display:none!important}main.site-main.community-view>#forum{display:block;min-height:calc(100vh - 190px);padding-top:38px}</style><style id="hide-header-story-search">header .search{display:none!important}</style><style id="single-file-tab-styles">
+main.site-main:not(.about-view)>#about{display:none!important}
+main.site-main:not(.genre-view)>#the-loai{display:none!important}
+main.site-main.about-view>:not(#about),main.site-main.genre-view>:not(#the-loai){display:none!important}
+main.site-main.about-view>#about{display:block;min-height:calc(100vh - 190px)}
+main.site-main.genre-view>#the-loai{display:block;min-height:calc(100vh - 190px);padding-top:30px}
+main.site-main.tab-transition{animation:elagiaTabReveal .28s cubic-bezier(.2,.75,.25,1) both}
+@keyframes elagiaTabReveal{from{opacity:.55;transform:translateY(8px)}to{opacity:1;transform:translateY(0)}}
+@media(prefers-reduced-motion:reduce){main.site-main.tab-transition{animation:none}}
+</style>
+<style id="embedded-genre-styles">
+#the-loai *{ box-sizing:border-box; }#the-loai button,#the-loai input,#the-loai select{ font:inherit; }#the-loai button{ cursor:pointer; }#the-loai a{ color:inherit;text-decoration:none; }#the-loai header{
+  min-height:76px;
+  background:rgba(250,247,255,.94);
+  border-bottom:1px solid var(--line);
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:22px;
+  padding:12px max(5%,calc((100% - 1350px)/2));
+  position:sticky;
+  top:0;
+  z-index:10;
+  backdrop-filter:blur(12px);
+}#the-loai .logo{ display:flex;align-items:center;gap:12px;flex-shrink:0; }#the-loai .logo-mark{width:48px;height:48px;object-fit:contain;display:block;flex:none;border-radius:12px}@media(max-width:580px){#the-loai .logo-mark{width:42px;height:42px}}#the-loai .logo strong{ font-size:16px;letter-spacing:.06em; }#the-loai .logo small{
+  display:block;font-size:10px;letter-spacing:2px;
+  color:var(--muted);margin-top:4px;
+}#the-loai nav{ display:flex;align-items:center;gap:22px; }#the-loai nav a{ color:var(--muted);font-size:14px;white-space:nowrap; }#the-loai nav a.active,#the-loai nav a:hover{ color:var(--purple2);font-weight:bold; }#the-loai .header-right{ display:flex;align-items:center;gap:10px; }#the-loai .theme-btn{
+  border:1px solid var(--line);background:var(--panel);border-radius:12px;
+  padding:11px 13px;color:var(--text);white-space:nowrap;
+}#the-loai .header-search{
+  display:flex;align-items:center;gap:8px;
+  background:var(--panel);border:1px solid var(--line);
+  padding:5px 8px 5px 12px;border-radius:14px;
+}#the-loai .header-search input{
+  width:115px;border:0;outline:0;padding:9px 0;min-width:0;
+}#the-loai .header-search button{
+  background:none;border:0;color:var(--purple);padding:8px;
+}#the-loai main{ max-width:1350px;margin:auto;padding:34px 28px 65px; }#the-loai .eyebrow{
+  font-size:12px;font-weight:800;letter-spacing:2px;color:var(--purple);
+}#the-loai h1{ font-size:36px;letter-spacing:-1.1px;margin:12px 0; }#the-loai h2{ letter-spacing:-.4px; }#the-loai .muted{ color:var(--muted);line-height:1.7; }#the-loai .hero{
+  display:grid;grid-template-columns:1.15fr .85fr;
+  gap:28px;align-items:center;
+  border:1px solid var(--line);border-radius:25px;
+  padding:35px;margin-bottom:34px;
+  background:linear-gradient(115deg,#fff 10%,#f0e8fc 100%);
+  overflow:hidden;
+}#the-loai .hero h1{ font-size:clamp(30px,4vw,48px);line-height:1.2; }#the-loai .hero p{ max-width:600px;font-size:15px; }#the-loai .hero-art{
+  min-height:225px;border-radius:20px;
+  background:linear-gradient(145deg,#bca6e3,#73538f 55%,#352844);
+  color:white;display:flex;align-items:center;justify-content:center;
+  flex-direction:column;text-align:center;padding:25px;
+  position:relative;overflow:hidden;
+}#the-loai .hero-art:before,#the-loai .hero-art:after{
+  content:"";position:absolute;border:1px solid #ffffff30;
+  border-radius:50%;width:240px;height:240px;
+}#the-loai .hero-art:after{ width:310px;height:310px; }#the-loai .hero-art .moon{ font-size:48px;position:relative;z-index:1; }#the-loai .hero-art strong{ font-size:22px;position:relative;z-index:1; }#the-loai .hero-art span:last-child{
+  font-size:11px;letter-spacing:3px;margin-top:10px;
+  position:relative;z-index:1;
+}#the-loai .primary{
+  display:inline-block;background:var(--purple);color:white;
+  border:0;border-radius:11px;padding:12px 18px;font-weight:bold;
+}#the-loai .primary:hover{ background:#7049ac; }#the-loai .section{ margin-top:38px; }#the-loai .section-head{
+  display:flex;justify-content:space-between;align-items:end;
+  gap:15px;margin-bottom:18px;
+}#the-loai .section-head h2{ margin:0 0 6px;font-size:23px; }#the-loai .section-head p{ margin:0;font-size:13px; }#the-loai .section-head a{ color:var(--purple);font-size:13px;white-space:nowrap; }#the-loai .category-grid{
+  display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:15px;
+}#the-loai .category-card{
+  --accent:#8b5cc7;
+  min-width:0;min-height:132px;padding:18px;
+  display:flex;align-items:center;gap:14px;
+  text-align:left;background:var(--panel);
+  border:1px solid var(--line);border-radius:17px;
+  color:var(--text);transition:transform .2s,border-color .2s;
+}#the-loai .category-card:hover,#the-loai .category-card.active{
+  border-color:var(--accent);transform:translateY(-2px);
+  box-shadow:0 8px 22px #65468d0b;
+}#the-loai .category-icon{
+  flex-shrink:0;width:53px;height:58px;border-radius:15px;
+  display:grid;place-items:center;background:var(--tint,#f1eafd);
+  font-size:27px;
+}#the-loai .category-copy{ min-width:0; }#the-loai .category-copy strong{ display:block;font-size:15px;margin-bottom:6px; }#the-loai .category-copy small{ color:var(--muted);font-size:11px;line-height:1.5; }#the-loai .category-copy .count{
+  display:block;color:var(--accent);font-size:11px;margin-top:7px;
+}#the-loai .popular-strip{
+  display:grid;grid-template-columns:repeat(6,minmax(0,1fr));gap:12px;
+}#the-loai .popular-item{
+  border:1px solid var(--line);background:var(--panel);border-radius:16px;
+  padding:18px 12px;text-align:center;color:var(--text);
+}#the-loai .popular-item .symbol{ font-size:27px;display:block;margin-bottom:10px; }#the-loai .popular-item strong{ font-size:13px;display:block; }#the-loai .popular-item small{ color:var(--muted);font-size:11px;display:block;margin-top:6px; }#the-loai .popular-item:hover,#the-loai .popular-item.active{ background:var(--panel2);border-color:#d0b9ed; }#the-loai .filter-bar{
+  display:flex;gap:10px;flex-wrap:wrap;margin-bottom:15px;
+}#the-loai .search-field{
+  flex:1;min-width:190px;display:flex;align-items:center;gap:9px;
+  border:1px solid var(--line);background:var(--panel);
+  border-radius:12px;padding:0 13px;
+}#the-loai .search-field input{
+  width:100%;min-width:0;border:0;outline:0;
+  padding:13px 0;background:transparent;color:var(--text);
+}#the-loai .filter-bar select{
+  border:1px solid var(--line);background:var(--panel);color:var(--text);
+  border-radius:12px;padding:0 12px;min-height:45px;
+}#the-loai .type-filters{ display:flex;gap:8px;flex-wrap:wrap;margin-bottom:22px; }#the-loai .pill{
+  padding:10px 15px;border:1px solid var(--line);border-radius:11px;
+  background:var(--panel);color:var(--muted);font-size:13px;
+}#the-loai .pill.active{ background:var(--purple);border-color:var(--purple);color:white; }#the-loai .result-count{ color:var(--muted);font-size:12px;margin-bottom:15px; }#the-loai .story-grid{
+  display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:17px;
+}#the-loai .story-card{
+  background:var(--panel);border:1px solid var(--line);border-radius:17px;
+  overflow:hidden;min-width:0;transition:transform .2s;
+}#the-loai .story-card:hover{ transform:translateY(-3px); }#the-loai .story-cover{
+  aspect-ratio:3/4;position:relative;overflow:hidden;
+  display:flex;flex-direction:column;align-items:center;justify-content:center;
+  text-align:center;color:white;padding:15px;
+  background:linear-gradient(145deg,#a88bd2,#382a4b);
+}#the-loai .story-cover:before{
+  content:"✦";font-size:27px;margin-bottom:12px;
+}#the-loai .story-cover strong{ font-size:18px;line-height:1.4; }#the-loai .story-cover small{ letter-spacing:2px;font-size:9px;margin-top:10px; }#the-loai .story-cover em{
+  position:absolute;top:10px;left:10px;font-style:normal;
+  font-size:10px;background:rgba(250,247,255,.94);color:#62418c;
+  border-radius:6px;padding:5px 7px;font-weight:bold;
+}#the-loai .story-cover.c2{ background:linear-gradient(145deg,#b28bab,#49304f); }#the-loai .story-cover.c3{ background:linear-gradient(145deg,#7982aa,#2d3049); }#the-loai .story-cover.c4{ background:linear-gradient(145deg,#c69ab6,#593a58); }#the-loai .story-cover.c5{ background:linear-gradient(145deg,#c3a078,#674a37); }#the-loai .story-cover.c6{ background:linear-gradient(145deg,#81aaa4,#31575d); }#the-loai .story-info{ padding:13px; }#the-loai .story-info h3{ font-size:14px;margin:0 0 7px;line-height:1.5; }#the-loai .story-info p{ font-size:11px;line-height:1.7;color:var(--muted);margin:0; }#the-loai .tags{ display:flex;gap:5px;flex-wrap:wrap;margin-top:9px; }#the-loai .tags span{ background:var(--panel2);color:var(--purple2);border-radius:5px;padding:4px 6px;font-size:10px; }#the-loai .story-actions{ display:flex;gap:6px;margin-top:12px; }#the-loai .story-actions button{
+  flex:1;padding:8px 4px;border:1px solid var(--line);
+  background:var(--panel);border-radius:8px;font-size:11px;color:var(--muted);
+}#the-loai .story-actions button:hover{ background:var(--panel2); }#the-loai .empty{ grid-column:1/-1;text-align:center;padding:35px;color:var(--muted); }#the-loai footer{
+  border-top:1px solid var(--line);padding:24px 5%;
+  display:flex;justify-content:space-between;gap:15px;flex-wrap:wrap;
+  color:var(--muted);font-size:12px;
+}:root[data-theme="dark"] #the-loai header,:root[data-theme="dark"] #the-loai .theme-btn,:root[data-theme="dark"] #the-loai .story-card,:root[data-theme="dark"] #the-loai .category-card,:root[data-theme="dark"] #the-loai .popular-item,:root[data-theme="dark"] #the-loai .search-field,:root[data-theme="dark"] #the-loai .filter-bar select,:root[data-theme="dark"] #the-loai .pill,:root[data-theme="dark"] #the-loai .story-actions button{ background:var(--panel); }:root[data-theme="dark"] #the-loai header{ background:rgba(16,13,23,.94); }:root[data-theme="dark"] #the-loai .hero{ background:linear-gradient(115deg,#21182d 0%,#2b1e3a 55%,#402a54 100%); }:root[data-theme="dark"] #the-loai .category-card.active,:root[data-theme="dark"] #the-loai .popular-item.active{ background:var(--panel2); }@media(max-width:1100px){#the-loai nav{ gap:12px; }#the-loai .category-grid{ grid-template-columns:repeat(3,minmax(0,1fr)); }#the-loai .popular-strip{ grid-template-columns:repeat(3,minmax(0,1fr)); }#the-loai .story-grid{ grid-template-columns:repeat(4,minmax(0,1fr)); }#the-loai .header-search input{ width:80px; }
+}@media(max-width:760px){#the-loai header{ position:relative;flex-wrap:wrap;padding:12px 16px;gap:12px; }#the-loai nav{ order:3;width:100%;overflow-x:auto;padding:5px 0 2px; }#the-loai nav a{ font-size:12px; }#the-loai .header-right{ margin-left:auto; }#the-loai .header-search{ display:none; }#the-loai main{ padding:22px 15px 40px; }#the-loai h1{ font-size:30px; }#the-loai .hero{ grid-template-columns:1fr;padding:20px;gap:20px; }#the-loai .hero-art{ min-height:175px; }#the-loai .category-grid{ grid-template-columns:repeat(2,minmax(0,1fr));gap:9px; }#the-loai .category-card{ min-height:112px;padding:12px;gap:10px; }#the-loai .category-icon{ width:42px;height:45px;font-size:23px; }#the-loai .category-copy strong{ font-size:13px; }#the-loai .category-copy small{ font-size:10px; }#the-loai .popular-strip{ grid-template-columns:repeat(3,minmax(0,1fr));gap:8px; }#the-loai .popular-item{ padding:14px 5px; }#the-loai .story-grid{ grid-template-columns:repeat(2,minmax(0,1fr));gap:11px; }#the-loai .story-info{ padding:10px; }#the-loai .story-info h3{ font-size:13px; }#the-loai .story-cover strong{ font-size:16px; }#the-loai .filter-bar{ display:grid;grid-template-columns:1fr 1fr; }#the-loai .search-field{ grid-column:1/-1; }#the-loai .filter-bar select{ width:100%;min-width:0; }#the-loai .section{ margin-top:30px; }
+}@media(max-width:360px){#the-loai .category-grid{ grid-template-columns:1fr; }#the-loai .popular-strip{ grid-template-columns:repeat(2,minmax(0,1fr)); }
+}
+
+</style>
+<style id="embedded-about-styles">
+
+#about.about-page{scroll-margin-top:96px;padding:clamp(22px,4vw,42px) 0 48px}
+#about .about-container{width:min(1060px,calc(100% - 40px));margin:0 auto;display:grid;gap:clamp(14px,2vw,20px)}
+#about .about-hero,#about .about-section,#about .about-closing{min-width:0;padding:clamp(22px,4vw,42px);border:1px solid var(--line);border-radius:22px;background:var(--panel);box-shadow:0 12px 32px #38224d0a}
+#about .about-hero{background:linear-gradient(135deg,var(--panel),var(--panel2))}
+#about .about-kicker{margin-bottom:9px;color:var(--purple2);font-size:11px;font-weight:850;letter-spacing:.13em;text-transform:uppercase}
+#about .about-hero h1{max-width:900px;margin:0;font-size:clamp(30px,4.5vw,50px);line-height:1.14;letter-spacing:-.035em}
+#about .about-tagline{margin:10px 0 24px!important;color:var(--purple2)!important;font-size:clamp(15px,1.8vw,18px)!important;font-style:italic}
+#about .about-container p{max-width:82ch;margin:12px 0;color:var(--muted);font-size:clamp(14px,1.2vw,16px);line-height:1.8}
+#about .about-container strong{color:var(--text)}
+#about .about-section h2{margin:0 0 9px;font-size:clamp(23px,2.7vw,32px);line-height:1.25;letter-spacing:-.025em}
+#about .about-cards{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:clamp(12px,1.6vw,18px);margin-top:20px}
+#about .about-card{min-width:0;padding:clamp(17px,2vw,23px);border:1px solid var(--line);border-radius:18px;background:var(--panel2)}
+#about .about-card h3{margin:0 0 9px;font-size:clamp(16px,1.5vw,19px);line-height:1.45;overflow-wrap:anywhere}
+#about .about-card p{margin:0;font-size:14px;line-height:1.75}
+#about .about-container p.about-after{margin-top:20px}
+#about .about-values{display:grid;gap:10px;max-width:82ch;margin:16px 0;padding-left:22px;color:var(--muted);line-height:1.75}
+#about .about-closing{text-align:center;background:linear-gradient(135deg,var(--panel2),var(--panel))}
+#about .about-closing h2{max-width:760px;margin:0 auto;font-size:clamp(22px,3.2vw,34px);line-height:1.35;overflow-wrap:anywhere}
+#about .about-closing p{margin:12px auto 0;color:var(--purple2);font-weight:750}
+@media(max-width:900px){#about .about-container{width:min(820px,calc(100% - 32px))}#about .about-hero,#about .about-section,#about .about-closing{padding:clamp(20px,3.5vw,32px)}}
+@media(max-width:640px){#about.about-page{padding:18px 0 30px}#about .about-container{width:calc(100% - 24px);gap:12px}#about .about-cards{grid-template-columns:1fr;gap:10px;margin-top:15px}#about .about-hero,#about .about-section,#about .about-closing{padding:20px 18px;border-radius:17px}#about .about-kicker{font-size:10px;letter-spacing:.1em}#about .about-hero h1{font-size:clamp(27px,8vw,36px)}#about .about-tagline{margin:8px 0 18px!important}#about .about-container p{font-size:14px;line-height:1.72}#about .about-section h2{font-size:23px}#about .about-card{padding:17px}#about .about-card h3{font-size:16px}}
+@media(max-width:380px){#about .about-container{width:calc(100% - 20px)}#about .about-hero,#about .about-section,#about .about-closing{padding:18px 15px}#about .about-hero h1{font-size:27px}#about .about-card{padding:15px}#about .about-values{padding-left:19px}}
+
+</style>
+</head><body><div class="topline"></div><header><div class="wrap nav"><a class="brand" href="#top"><img class="elagia-logo-e" src="elagia-cat-logo.png" alt="Logo mèo Elagia Comics"><span>ELAGIA COMICS<small>READ · DREAM · REPEAT</small></span></a><button class="menuBtn" id="menuBtn">☰ Menu</button><nav class="navlinks" id="navlinks"><a href="#about">Giới thiệu</a><a class="active" href="#top">Trang chủ</a><a href="#the-loai">Thể loại</a><a href="#forum">Cộng đồng</a><a href="#me">Tôi</a></nav><button class="themeToggle" id="themeToggle" type="button" aria-label="Đổi giao diện">☀ Sáng</button><form class="search" id="searchForm"><span>⌕</span><input id="searchInput" type="search" placeholder="Tìm tên truyện..." aria-label="Tìm truyện"><button type="submit">Tìm</button></form></div></header><main class="wrap site-main" id="top">
+<div class="preview-badge">BẢN DEMO HTML · Dữ liệu minh họa, chưa kết nối WordPress</div><section class="hero"><div class="heroBox"><div class="heroCopy"><span class="eyebrow">✦ WELCOME TO ELAGIA COMICS</span><h1>Elagia Comics<br><em>Thế giới truyện tranh</em></h1><p>Khám phá thế giới Manga, Manhwa và Manhua. Tìm bộ truyện yêu thích, mở trang chi tiết và trải nghiệm giao diện đọc chương.</p><a class="btn" href="#truyen-moi">Khám phá thư viện ↗</a></div><div class="heroNote">✧ READ · DREAM · REPEAT ✧</div></div><div class="stats"><button class="stat" type="button" data-genre="Manga" aria-label="Mở truyện Manga"><strong>✦ Manga</strong></button><button class="stat" type="button" data-genre="Manhwa" aria-label="Mở truyện Manhwa"><strong>☾ Manhwa</strong></button><button class="stat" type="button" data-genre="Manhua" aria-label="Mở truyện Manhua"><strong>♡ Manhua</strong></button></div></section><section class="elagia-home" id="story-shelf">
+<!-- TRUYỆN NỔI BẬT -->
+  <div class="featured">
+    <div class="featured-cover">
+      <span class="sparkle">✦</span>
+      <strong>Moonlit Garden</strong>
+      <small>FEATURED MANHWA</small>
+    </div>
+    <div class="featured-copy">
+      <span class="tag">✦ TRUYỆN NỔI BẬT</span>
+      <h2>Khám phá thế giới mới</h2>
+      <p>
+        Những câu chuyện mới đang chờ bạn khám phá.
+        Chọn một bộ truyện, bước vào thế giới của các nhân vật
+        và bắt đầu hành trình tiếp theo.
+      </p>
+      <button class="btn-primary" id="featuredRead">
+        Khám phá truyện →
+      </button>
+    </div>
+  </div>
+
+  <!-- TÌM KIẾM VÀ BỘ LỌC -->
+  <div class="story-heading">
+    <div>
+      <span class="eyebrow">THE STORY SHELF</span>
+      <h1>Truyện tranh mới</h1>
+      <p class="subtitle">
+        Nhấn vào bìa truyện để xem thông tin và danh sách chương.
+      </p>
+    </div>
+  </div>
+
+  <div class="filters" id="typeFilters">
+    <button class="filter-btn active" data-type="all">Tất cả</button>
+    <button class="filter-btn" data-type="Manhwa">Manhwa</button>
+    <button class="filter-btn" data-type="Manhua">Manhua</button>
+    <button class="filter-btn" data-type="Manga">Manga</button>
+    <button class="filter-btn" data-type="Novel">Truyện chữ</button>
+  </div>
+
+  <div class="search-row">
+    <label class="search-box">
+      <span>⌕</span>
+      <input id="storySearch" type="search"
+        placeholder="Tìm tên truyện, thể loại...">
+    </label>
+
+    <select id="storySort" class="sort-select"
+      aria-label="Sắp xếp truyện">
+      <option value="newest">Mới cập nhật</option>
+      <option value="popular">Phổ biến</option>
+      <option value="az">Tên A–Z</option>
+    </select>
+  </div>
+
+  <div class="genre-panel">
+    <button class="genre-toggle" id="shelfGenreToggle"
+      aria-expanded="false" aria-controls="genreOptions">
+      <span>☷ &nbsp; Thể loại truyện</span>
+      <span id="shelfGenreArrow">⌄</span>
+    </button>
+
+    <div class="genre-options" id="shelfGenreOptions" hidden>
+      <button class="genre-chip active" data-shelf-genre="all">Tất cả</button>
+      <button class="genre-chip" data-shelf-genre="Lãng mạn">Lãng mạn</button>
+      <button class="genre-chip" data-shelf-genre="Fantasy">Fantasy</button>
+      <button class="genre-chip" data-shelf-genre="Hành động">Hành động</button>
+      <button class="genre-chip" data-shelf-genre="Hài hước">Hài hước</button>
+      <button class="genre-chip" data-shelf-genre="Đời thường">Đời thường</button>
+      <button class="genre-chip" data-shelf-genre="Trinh thám">Trinh thám</button>
+      <button class="genre-chip" data-shelf-genre="Kinh dị">Kinh dị</button>
+    </div>
+  </div>
+
+  <div class="results-line">
+    <span id="resultCount">Đang tải truyện...</span>
+    <span>✦ Elagia Comics</span>
+  </div>
+
+  <div class="story-grid" id="storyGrid"></div>
+
+  <div class="more-row">
+    <button class="more-btn" id="showMore">Xem thêm truyện ↓</button>
+  </div>
+
+  <dialog class="story-dialog" id="storyDialog">
+    <button class="dialog-close" id="closeDialog"
+      aria-label="Đóng">✕</button>
+    <span class="eyebrow">ELAGIA COMICS</span>
+    <h2 id="dialogTitle"></h2>
+    <p id="dialogMeta" class="subtitle"></p>
+    <p id="dialogDesc"></p>
+    <div class="story-tags" id="dialogTags"></div>
+    <div class="dialog-actions">
+      <button class="btn-primary" id="readStory">Đọc truyện</button>
+      <button class="filter-btn" id="dialogFavorite">♡ Yêu thích</button>
+    </div>
+    <p class="subtitle" style="font-size:12px;margin-top:18px">
+      Đây là bản demo. Danh sách chương cần được kết nối với dữ liệu truyện.
+    </p>
+  </dialog>
+
+  <script>
+  (() => {
+    const root = document.querySelector(".elagia-home");
+    if (!root || root.dataset.initialized) return;
+    root.dataset.initialized = "true";
+
+    // DỮ LIỆU MẪU — thay bằng dữ liệu truyện thật sau này.
+    const stories = [
+      {
+        id: 1, title: "Moonlit Garden", type: "Manhwa",
+        genres: ["Fantasy", "Lãng mạn"],
+        chapters: 24, status: "Đang cập nhật",
+        views: 920, updated: 6,
+        cover: "c1", label: "Nổi bật",
+        desc: "Một khu vườn bí ẩn, những bí mật chưa được hé lộ và hành trình khám phá thế giới dưới ánh trăng."
+      },
+      {
+        id: 2, title: "The Violet Crown", type: "Manhua",
+        genres: ["Fantasy", "Hành động"],
+        chapters: 18, status: "Đang cập nhật",
+        views: 760, updated: 5,
+        cover: "c2", label: "Mới",
+        desc: "Một chiếc vương miện tím và hành trình tìm kiếm sức mạnh của người thừa kế."
+      },
+      {
+        id: 3, title: "Cat Café Days", type: "Manga",
+        genres: ["Đời thường", "Hài hước"],
+        chapters: 42, status: "Hoàn thành",
+        views: 1200, updated: 4,
+        cover: "c3", label: "",
+        desc: "Những ngày bình yên, những vị khách thú vị và một quán cà phê đầy bất ngờ."
+      },
+      {
+        id: 4, title: "After the Rain", type: "Manhwa",
+        genres: ["Lãng mạn", "Đời thường"],
+        chapters: 31, status: "Đang cập nhật",
+        views: 850, updated: 3,
+        cover: "c4", label: "",
+        desc: "Một câu chuyện nhẹ nhàng về những cuộc gặp gỡ và cơ hội bắt đầu lại."
+      },
+      {
+        id: 5, title: "Ember Chronicle", type: "Novel",
+        genres: ["Fantasy", "Hành động"],
+        chapters: 56, status: "Đang cập nhật",
+        views: 980, updated: 2,
+        cover: "c5", label: "Truyện chữ",
+        desc: "Một chuyến hành trình xuyên qua những vùng đất huyền bí, nơi mỗi lựa chọn đều có ý nghĩa."
+      },
+      {
+        id: 6, title: "The Last Clue", type: "Manga",
+        genres: ["Trinh thám", "Kinh dị"],
+        chapters: 15, status: "Đang cập nhật",
+        views: 640, updated: 1,
+        cover: "c6", label: "Mới",
+        desc: "Một chuỗi manh mối kỳ lạ dẫn đến bí mật mà không ai muốn nhắc lại."
+      }
+    ];
+
+    let selectedType = "all";
+    let selectedGenre = "all";
+    let visibleCount = 8;
+    let selectedStory = null;
+
+    // Yêu thích chỉ được lưu trong phiên demo của trình duyệt.
+    const favorites = new Set();
+
+    const grid = root.querySelector("#storyGrid");
+    const search = root.querySelector("#storySearch");
+    const sort = root.querySelector("#storySort");
+    const count = root.querySelector("#resultCount");
+    const dialog = root.querySelector("#storyDialog");
+
+    const typeNames = {
+      Manhwa: "MANHWA",
+      Manhua: "MANHUA",
+      Manga: "MANGA",
+      Novel: "TRUYỆN CHỮ"
+    };
+
+    function getFiltered() {
+      const query = search.value.trim().toLocaleLowerCase("vi");
+
+      let result = stories.filter(story => {
+        const matchesType =
+          selectedType === "all" || story.type === selectedType;
+
+        const matchesGenre =
+          selectedGenre === "all" || story.genres.includes(selectedGenre);
+
+        const searchable = [
+          story.title, story.type, ...story.genres
+        ].join(" ").toLocaleLowerCase("vi");
+
+        return matchesType && matchesGenre && searchable.includes(query);
+      });
+
+      if (sort.value === "popular") {
+        result.sort((a, b) => b.views - a.views);
+      } else if (sort.value === "az") {
+        result.sort((a, b) => a.title.localeCompare(b.title));
+      } else {
+        result.sort((a, b) => b.updated - a.updated);
+      }
+
+      return result;
+    }
+
+    function render() {
+      const result = getFiltered();
+      const shown = result.slice(0, visibleCount);
+
+      count.textContent = `${result.length} bộ truyện`;
+
+      grid.innerHTML = shown.length ? shown.map(story => `
+        <article class="story-card">
+          <button class="story-cover ${story.cover}"
+            data-detail="${story.id}"
+            aria-label="Xem ${story.title}"
+            style="width:100%;border:0;cursor:pointer">
+            ${story.label
+              ? `<span class="cover-label">${story.label}</span>`
+              : ""}
+            <span class="cover-symbol">✦</span>
+            <strong>${story.title}</strong>
+            <small>${typeNames[story.type]}</small>
+          </button>
+
+          <div class="story-info">
+            <span class="story-title">${story.title}</span>
+            <div class="story-meta">
+              ${story.chapters} chương · ${story.status}<br>
+              ${story.views.toLocaleString("vi-VN")} lượt xem demo
+            </div>
+
+            <div class="story-tags">
+              ${story.genres.slice(0, 2).map(genre =>
+                `<span>${genre}</span>`
+              ).join("")}
+            </div>
+
+            <div class="card-actions">
+              <button class="favorite-btn ${favorites.has(story.id) ? "active" : ""}"
+                data-favorite="${story.id}"
+                aria-pressed="${favorites.has(story.id)}">
+                ${favorites.has(story.id) ? "♥ Đã thích" : "♡ Yêu thích"}
+              </button>
+              <button class="detail-btn" data-detail="${story.id}">
+                Chi tiết
+              </button>
+            </div>
+          </div>
+        </article>
+      `).join("") : `
+        <div class="empty-state">
+          <div style="font-size:32px">⌕</div>
+          <h3>Chưa tìm thấy truyện phù hợp</h3>
+          <p>Thử đổi từ khóa hoặc bộ lọc nhé.</p>
+        </div>
+      `;
+
+      root.querySelector("#showMore").hidden =
+        shown.length >= result.length;
+    }
+
+    function openDetail(id) {
+      selectedStory = stories.find(story => story.id === id);
+      if (!selectedStory) return;
+
+      root.querySelector("#dialogTitle").textContent =
+        selectedStory.title;
+      root.querySelector("#dialogMeta").textContent =
+        `${typeNames[selectedStory.type]} · ${selectedStory.chapters} chương · ${selectedStory.status}`;
+      root.querySelector("#dialogDesc").textContent =
+        selectedStory.desc;
+
+      root.querySelector("#dialogTags").innerHTML =
+        selectedStory.genres.map(genre =>
+          `<span>${genre}</span>`
+        ).join("");
+
+      updateDialogFavorite();
+      dialog.showModal();
+    }
+
+    function updateDialogFavorite() {
+      if (!selectedStory) return;
+      const button = root.querySelector("#dialogFavorite");
+      const liked = favorites.has(selectedStory.id);
+      button.textContent = liked ? "♥ Đã yêu thích" : "♡ Yêu thích";
+      button.classList.toggle("active", liked);
+    }
+
+    root.querySelector("#typeFilters").addEventListener("click", event => {
+      const button = event.target.closest("[data-type]");
+      if (!button) return;
+
+      selectedType = button.dataset.type;
+      visibleCount = 8;
+
+      root.querySelectorAll("[data-type]").forEach(item =>
+        item.classList.toggle("active", item === button)
+      );
+
+      render();
+    });
+
+    root.querySelector("#shelfGenreToggle").addEventListener("click", () => {
+      const options = root.querySelector("#shelfGenreOptions");
+      const expanded =
+        root.querySelector("#shelfGenreToggle").getAttribute("aria-expanded") === "true";
+
+      root.querySelector("#shelfGenreToggle").setAttribute(
+        "aria-expanded", String(!expanded)
+      );
+      options.hidden = expanded;
+      root.querySelector("#shelfGenreArrow").textContent = expanded ? "⌄" : "⌃";
+    });
+
+    root.querySelector("#shelfGenreOptions").addEventListener("click", event => {
+      const button = event.target.closest("[data-shelf-genre]");
+      if (!button) return;
+
+      selectedGenre = button.dataset.shelfGenre;
+      visibleCount = 8;
+
+      root.querySelectorAll("[data-shelf-genre]").forEach(item =>
+        item.classList.toggle("active", item === button)
+      );
+
+      render();
+    });
+
+    search.addEventListener("input", () => {
+      visibleCount = 8;
+      render();
+    });
+
+    sort.addEventListener("change", render);
+
+    grid.addEventListener("click", event => {
+      const favoriteButton = event.target.closest("[data-favorite]");
+      if (favoriteButton) {
+        const id = Number(favoriteButton.dataset.favorite);
+        favorites.has(id) ? favorites.delete(id) : favorites.add(id);
+        render();
+        return;
+      }
+
+      const detailButton = event.target.closest("[data-detail]");
+      if (detailButton) openDetail(Number(detailButton.dataset.detail));
+    });
+
+    root.querySelector("#featuredRead").addEventListener("click", () => {
+      openDetail(1);
+    });
+
+    root.querySelector("#closeDialog").addEventListener("click", () => {
+      dialog.close();
+    });
+
+    root.querySelector("#dialogFavorite").addEventListener("click", () => {
+      if (!selectedStory) return;
+      const id = selectedStory.id;
+      favorites.has(id) ? favorites.delete(id) : favorites.add(id);
+      updateDialogFavorite();
+      render();
+    });
+
+    root.querySelector("#readStory").addEventListener("click", () => {
+      if (!selectedStory) return;
+      alert(
+        `Bạn đã chọn "${selectedStory.title}".\n` +
+        "Hãy kết nối trang chi tiết và danh sách chương để triển khai chức năng đọc."
+      );
+    });
+
+    root.querySelector("#showMore").addEventListener("click", () => {
+      visibleCount += 8;
+      render();
+    });
+
+    render();
+  })();
+  </script>
+</section>
+
+<section id="about" class="about-page">
+
+  <div class="about-container">
+    <section class="about-hero">
+      <div class="about-kicker">01 · CHÚNG MÌNH LÀ AI?</div>
+      <h1>Chào mừng đến với Elagia Comics ✦</h1>
+      <p class="about-tagline">Where every story opens a new world.</p>
+      <p>Chào mừng bạn đến với <strong>Elagia Comics</strong> — một góc nhỏ dành cho những tâm hồn yêu thích truyện tranh và truyện chữ.</p>
+      <p>Chúng mình tin rằng mỗi câu chuyện đều mang trong mình một thế giới riêng. Có những thế giới rực rỡ sắc màu, nơi những cuộc phiêu lưu không có hồi kết đang chờ đón. Có những câu chuyện nhẹ nhàng, lưu giữ những khoảnh khắc bình dị mà đáng nhớ. Cũng có những câu chuyện khiến người đọc hồi hộp qua từng chương, tò mò về số phận của nhân vật và không thể ngừng lật sang trang tiếp theo.</p>
+      <p>Elagia Comics được xây dựng với mong muốn mang những thế giới ấy đến gần bạn hơn — để mỗi lần mở trang web không chỉ là một lần tìm kiếm thứ gì đó để đọc, mà còn là cơ hội khám phá một hành trình mới.</p>
+      <p>Dù bạn là người yêu thích những bộ manga kinh điển, say mê manhwa với nét vẽ cuốn hút, tò mò về thế giới manhua hay thích đắm mình trong những câu chuyện được kể bằng ngôn từ, Elagia Comics hy vọng bạn sẽ tìm thấy một góc nhỏ dành riêng cho mình.</p>
+    </section>
+
+    <section class="about-section">
+      <div class="about-kicker">02 · KHÁM PHÁ</div>
+      <h2>Một thế giới, vô vàn câu chuyện</h2>
+      <p>Tại Elagia Comics, mỗi thể loại đều mở ra một cánh cửa khác nhau.</p>
+      <div class="about-cards">
+        <article class="about-card"><h3>📚 Manga — Những câu chuyện đến từ Nhật Bản</h3><p>Từ những cuộc phiêu lưu kỳ thú, những trận chiến đầy kịch tính đến các câu chuyện đời thường ấm áp, manga luôn có cách riêng để đưa người đọc bước vào thế giới của các nhân vật.</p></article>
+        <article class="about-card"><h3>💜 Manhwa — Những khung hình đầy cảm xúc</h3><p>Khám phá những câu chuyện với phong cách minh họa đặc trưng, những tình tiết bất ngờ và hành trình trưởng thành, tình cảm hay tranh đấu của các nhân vật.</p></article>
+        <article class="about-card"><h3>🌸 Manhua — Sắc màu của những thế giới khác biệt</h3><p>Tìm hiểu những câu chuyện đa dạng về bối cảnh, văn hóa và phong cách kể chuyện, từ huyền huyễn, võ thuật đến những chuyến phiêu lưu kỳ ảo.</p></article>
+        <article class="about-card"><h3>✍️ Truyện chữ — Khi trí tưởng tượng không có giới hạn</h3><p>Không cần những khung hình minh họa, đôi khi chỉ vài dòng chữ cũng đủ mở ra cả một vũ trụ. Truyện chữ đưa bạn đến gần hơn với suy nghĩ của nhân vật, những bí mật chưa được hé lộ và các tình tiết được xây dựng qua từng chương.</p></article>
+      </div>
+      <p class="about-after">Từ lãng mạn, hài hước, giả tưởng, trinh thám đến kinh dị, hành động hay đời thường, mỗi câu chuyện đều có thể trở thành một trải nghiệm đáng nhớ theo cách riêng.</p>
+    </section>
+
+    <section class="about-section">
+      <div class="about-kicker">03 · TRẢI NGHIỆM</div>
+      <h2>Trải nghiệm đọc dành cho bạn</h2>
+      <p>Chúng mình muốn việc đọc truyện trở nên thuận tiện và thoải mái hơn, để bạn có thể tập trung vào điều quan trọng nhất: tận hưởng câu chuyện.</p>
+      <div class="about-cards">
+        <article class="about-card"><h3>🔎 Khám phá theo sở thích</h3><p>Tìm kiếm và khám phá các tác phẩm theo thể loại, tên truyện hoặc những chủ đề mà bạn quan tâm. Mục tiêu là giúp bạn dễ dàng tìm được câu chuyện phù hợp với tâm trạng của mình.</p></article>
+        <article class="about-card"><h3>📖 Lưu giữ hành trình đọc</h3><p>Tủ truyện cá nhân giúp bạn quản lý những tác phẩm đang đọc, những bộ truyện yêu thích và các chương đã xem. Khi quay lại, bạn có thể tiếp tục hành trình của mình thuận tiện hơn.</p></article>
+        <article class="about-card"><h3>📱 Đọc trên nhiều thiết bị</h3><p>Dù bạn sử dụng điện thoại, máy tính bảng hay máy tính cá nhân, Elagia Comics hướng đến một giao diện linh hoạt, dễ sử dụng và phù hợp với nhiều kích thước màn hình.</p></article>
+        <article class="about-card"><h3>🌙 Không gian đọc của riêng bạn</h3><p>Chúng mình mong muốn phát triển những tính năng hỗ trợ cá nhân hóa trải nghiệm, giúp bạn quản lý thư viện truyện và lựa chọn cách đọc phù hợp với thói quen của mình.</p></article>
+      </div>
+    </section>
+
+    <section class="about-section">
+      <div class="about-kicker">04 · CẢM HỨNG</div>
+      <h2>Không chỉ là đọc truyện</h2>
+      <p>Đằng sau mỗi tác phẩm là sự sáng tạo, thời gian và tâm huyết của những người kể chuyện.</p>
+      <p>Một nhân vật có thể khiến chúng ta bật cười, một tình tiết có thể làm thay đổi cách nhìn về một vấn đề, hay một câu chuyện tưởng chừng đơn giản lại khiến chúng ta nhớ mãi sau khi đã đọc xong.</p>
+      <p>Với Elagia Comics, giá trị của việc đọc không chỉ nằm ở số lượng chương đã hoàn thành. Đó còn là cảm xúc, trí tưởng tượng và những trải nghiệm mà mỗi câu chuyện để lại.</p>
+      <p>Chúng mình hy vọng Elagia Comics sẽ trở thành nơi bạn có thể tìm thấy những tác phẩm mới, quay lại với những câu chuyện yêu thích và dành cho bản thân một khoảng thời gian thư giãn giữa nhịp sống bận rộn.</p>
+    </section>
+
+    <section class="about-section">
+      <div class="about-kicker">05 · ĐỊNH HƯỚNG</div>
+      <h2>Tầm nhìn và sứ mệnh</h2>
+      <p>Elagia Comics hướng đến việc xây dựng một nền tảng đọc truyện trực tuyến thân thiện, dễ tiếp cận và thuận tiện cho cộng đồng độc giả.</p>
+      <p>Chúng mình mong muốn từng bước hoàn thiện trải nghiệm khám phá, đọc và quản lý truyện; đồng thời tạo nên một không gian có tổ chức, nơi nội dung được trình bày rõ ràng và người đọc có thể dễ dàng tìm thấy điều mình quan tâm.</p>
+      <p>Trong quá trình phát triển, Elagia Comics hướng đến những giá trị sau:</p>
+      <ul class="about-values">
+        <li><strong>Trải nghiệm người đọc:</strong> Ưu tiên sự thuận tiện, dễ sử dụng và khả năng tiếp cận trên nhiều thiết bị.</li>
+        <li><strong>Khám phá sáng tạo:</strong> Mở ra cơ hội tiếp cận nhiều thể loại và phong cách kể chuyện.</li>
+        <li><strong>Cộng đồng tích cực:</strong> Khuyến khích sự chia sẻ, tôn trọng và giao tiếp văn minh giữa những người yêu truyện.</li>
+        <li><strong>Tôn trọng tác giả:</strong> Đề cao công sức sáng tạo, quyền sở hữu trí tuệ và việc sử dụng nội dung một cách có trách nhiệm.</li>
+        <li><strong>Phát triển bền vững:</strong> Không ngừng cải thiện nền tảng dựa trên nhu cầu thực tế và phản hồi của người dùng.</li>
+      </ul>
+      <p>Đây không phải là đích đến trong một ngày, mà là hành trình mà Elagia Comics mong muốn từng bước thực hiện.</p>
+    </section>
+
+    <section class="about-section">
+      <div class="about-kicker">06 · CỘNG ĐỒNG</div>
+      <h2>Dành cho cộng đồng yêu truyện</h2>
+      <p>Mỗi độc giả đến với truyện bằng một lý do khác nhau.</p>
+      <p>Có người tìm kiếm những phút giây thư giãn sau một ngày dài. Có người yêu cảm giác hồi hộp khi chờ chương mới. Có người muốn khám phá những thế giới chưa từng biết đến. Và cũng có người đơn giản chỉ muốn tìm lại một câu chuyện đã từng khiến mình rung động.</p>
+      <p>Dù bạn đến đây vì lý do nào, chúng mình hy vọng Elagia Comics có thể mang đến cho bạn một trải nghiệm đáng nhớ.</p>
+      <p>Hãy khám phá những thể loại mới, tìm kiếm những nhân vật khiến bạn yêu thích và chia sẻ niềm đam mê đọc truyện theo cách của riêng mình.</p>
+    </section>
+
+    <section class="about-section">
+      <div class="about-kicker">07 · LỜI NHẮN</div>
+      <h2>Lời nhắn từ Elagia Comics</h2>
+      <p>Cảm ơn bạn đã ghé thăm Elagia Comics.</p>
+      <p>Một nền tảng đọc truyện không chỉ được tạo nên từ những trang truyện, mà còn từ những người dành thời gian khám phá, theo dõi và yêu mến chúng.</p>
+      <p>Mỗi lượt đọc, mỗi câu chuyện được khám phá và mỗi lần bạn quay trở lại đều là một phần của hành trình ấy.</p>
+      <p>Elagia Comics hy vọng sẽ đồng hành cùng bạn qua những chuyến phiêu lưu kỳ thú, những câu chuyện dịu dàng, những bí mật chưa được giải đáp và vô vàn thế giới vẫn đang chờ được khám phá.</p>
+    </section>
+
+    <section class="about-closing">
+      <h2>Hãy chọn một câu chuyện. Mở ra một thế giới. Và bắt đầu hành trình của riêng bạn.</h2>
+      <p>Elagia Comics — Mỗi câu chuyện là một thế giới. ✦</p>
+    </section>
+  </div>
+
+</section>
+<section id="the-loai" class="genre-page">
+
+  <!-- 1. BANNER GIỚI THIỆU -->
+  <section class="hero">
+    <div>
+      <span class="eyebrow">KHÁM PHÁ THƯ VIỆN</span>
+      <h1>Tìm thể loại của riêng bạn ✦</h1>
+      <p class="muted">
+        Từ những cuộc phiêu lưu kỳ thú đến các câu chuyện dịu dàng.
+        Chọn một thể loại, khám phá những thế giới mới và tìm câu
+        chuyện tiếp theo dành cho bạn.
+      </p>
+      <button class="primary" onclick="document.querySelector('#genre-allStories').scrollIntoView({behavior:'smooth'})">
+        Khám phá truyện ↓
+      </button>
+    </div>
+    <div class="hero-art">
+      <span class="moon">☾ ✦</span>
+      <strong>Every story has a world</strong>
+      <span>FIND YOUR NEXT STORY</span>
+    </div>
+  </section>
+
+  <!-- 2. THẺ THỂ LOẠI CÓ MINH HỌA -->
+  <section class="section" id="genre-categories">
+    <div class="section-head">
+      <div>
+        <h2>Khám phá theo thể loại</h2>
+        <p class="muted">Chọn một thế giới để bắt đầu hành trình.</p>
+      </div>
+      <a href="#genre-allStories">Xem truyện ↓</a>
+    </div>
+    <div class="category-grid" id="genre-categoryGrid"></div>
+  </section>
+
+  <!-- 3. TRUYỆN NỔI BẬT THEO THỂ LOẠI -->
+  <section class="section" id="genre-popularGenres">
+    <div class="section-head">
+      <div>
+        <h2>Thể loại được yêu thích</h2>
+        <p class="muted">Một vài lựa chọn để bạn bắt đầu khám phá.</p>
+      </div>
+    </div>
+    <div class="popular-strip" id="genre-popularStrip"></div>
+  </section>
+
+  <!-- 4. LỌC VÀ DANH SÁCH TRUYỆN -->
+  <section class="section" id="genre-allStories">
+    <div class="section-head">
+      <div>
+        <h2 id="genre-listTitle">Truyện dành cho bạn</h2>
+        <p class="muted">Tìm kiếm, lọc và khám phá những bộ truyện phù hợp.</p>
+      </div>
+    </div>
+
+    <div class="filter-bar">
+      <label class="search-field">
+        <span>⌕</span>
+        <input id="genre-storySearch" placeholder="Tìm tên truyện hoặc thể loại...">
+      </label>
+      <select id="genre-typeFilter" aria-label="Loại truyện">
+        <option value="all">Tất cả loại truyện</option>
+        <option value="Manhwa">Manhwa</option>
+        <option value="Manhua">Manhua</option>
+        <option value="Manga">Manga</option>
+        <option value="Truyện chữ">Truyện chữ</option>
+      </select>
+      <select id="genre-sortFilter" aria-label="Sắp xếp">
+        <option value="newest">Mới cập nhật</option>
+        <option value="popular">Phổ biến</option>
+        <option value="az">Tên A–Z</option>
+      </select>
+    </div>
+
+    <div class="type-filters" id="genre-quickFilters">
+      <button class="pill active" data-type="all">Tất cả</button>
+      <button class="pill" data-type="Manhwa">Manhwa</button>
+      <button class="pill" data-type="Manhua">Manhua</button>
+      <button class="pill" data-type="Manga">Manga</button>
+      <button class="pill" data-type="Truyện chữ">Truyện chữ</button>
+    </div>
+
+    <div class="result-count" id="genre-resultCount"></div>
+    <div class="story-grid" id="genre-storyGrid"></div>
+  </section>
+
+</section>
+<script>
+(function(){
+
+const genres = [
+  {name:"Lãng mạn",icon:"♡",desc:"Tình cảm · Đời thường",color:"#9368b8",tint:"#f0e5fb"},
+  {name:"Hành động",icon:"⚔",desc:"Chiến đấu · Kịch tính",color:"#6175a5",tint:"#e7ebfa"},
+  {name:"Fantasy",icon:"✧",desc:"Ma thuật · Kỳ ảo",color:"#9168bd",tint:"#eee5fb"},
+  {name:"Trinh thám",icon:"⌕",desc:"Bí ẩn · Phá án",color:"#538d85",tint:"#e2f2ed"},
+  {name:"Hài hước",icon:"☻",desc:"Vui vẻ · Giải trí",color:"#bd8b4f",tint:"#fbefdc"},
+  {name:"Kinh dị",icon:"☾",desc:"Bí ẩn · Hồi hộp",color:"#8b647d",tint:"#f4e6ef"},
+  {name:"Phiêu lưu",icon:"➤",desc:"Khám phá · Hành trình",color:"#5e91aa",tint:"#e3f1f7"},
+  {name:"Đời thường",icon:"☕",desc:"Nhẹ nhàng · Gần gũi",color:"#a67b75",tint:"#f8e9e4"}
+];
+
+const stories = [
+  {id:1,title:"Moonlit Garden",type:"Manhwa",genres:["Fantasy","Lãng mạn"],chapters:24,status:"Đang cập nhật",views:920,updated:6,cover:"c1",desc:"Một khu vườn bí ẩn và những câu chuyện dưới ánh trăng."},
+  {id:2,title:"The Violet Crown",type:"Manhua",genres:["Fantasy","Hành động"],chapters:18,status:"Đang cập nhật",views:760,updated:5,cover:"c2",desc:"Hành trình khám phá sức mạnh của một chiếc vương miện bí ẩn."},
+  {id:3,title:"Cat Café Days",type:"Manga",genres:["Hài hước","Đời thường"],chapters:42,status:"Hoàn thành",views:1200,updated:4,cover:"c3",desc:"Những ngày bình yên tại một quán cà phê đầy điều bất ngờ."},
+  {id:4,title:"After the Rain",type:"Manhwa",genres:["Lãng mạn","Đời thường"],chapters:31,status:"Đang cập nhật",views:850,updated:3,cover:"c4",desc:"Một câu chuyện về những cuộc gặp gỡ và cơ hội bắt đầu lại."},
+  {id:5,title:"Ember Chronicle",type:"Truyện chữ",genres:["Fantasy","Phiêu lưu"],chapters:56,status:"Đang cập nhật",views:980,updated:2,cover:"c5",desc:"Một chuyến hành trình qua những vùng đất huyền bí."},
+  {id:6,title:"The Last Clue",type:"Manga",genres:["Trinh thám","Kinh dị"],chapters:15,status:"Đang cập nhật",views:640,updated:1,cover:"c6",desc:"Một chuỗi manh mối dẫn đến bí mật chưa được giải đáp."},
+  {id:7,title:"Summer Letter",type:"Manhwa",genres:["Lãng mạn","Đời thường"],chapters:20,status:"Hoàn thành",views:1100,updated:7,cover:"c4",desc:"Những bức thư cũ kể lại câu chuyện của một mùa hè."},
+  {id:8,title:"Beyond the Gate",type:"Truyện chữ",genres:["Hành động","Phiêu lưu"],chapters:36,status:"Đang cập nhật",views:710,updated:8,cover:"c3",desc:"Một thế giới mới nằm phía bên kia cánh cổng."},
+  {id:9,title:"Detective Nocturne",type:"Manhua",genres:["Trinh thám"],chapters:29,status:"Đang cập nhật",views:690,updated:9,cover:"c6",desc:"Một thám tử lần theo dấu vết của những vụ án kỳ lạ."},
+  {id:10,title:"Little Star Club",type:"Manga",genres:["Hài hước","Đời thường"],chapters:48,status:"Hoàn thành",views:1400,updated:10,cover:"c5",desc:"Một nhóm bạn và những câu chuyện vui nhộn mỗi ngày."}
+];
+
+const typeLabel = {
+  "Manhwa":"MANHWA","Manhua":"MANHUA",
+  "Manga":"MANGA","Truyện chữ":"TRUYỆN CHỮ"
+};
+
+let activeGenre = "all";
+let activeType = "all";
+let favorites = new Set();
+
+const genreRoot = document.getElementById("the-loai");
+const $ = id => genreRoot.querySelector("#genre-" + id);
+
+function renderGenres() {
+  $("categoryGrid").innerHTML = genres.map((g,i)=>`
+    <button class="category-card ${activeGenre===g.name?"active":""}"
+      data-genre="${g.name}"
+      style="--accent:${g.color};--tint:${g.tint}">
+      <span class="category-icon">${g.icon}</span>
+      <span class="category-copy">
+        <strong>${g.name}</strong>
+        <small>${g.desc}</small>
+        <span class="count">${stories.filter(s=>s.genres.includes(g.name)).length} truyện mẫu →</span>
+      </span>
+    </button>
+  `).join("");
+}
+
+function renderPopular() {
+  const popular = [...genres].sort((a,b)=>
+    stories.filter(s=>s.genres.includes(b.name)).length -
+    stories.filter(s=>s.genres.includes(a.name)).length
+  ).slice(0,6);
+
+  $("popularStrip").innerHTML = popular.map(g=>`
+    <button class="popular-item ${activeGenre===g.name?"active":""}"
+      data-genre="${g.name}">
+      <span class="symbol">${g.icon}</span>
+      <strong>${g.name}</strong>
+      <small>${stories.filter(s=>s.genres.includes(g.name)).length} truyện mẫu</small>
+    </button>
+  `).join("");
+}
+
+function renderStories() {
+  const query = $("storySearch").value.trim().toLocaleLowerCase("vi");
+  let result = stories.filter(s=>{
+    const text = [s.title,s.type,...s.genres].join(" ").toLocaleLowerCase("vi");
+    return (activeGenre==="all" || s.genres.includes(activeGenre)) &&
+      (activeType==="all" || s.type===activeType) &&
+      text.includes(query);
+  });
+
+  if ($("sortFilter").value==="popular") result.sort((a,b)=>b.views-a.views);
+  else if ($("sortFilter").value==="az") result.sort((a,b)=>a.title.localeCompare(b.title));
+  else result.sort((a,b)=>b.updated-a.updated);
+
+  $("listTitle").textContent = activeGenre==="all" ? "Truyện dành cho bạn" : "Truyện: "+activeGenre;
+  $("resultCount").textContent = `Có ${result.length} bộ truyện phù hợp · Dữ liệu minh họa`;
+
+  $("storyGrid").innerHTML = result.length ? result.map(s=>`
+    <article class="story-card">
+      <button class="story-cover ${s.cover}" data-detail="${s.id}"
+        style="width:100%;border:0;cursor:pointer">
+        ${s.status==="Hoàn thành"?"<em>Hoàn thành</em>":""}
+        <strong>${s.title}</strong>
+        <small>${typeLabel[s.type]}</small>
+      </button>
+      <div class="story-info">
+        <h3>${s.title}</h3>
+        <p>${s.chapters} chương · ${s.status}<br>${s.views.toLocaleString("vi-VN")} lượt xem mẫu</p>
+        <div class="tags">${s.genres.map(g=>`<span>${g}</span>`).join("")}</div>
+        <div class="story-actions">
+          <button data-fav="${s.id}">${favorites.has(s.id)?"♥ Đã thích":"♡ Yêu thích"}</button>
+          <button data-detail="${s.id}">Chi tiết</button>
+        </div>
+      </div>
+    </article>
+  `).join("") : `<div class="empty">Không tìm thấy truyện phù hợp. Hãy thử bộ lọc khác nhé.</div>`;
+}
+
+function chooseGenre(genre) {
+  activeGenre = genre;
+  renderGenres();
+  renderPopular();
+  renderStories();
+}
+
+genreRoot.addEventListener("click",e=>{
+  const genreButton=e.target.closest("[data-genre]");
+  if(genreButton) {
+    chooseGenre(genreButton.dataset.genre);
+    $("allStories").scrollIntoView({behavior:"smooth"});
+  }
+
+  const typeButton=e.target.closest("#genre-quickFilters [data-type]");
+  if(typeButton) {
+    activeType=typeButton.dataset.type;
+    genreRoot.querySelectorAll("#genre-quickFilters [data-type]").forEach(b=>
+      b.classList.toggle("active",b===typeButton));
+    $("typeFilter").value=activeType;
+    renderStories();
+  }
+
+  const favButton=e.target.closest("[data-fav]");
+  if(favButton) {
+    const id=Number(favButton.dataset.fav);
+    favorites.has(id)?favorites.delete(id):favorites.add(id);
+    renderStories();
+  }
+
+  const detailButton=e.target.closest("[data-detail]");
+  if(detailButton) {
+    const s=stories.find(x=>x.id===Number(detailButton.dataset.detail));
+    if(s) alert(`${s.title}\n${s.type} · ${s.chapters} chương\n\n${s.desc}\n\nĐây là dữ liệu demo. Cần kết nối trang chương để đọc truyện.`);
+  }
+});
+
+$("storySearch").addEventListener("input",renderStories);
+$("sortFilter").addEventListener("change",renderStories);
+$("typeFilter").addEventListener("change",()=>{
+  activeType=$("typeFilter").value;
+  genreRoot.querySelectorAll("#genre-quickFilters [data-type]").forEach(b=>
+    b.classList.toggle("active",b.dataset.type===activeType));
+  renderStories();
+});
+
+renderGenres();
+renderPopular();
+renderStories();
+
+})();
+</script>
+<section id="forum">
+<section id="elagia-community">
+<style>
+#elagia-community {
+  --purple:#8b5cc7;--ink:#2b2335;--muted:#766b80;--line:#e2d7ef;--surface:#fff;--soft:#f1eafd;
+  color:var(--ink);font-family:inherit;
+}
+#elagia-community * {box-sizing:border-box}
+#elagia-community button,#elagia-community input,
+#elagia-community textarea {font:inherit}
+#elagia-community button {cursor:pointer}
+#elagia-community .community-hero {
+  padding:26px 0 20px;
+}
+#elagia-community .eyebrow {
+  color:var(--purple);font-size:12px;font-weight:800;
+  letter-spacing:2px;
+}
+#elagia-community h1 {
+  font-size:clamp(29px,4vw,39px);margin:10px 0;
+  letter-spacing:-1px;
+}
+#elagia-community .muted {color:var(--muted);line-height:1.7}
+#elagia-community .community-layout {
+  display:grid;grid-template-columns:minmax(0,1fr) 290px;
+  gap:20px;align-items:start;
+}
+#elagia-community .panel {
+  background:var(--surface);border:1px solid var(--line);
+  border-radius:20px;overflow:hidden;
+}
+#elagia-community .chat-head {
+  display:flex;align-items:center;gap:13px;
+  padding:17px 20px;background:var(--soft);
+  border-bottom:1px solid var(--line);
+}
+#elagia-community .avatar {
+  width:43px;height:43px;flex-shrink:0;border-radius:15px;
+  display:grid;place-items:center;background:#e5d7fa;font-size:23px;
+}
+#elagia-community .chat-head h2 {font-size:17px;margin:0 0 5px}
+#elagia-community .chat-head p {margin:0;font-size:12px;color:var(--muted)}
+#elagia-community .online {
+  margin-left:auto;font-size:12px;color:#438667;white-space:nowrap;
+}
+#elagia-community .pinned {
+  margin:14px;padding:13px 15px;background:#fbf8ff;
+  border:1px solid #e6d9fa;border-radius:13px;font-size:13px;
+  line-height:1.7;
+}
+#elagia-community .pinned strong {display:block;margin-bottom:4px}
+#elagia-community .chat-tools {
+  display:flex;gap:10px;padding:12px 15px;
+  border-bottom:1px solid var(--line);
+}
+#elagia-community .chat-tools input {
+  min-width:0;flex:1;border:1px solid var(--line);
+  border-radius:10px;padding:10px 12px;outline-color:var(--purple);
+  background:var(--surface);color:var(--ink);
+}
+#elagia-community .chat-tools button,
+#elagia-community .secondary {
+  border:1px solid var(--line);border-radius:10px;
+  background:var(--surface);color:var(--ink);padding:9px 12px;
+}
+#elagia-community .messages {
+  height:420px;overflow-y:auto;padding:16px;
+  display:flex;flex-direction:column;gap:17px;
+}
+#elagia-community .message {display:flex;gap:10px;align-items:start}
+#elagia-community .message .avatar {
+  width:36px;height:36px;border-radius:50%;font-size:17px;
+}
+#elagia-community .message-body {min-width:0;flex:1}
+#elagia-community .message-meta {
+  display:flex;flex-wrap:wrap;align-items:center;
+  gap:8px;margin-bottom:5px;font-size:12px;
+}
+#elagia-community .message-meta time {color:var(--muted)}
+#elagia-community .role {
+  color:#7650ac;background:#eee6fb;border-radius:5px;
+  padding:3px 6px;font-size:10px;font-weight:bold;
+}
+#elagia-community .bubble {
+  display:inline-block;max-width:100%;padding:10px 13px;
+  border:1px solid var(--line);border-radius:4px 13px 13px 13px;
+  background:#fcfaff;font-size:13px;line-height:1.7;
+  overflow-wrap:anywhere;white-space:pre-wrap;
+}
+#elagia-community .message-actions {
+  display:flex;gap:12px;margin-top:7px;
+}
+#elagia-community .text-action {
+  border:0;background:none;color:var(--muted);font-size:11px;padding:2px 0;
+}
+#elagia-community .text-action:hover {color:var(--purple)}
+#elagia-community .composer {
+  padding:15px;border-top:1px solid var(--line);
+}
+#elagia-community .composer-row {
+  display:grid;grid-template-columns:110px minmax(0,1fr) auto;gap:9px;
+}
+#elagia-community .composer input,
+#elagia-community .composer textarea {
+  width:100%;min-width:0;border:1px solid var(--line);
+  border-radius:11px;padding:12px;outline-color:var(--purple);
+  background:var(--surface);color:var(--ink);
+}
+#elagia-community .composer textarea {
+  height:47px;resize:vertical;min-height:47px;
+}
+#elagia-community .send {
+  background:var(--purple);color:white;border:0;
+  border-radius:11px;padding:0 16px;font-weight:bold;
+}
+#elagia-community .hint {font-size:11px;color:var(--muted);line-height:1.6;margin:10px 2px 0}
+#elagia-community .sidebar {display:flex;flex-direction:column;gap:15px}
+#elagia-community .side-panel {padding:18px}
+#elagia-community .side-panel h3 {font-size:16px;margin:0 0 13px}
+#elagia-community .rule {
+  display:flex;align-items:start;gap:9px;margin:11px 0;
+  font-size:12px;line-height:1.65;
+}
+#elagia-community .check {color:#498b6b;font-weight:bold}
+#elagia-community .topic {
+  padding:12px 0;border-top:1px solid var(--line);
+}
+#elagia-community .topic:first-of-type {border-top:0;padding-top:0}
+#elagia-community .topic strong {display:block;font-size:13px;line-height:1.5}
+#elagia-community .topic small {display:block;color:var(--muted);margin-top:6px;font-size:11px}
+#elagia-community .topic button {
+  border:1px solid var(--line);background:var(--surface);
+  border-radius:8px;padding:6px 9px;margin-top:8px;font-size:11px;
+}
+#elagia-community .admin-note {
+  background:#f4effb;border:1px solid #e6d9fa;
+  border-radius:12px;padding:13px;font-size:12px;line-height:1.7;
+}
+#elagia-community .empty {
+  text-align:center;padding:40px 12px;color:var(--muted);font-size:13px;
+}
+#elagia-community .toast {
+  padding:10px 12px;margin:12px 0 0;border-radius:9px;
+  background:#edf7f0;color:#286747;font-size:12px;
+}
+#elagia-community .toast[hidden] {display:none}
+@media(max-width:850px) {
+  #elagia-community .community-layout {grid-template-columns:1fr}
+  #elagia-community .sidebar {display:grid;grid-template-columns:1fr 1fr}
+}
+@media(max-width:560px) {
+  #elagia-community .community-hero {padding-top:20px}
+  #elagia-community .chat-head {padding:14px}
+  #elagia-community .online {font-size:10px}
+  #elagia-community .messages {height:390px;padding:13px}
+  #elagia-community .composer-row {grid-template-columns:1fr auto}
+  #elagia-community .composer-row input {grid-column:1/-1}
+  #elagia-community .composer-row textarea {height:46px}
+  #elagia-community .send {min-height:46px}
+  #elagia-community .sidebar {grid-template-columns:1fr}
+}
+:root[data-theme="dark"] #elagia-community {
+  --purple:#c5a0f4;--ink:#faf7ff;--muted:#b8adc7;
+  --line:#3a2c4c;--surface:#1a1522;--soft:#251c31;
+}
+:root[data-theme="dark"] #elagia-community .pinned,
+:root[data-theme="dark"] #elagia-community .bubble,
+:root[data-theme="dark"] #elagia-community .admin-note {
+  background:#211a2d;border-color:#473858;color:var(--ink);
+}
+:root[data-theme="dark"] #elagia-community .role {color:#e2d0ff;background:#392a50}
+:root[data-theme="dark"] #elagia-community .online,
+:root[data-theme="dark"] #elagia-community .check {color:#91d6ad}
+:root[data-theme="dark"] #elagia-community .toast {background:#1d3528;color:#bfe6d0}</style>
+
+<div class="community-hero">
+  <span class="eyebrow">GÓC CỘNG ĐỒNG</span>
+  <h1>Phòng chat Elagia ✦</h1>
+  <p class="muted">
+    Nơi độc giả gặp gỡ, chia sẻ cảm nhận và cùng nhau
+    xây dựng một cộng đồng yêu truyện văn minh.
+  </p>
+</div>
+
+<div class="community-layout">
+  <section class="panel">
+    <div class="chat-head">
+      <div class="avatar">🐱</div>
+      <div>
+        <h2>Elagia Chat</h2>
+        <p>Phòng trò chuyện chung · Bản demo</p>
+      </div>
+      <div class="online">● Không gian thân thiện</div>
+    </div>
+
+    <div class="pinned">
+      <strong>📌 Thông báo từ quản trị viên</strong>
+      Chào mừng bạn đến với Elagia! Hãy cùng trò chuyện về
+      truyện, chia sẻ góp ý và tôn trọng mọi thành viên.
+      Không công kích cá nhân, spam hay tiết lộ nội dung quan trọng
+      mà không cảnh báo spoiler.
+    </div>
+
+    <div class="chat-tools">
+      <input id="ecSearch" placeholder="Tìm trong cuộc trò chuyện..."
+        aria-label="Tìm tin nhắn">
+      <button id="ecClearSearch" type="button">Xóa lọc</button>
+    </div>
+
+    <div class="messages" id="ecMessages" aria-live="polite"></div>
+
+    <form class="composer" id="ecForm">
+      <div class="composer-row">
+        <input id="ecName" maxlength="24" placeholder="Tên hiển thị"
+          aria-label="Tên hiển thị" required>
+        <textarea id="ecText" maxlength="500"
+          placeholder="Chia sẻ cảm nhận hoặc góp ý..."
+          aria-label="Nội dung tin nhắn" required></textarea>
+        <button class="send" type="submit">Gửi ➤</button>
+      </div>
+      <p class="hint">
+        Hãy giao tiếp lịch sự. Tin nhắn có từ ngữ không phù hợp có thể
+        bị chặn trong bản demo. Đừng chia sẻ thông tin cá nhân nhạy cảm.
+      </p>
+      <div class="toast" id="ecToast" role="status" hidden></div>
+    </form>
+  </section>
+
+  <aside class="sidebar">
+    <section class="panel side-panel">
+      <h3>🛡️ Quy tắc cộng đồng</h3>
+      <div class="rule"><span class="check">✓</span><span>Góp ý về truyện và website một cách cụ thể, lịch sự.</span></div>
+      <div class="rule"><span class="check">✓</span><span>Tôn trọng khác biệt về sở thích và quan điểm.</span></div>
+      <div class="rule"><span class="check">✓</span><span>Không spam, quấy rối, xúc phạm hay công khai thông tin riêng tư.</span></div>
+      <div class="rule"><span class="check">✓</span><span>Dùng chức năng báo cáo nếu thấy nội dung vi phạm.</span></div>
+    </section>
+
+    <section class="panel side-panel">
+      <h3>💡 Góc góp ý</h3>
+      <div class="topic">
+        <strong>Giao diện đọc trên điện thoại</strong>
+        <small>Gợi ý cải thiện trải nghiệm</small>
+        <button type="button" data-topic="Giao diện đọc trên điện thoại">
+          Thảo luận
+        </button>
+      </div>
+      <div class="topic">
+        <strong>Đề xuất truyện và thể loại</strong>
+        <small>Chia sẻ điều bạn muốn thấy</small>
+        <button type="button" data-topic="Đề xuất truyện và thể loại">
+          Thảo luận
+        </button>
+      </div>
+      <div class="topic">
+        <strong>Báo lỗi hoặc đề xuất tính năng</strong>
+        <small>Giúp Elagia hoàn thiện hơn</small>
+        <button type="button" data-topic="Báo lỗi hoặc đề xuất tính năng">
+          Thảo luận
+        </button>
+      </div>
+    </section>
+
+    <section class="panel side-panel">
+      <h3>👑 Dành cho quản trị viên</h3>
+      <div class="admin-note">
+        <strong>Quản lý cộng đồng</strong><br>
+        Bản demo chưa có bảng điều khiển quản trị thật.
+        Khi kết nối hệ thống, quản trị viên có thể xem báo cáo,
+        ẩn nội dung vi phạm, ghim thông báo và theo dõi các góp ý
+        được quan tâm.
+      </div>
+    </section>
+  </aside>
+</div>
+
+<script>
+(() => {
+  const root = document.getElementById("elagia-community");
+  if (root.dataset.ready) return;
+  root.dataset.ready = "1";
+
+  const $ = id => root.querySelector("#" + id);
+  const messagesEl = $("ecMessages");
+  const toast = $("ecToast");
+
+  // Dữ liệu minh họa; chưa được chia sẻ giữa nhiều người dùng.
+  const demoMessages = [
+    {
+      id:1,name:"Elagia Admin",role:"QUẢN TRỊ VIÊN",
+      text:"Chào mọi người! 💜 Mọi góp ý về giao diện, trải nghiệm đọc và các bộ truyện đều được chào đón. Hãy cùng giữ phòng chat thân thiện nhé!",
+      time:"Ghim chào mừng",admin:true
+    },
+    {
+      id:2,name:"Mây Nhỏ",role:"ĐỘC GIẢ",
+      text:"Mình mong có thêm chế độ đọc tối trên điện thoại. Đọc ban đêm sẽ dễ chịu hơn nhiều!",
+      time:"Tin nhắn mẫu"
+    },
+    {
+      id:3,name:"Bánh Bao",role:"ĐỘC GIẢ",
+      text:"Mọi người có muốn thêm bộ lọc truyện đã hoàn thành không? Mình thích đọc trọn bộ hơn á.",
+      time:"Tin nhắn mẫu"
+    }
+  ];  const savedMessages = (() => {
+    try {
+      const parsed = JSON.parse(localStorage.getItem("elagiaChatMessages") || "[]");
+      return Array.isArray(parsed) ? parsed : [];
+    } catch (error) {
+      return [];
+    }
+  })();
+
+  const messages = savedMessages.length
+    ? [demoMessages[0], ...savedMessages.map((item, index) => ({
+        id:index + 2,
+        name:String(item.name || "Bạn đọc").slice(0, 24),
+        role:"ĐỘC GIẢ",
+        text:String(item.body || item.text || "").slice(0, 500),
+        time:String(item.time || "Tin nhắn trước")
+      })).filter(message => message.text)]
+    : demoMessages;
+  let nextId = messages.reduce((max, message) => Math.max(max, message.id || 0), 0) + 1;
+  const reported = new Set();
+
+  // Bộ lọc demo, không thay thế kiểm duyệt phía máy chủ.
+  const blockedWords = [
+    "địt","đụ","đéo","lồn","cặc","đm","dm","vcl","đĩ"
+  ];
+
+  function hasBlockedLanguage(text) {
+    const normalized = text.toLocaleLowerCase("vi")
+      .normalize("NFC")
+      .replace(/[.,!?*_~\-]/g," ")
+      .replace(/\s+/g," ");
+
+    return blockedWords.some(word => {
+      const escaped = word.replace(/[.*+?^${}()|[\]\\]/g,"\\$&");
+      return new RegExp("(^|\\s)" + escaped + "(?=\\s|$)","i")
+        .test(normalized);
+    });
+  }
+
+  function showToast(text) {
+    toast.textContent = text;
+    toast.hidden = false;
+  }
+
+  function render() {
+    const query = $("ecSearch").value.trim().toLocaleLowerCase("vi");
+    const visible = messages.filter(m =>
+      (m.name + " " + m.text).toLocaleLowerCase("vi").includes(query)
+    );
+
+    messagesEl.innerHTML = "";
+
+    if (!visible.length) {
+      messagesEl.innerHTML =
+        '<div class="empty">Không tìm thấy tin nhắn phù hợp.</div>';
+      return;
+    }
+
+    visible.forEach(m => {
+      const article = document.createElement("article");
+      article.className = "message";
+
+      const avatar = document.createElement("div");
+      avatar.className = "avatar";
+      avatar.textContent = m.admin ? "🐱" : "💜";
+
+      const body = document.createElement("div");
+      body.className = "message-body";
+
+      const meta = document.createElement("div");
+      meta.className = "message-meta";
+
+      const name = document.createElement("strong");
+      name.textContent = m.name;
+
+      const role = document.createElement("span");
+      role.className = "role";
+      role.textContent = m.role || "ĐỘC GIẢ";
+
+      const time = document.createElement("time");
+      time.textContent = m.time;
+
+      meta.append(name, role, time);
+
+      const bubble = document.createElement("div");
+      bubble.className = "bubble";
+      bubble.textContent = m.text;
+
+      const actions = document.createElement("div");
+      actions.className = "message-actions";
+
+      if (!m.admin) {
+        const report = document.createElement("button");
+        report.type = "button";
+        report.className = "text-action";
+        report.textContent = reported.has(m.id)
+          ? "Đã báo cáo" : "⚑ Báo cáo";
+        report.disabled = reported.has(m.id);
+
+        report.addEventListener("click", () => {
+          reported.add(m.id);
+          render();
+          showToast(
+            "Bản demo đã ghi nhận báo cáo trong phiên này. " +
+            "Chưa có thông báo gửi tới quản trị viên."
+          );
+        });
+
+        actions.append(report);
+      }
+
+      body.append(meta, bubble, actions);
+      article.append(avatar, body);
+      messagesEl.append(article);
+    });
+
+    messagesEl.scrollTop = messagesEl.scrollHeight;
+  }
+
+  $("ecForm").addEventListener("submit", event => {
+    event.preventDefault();
+
+    const name = $("ecName").value.trim();
+    const text = $("ecText").value.trim();
+
+    if (!name || !text) {
+      showToast("Em hãy nhập tên hiển thị và nội dung tin nhắn nhé.");
+      return;
+    }
+
+    if (hasBlockedLanguage(text)) {
+      showToast(
+        "Tin nhắn có thể chứa ngôn từ không phù hợp. " +
+        "Hãy chỉnh sửa để giữ cuộc trò chuyện văn minh nhé."
+      );
+      return;
+    }
+
+        messages.push({
+      id:nextId++,
+      name,
+      role:"ĐỘC GIẢ",
+      text,
+      time:"Vừa xong"
+    });
+    localStorage.setItem("elagiaChatMessages", JSON.stringify(
+      messages.filter(message => !message.admin).slice(-100).map(message => ({
+        name:message.name, body:message.text, time:message.time, mine:true
+      }))
+    ));
+
+    $("ecText").value = "";
+    $("ecSearch").value = "";
+    render();
+    showToast("Tin nhắn đã được thêm vào bản demo trên trình duyệt.");
+  });
+
+  $("ecSearch").addEventListener("input", render);
+
+  $("ecClearSearch").addEventListener("click", () => {
+    $("ecSearch").value = "";
+    render();
+  });
+
+  root.querySelectorAll("[data-topic]").forEach(button => {
+    button.addEventListener("click", () => {
+      $("ecText").value =
+        "Góp ý về " + button.dataset.topic + ": ";
+      $("ecText").focus();
+      $("ecText").scrollIntoView({behavior:"smooth",block:"center"});
+    });
+  });
+
+  render();
+})();
+</script>
+</section>
+</section>
+<section id="recently-read"><div class="sectionHead"><div><div class="kicker">KỆ TRUYỆN CỦA BẠN</div><h2>Đọc gần đây & yêu thích</h2><p>Lưu thử ngay trong bản xem trước này.</p></div></div><div class="content-panel"><h3>Truyện đã lưu</h3><div id="favList">Chưa có truyện yêu thích.</div><h3 style="margin-top:18px">Đọc gần đây</h3><div id="historyList">Chưa có lịch sử đọc.</div></div></section><section id="truyen-moi"><div class="sectionHead"><div><div class="kicker">THE STORY SHELF</div><h2>Truyện tranh mới</h2><p>Nhấn vào bìa truyện để mở chi tiết và danh sách chương.</p></div></div><div class="filters" id="filters"><button class="chip active" data-genre="all">Tất cả</button><button class="chip" data-genre="Manhwa">Manhwa</button><button class="chip" data-genre="Manhua">Manhua</button><button class="chip" data-genre="Manga">Manga</button></div>
+<div class="genre-details" id="genreDetails" style="margin:0 0 18px"><button class="genre-toggle" id="genreToggle" type="button" aria-expanded="false" aria-controls="genreOptions"><span><span style="font-size:20px;color:var(--purple)">☷</span><span>Thể loại truyện</span></span><span class="arrow" id="genreArrow">⌄</span></button><div class="genre-options" id="genreOptions" hidden></div></div>
+<div class="comic-grid" id="comicGrid"></div><p class="preview-note">Ảnh bìa và tên truyện trong bản demo là nội dung mẫu để xem bố cục.</p></section><section id="truyen-hot"><div class="sectionHead"><div><div class="kicker">ĐƯỢC QUAN TÂM</div><h2>Truyện hot 🔥</h2><p>Những bộ truyện nổi bật trong bản demo.</p></div></div><div class="comic-grid" id="hotGrid"></div></section><section id="me" class="personalSection"><iframe id="personalDashboardFrame" title="Trang cá nhân Elagia"></iframe></section></main><footer><div class="wrap footerInner"><span>© Elagia Comics · READ · DREAM · REPEAT</span><span>Pastel purple × black</span></div></footer><div class="modal" id="modal" role="dialog" aria-modal="true"><div class="modalBox"><div class="modalTop"><div class="kicker">COMIC DETAILS</div><button class="close" id="closeModal">Đóng ✕</button></div><div id="modalContent"></div><div class="chapterLinks" id="chapterLinks"></div><div class="reader" id="reader"><div class="fakePage"><div><div style="font-size:12px;letter-spacing:.15em">ELAGIA COMICS · DEMO</div><h3 id="readerTitle">Chương 1</h3><p>Đây là khu vực minh họa trình đọc chương. Khi kết nối WordPress, nội dung thật sẽ hiển thị tại đây.</p></div></div><div class="readerNav"><button class="chip" id="prevChapter">← Chương trước</button><button class="chip" id="nextChapter">Chương sau →</button></div></div></div></div><div class="toast" id="toast"></div><script>
+const comics=[
+{title:'Moonlit Garden',genre:'Manhwa',tags:['Fantasy','Romance'],desc:'Một khu vườn bí ẩn mở ra khi trăng lên. Hành trình bắt đầu từ một lời hứa.',chapters:24},
+{title:'The Violet Crown',genre:'Manhua',tags:['Fantasy','Action'],desc:'Thiếu nữ thừa kế chiếc vương miện tím và bí mật của vương quốc.',chapters:18},
+{title:'Cat Café Days',genre:'Manga',tags:['Comedy','Romance'],desc:'Những ngày bình yên ở quán cà phê mèo nhỏ trong con phố cũ.',chapters:42},
+{title:'After the Rain',genre:'Manhwa',tags:['Romance'],desc:'Hai người xa lạ gặp lại nhau sau một mùa mưa dài.',chapters:31},
+{title:'Starbound Academy',genre:'Manhua',tags:['Fantasy','Action'],desc:'Học viện phép thuật nơi mỗi vì sao cất giữ một sức mạnh riêng.',chapters:16},
+{title:'Little Fox Diary',genre:'Manga',tags:['Comedy'],desc:'Nhật ký đáng yêu của một chú cáo nhỏ và nhóm bạn tinh nghịch.',chapters:12},
+{title:'Crimson Echo',genre:'Manhwa',tags:['Action','Fantasy'],desc:'Một lời nguyền cổ đại buộc chiến binh trẻ tìm lại ký ức đã mất.',chapters:27},
+{title:'Blooming Season',genre:'Manhua',tags:['Romance'],desc:'Một câu chuyện nhẹ nhàng về tình bạn và những khởi đầu mới.',chapters:20}
+];
+const genreChoices=[
+['Shounen','Shounen'],['Shoujo','Shoujo'],['Seinen','Seinen'],['Josei','Josei'],['Kodomo','Kodomo'],
+['Hành động','Action'],['Phiêu lưu','Adventure'],['Viễn tưởng','Sci-Fi'],['Kỳ ảo','Fantasy'],['Trinh thám','Mystery'],['Giật gân','Thriller'],['Kinh dị','Horror'],['Hài hước','Comedy'],['Thể thao','Sports'],['Học đường','School'],['Lãng mạn','Romance'],['Isekai','Isekai'],['Trọng sinh','Rebirth'],['Hệ thống','System'],['Tu tiên','Cultivation'],['Huyền huyễn','Xuanhuan'],['Harem','Harem']
+];
+let activeGenre='all',activeComic=null,currentChapter=1;const $=s=>document.querySelector(s);const grid=$('#comicGrid');
+const genreOptions=$('#genreOptions');genreChoices.forEach(([label,value])=>{const b=document.createElement('button');b.type='button';b.className='chip';b.textContent=label;b.dataset.genre=value;b.addEventListener('click',()=>{activeGenre=value;document.querySelectorAll('#filters .chip').forEach(x=>x.classList.toggle('active',x.dataset.genre===value));genreOptions.querySelectorAll('.chip').forEach(x=>x.classList.toggle('active',x.dataset.genre===value));render();$('#truyen-moi').scrollIntoView({behavior:'smooth'});});genreOptions.appendChild(b)});
+const genreToggle=$('#genreToggle');genreToggle.addEventListener('click',()=>{const opening=genreOptions.hidden;genreOptions.hidden=!opening;genreToggle.setAttribute('aria-expanded',String(opening));$('#genreDetails').classList.toggle('is-open',opening);});
+function render(){grid.innerHTML='';let q=$('#searchInput').value.trim().toLowerCase();let arr=comics.filter(c=>(activeGenre==='all'||c.genre===activeGenre||c.tags.includes(activeGenre))&&c.title.toLowerCase().includes(q));if(!arr.length){grid.innerHTML='<div class="content-panel">Không tìm thấy truyện phù hợp. Thử từ khóa khác nhé.</div>';return}arr.forEach((c,i)=>{let card=document.createElement('article');card.className='comic-card';card.innerHTML=`<a class="comic-card-link" href="#comic-${i}"><div class="preview-cover"><div>✦<br>${c.title}<div class="cover-tag">${c.genre.toUpperCase()}</div></div></div><div class="cardBody"><h2>${c.title}</h2><p>${c.chapters} chương · Đang cập nhật</p></div></a><div class="comic-card-actions"><button class="chip favBtn" type="button">♡ Yêu thích</button></div>`;card.querySelector('a').addEventListener('click',e=>{e.preventDefault();openComic(c)});card.querySelector('.favBtn').addEventListener('click',()=>toggleFav(c));grid.appendChild(card)})}
+function renderHot(){const hotGrid=$('#hotGrid');if(!hotGrid)return;hotGrid.innerHTML='';const hotTitles=['Moonlit Garden','The Violet Crown','Cat Café Days','Crimson Echo'];hotTitles.forEach(title=>{const c=comics.find(x=>x.title===title);if(!c)return;const card=document.createElement('article');card.className='comic-card';card.innerHTML=`<a class="comic-card-link" href="#hot-${encodeURIComponent(c.title)}"><div class="preview-cover"><div>🔥<br>${c.title}<div class="cover-tag">${c.genre.toUpperCase()}</div></div></div><div class="cardBody"><h2>${c.title}</h2><p>${c.chapters} chương · Đang cập nhật</p></div></a><div class="comic-card-actions"><button class="chip favBtn" type="button">♡ Yêu thích</button></div>`;card.querySelector('a').addEventListener('click',e=>{e.preventDefault();openComic(c)});card.querySelector('.favBtn').addEventListener('click',()=>toggleFav(c));hotGrid.appendChild(card)})}
+function toast(t){$('#toast').textContent=t;$('#toast').classList.add('show');setTimeout(()=>$('#toast').classList.remove('show'),1800)}function toggleFav(c){let a=JSON.parse(localStorage.getItem('elagiaFav')||'[]');if(a.some(x=>x.title===c.title)){a=a.filter(x=>x.title!==c.title);toast('Đã bỏ yêu thích')}else{a.push({title:c.title});toast('Đã thêm vào yêu thích')}localStorage.setItem('elagiaFav',JSON.stringify(a));showLists()}function showLists(){let f=JSON.parse(localStorage.getItem('elagiaFav')||'[]'),h=JSON.parse(localStorage.getItem('elagiaHist')||'[]');$('#favList').innerHTML=f.length?f.map(x=>`<button class="chip" data-open="${x.title}">♡ ${x.title}</button>`).join(''):'Chưa có truyện yêu thích.';$('#historyList').innerHTML=h.length?h.map(x=>`<button class="chip" data-open="${x.title}">↗ ${x.title} · Ch.${x.chapter}</button>`).join(''):'Chưa có lịch sử đọc.';document.querySelectorAll('[data-open]').forEach(b=>b.onclick=()=>{let c=comics.find(x=>x.title===b.dataset.open);if(c)openComic(c)})}
+function openComic(c){activeComic=c;$('#modalContent').innerHTML=`<div class="preview-cover" style="--c1:#8762a6;--c2:#2a1e3b;width:110px;float:left;margin:0 16px 12px 0;border-radius:10px">✦</div><h2>${c.title}</h2><p>${c.genre} · ${c.tags.join(' · ')}</p><p>${c.desc}</p><p><b>${c.chapters} chương</b> · Đang cập nhật</p><button class="btn" id="readFirst">Đọc chương 1 ↗</button><button class="chip" id="modalFav">♡ Yêu thích</button><div style="clear:both"></div>`;$('#chapterLinks').innerHTML='';for(let n=Math.min(c.chapters,8);n>=1;n--){let b=document.createElement('button');b.innerHTML=`<span>Chương ${n}</span><span>Đọc ngay ↗</span>`;b.onclick=()=>readChapter(n);$('#chapterLinks').appendChild(b)}$('#reader').classList.remove('show');$('#modal').classList.add('open');$('#readFirst').onclick=()=>readChapter(1);$('#modalFav').onclick=()=>toggleFav(c)}function readChapter(n){currentChapter=n;$('#readerTitle').textContent=activeComic.title+' · Chương '+n;$('#reader').classList.add('show');let h=JSON.parse(localStorage.getItem('elagiaHist')||'[]').filter(x=>x.title!==activeComic.title);h.unshift({title:activeComic.title,chapter:n});localStorage.setItem('elagiaHist',JSON.stringify(h.slice(0,6)));showLists();$('#reader').scrollIntoView({behavior:'smooth',block:'nearest'})}$('#prevChapter').onclick=()=>{if(currentChapter>1)readChapter(currentChapter-1);else toast('Đây là chương đầu tiên')};$('#nextChapter').onclick=()=>{if(activeComic&&currentChapter<activeComic.chapters)readChapter(currentChapter+1);else toast('Đây là chương mới nhất trong demo')};$('#closeModal').onclick=()=>$('#modal').classList.remove('open');$('#modal').onclick=e=>{if(e.target===$('#modal'))$('#modal').classList.remove('open')};$('#searchForm').onsubmit=e=>{e.preventDefault();render();switchSiteTab('#truyen-moi');$('#truyen-moi').scrollIntoView({behavior:'smooth'})};$('#searchInput').oninput=render;document.querySelectorAll('[data-genre]').forEach(b=>b.onclick=()=>{activeGenre=b.dataset.genre;document.querySelectorAll('#filters .chip').forEach(x=>x.classList.toggle('active',x.dataset.genre===activeGenre));render();$('#truyen-moi').scrollIntoView({behavior:'smooth'})});$('#menuBtn').onclick=()=>$('#navlinks').classList.toggle('open');render();renderHot();showLists();
+
+document.querySelectorAll('.stats .stat').forEach(function(tile){tile.addEventListener('click',function(){var genre=tile.dataset.genre;var filter=document.querySelector('#filters [data-genre=\"'+genre+'\"]');if(filter)filter.click();document.getElementById('truyen-moi').scrollIntoView({behavior:'smooth'});});});
+const themeToggle=document.getElementById('themeToggle');const savedTheme=localStorage.getItem('elagiaTheme')||'light';document.documentElement.dataset.theme=savedTheme;function updateThemeButton(){const dark=document.documentElement.dataset.theme==='dark';themeToggle.textContent=dark?'☾ Tối':'☀ Sáng';themeToggle.setAttribute('aria-label',dark?'Chuyển sang giao diện sáng':'Chuyển sang giao diện tối')}updateThemeButton();themeToggle.addEventListener('click',()=>{const next=document.documentElement.dataset.theme==='dark'?'light':'dark';document.documentElement.dataset.theme=next;localStorage.setItem('elagiaTheme',next);updateThemeButton()});
+const personalDashboardFrame=document.getElementById('personalDashboardFrame');const personalDashboardBytes=Uint8Array.from(atob('DQo8IURPQ1RZUEUgaHRtbD4NCjxodG1sIGxhbmc9InZpIj4NCjxoZWFkPg0KPG1ldGEgY2hhcnNldD0iVVRGLTgiPg0KPG1ldGEgbmFtZT0idmlld3BvcnQiIGNvbnRlbnQ9IndpZHRoPWRldmljZS13aWR0aCwgaW5pdGlhbC1zY2FsZT0xLjAiPg0KPHRpdGxlPkVsYWdpYSBDb21pY3Mg4oCUIFRyYW5nIGPDoSBuaMOibjwvdGl0bGU+DQo8c3R5bGU+DQo6cm9vdCB7DQogIC0tYmc6I2ZhZjdmZjsNCiAgLS1jYXJkOiNmZmZmZmY7DQogIC0tdGV4dDojMmIyMzM1Ow0KICAtLW11dGVkOiM3NjZiODA7DQogIC0tcHVycGxlOiM4YjVjYzc7DQogIC0tbGlnaHQ6I2YxZWFmZDsNCiAgLS1ib3JkZXI6I2UyZDdlZjsNCiAgLS1zaGFkb3c6MCA4cHggMzBweCAjMzMyMzRiMDg7DQp9DQoqIHsgYm94LXNpemluZzpib3JkZXItYm94OyB9DQpib2R5IHsNCiAgbWFyZ2luOjA7DQogIGJhY2tncm91bmQ6dmFyKC0tYmcpOw0KICBjb2xvcjp2YXIoLS10ZXh0KTsNCiAgZm9udC1mYW1pbHk6SW50ZXIsdWktc2Fucy1zZXJpZixzeXN0ZW0tdWksLWFwcGxlLXN5c3RlbSxCbGlua01hY1N5c3RlbUZvbnQsIlNlZ29lIFVJIixzYW5zLXNlcmlmOw0KfQ0KYnV0dG9uIHsgZm9udDppbmhlcml0OyBjdXJzb3I6cG9pbnRlcjsgfQ0KYnV0dG9uOmZvY3VzLXZpc2libGUgeyBvdXRsaW5lOjJweCBzb2xpZCB2YXIoLS1wdXJwbGUpOyBvdXRsaW5lLW9mZnNldDozcHg7IH0NCi50b3BiYXIgew0KICBoZWlnaHQ6NzJweDtiYWNrZ3JvdW5kOnZhcigtLWNhcmQpO2JvcmRlci1ib3R0b206MXB4IHNvbGlkIHZhcigtLWJvcmRlcik7DQogIGRpc3BsYXk6ZmxleDthbGlnbi1pdGVtczpjZW50ZXI7anVzdGlmeS1jb250ZW50OnNwYWNlLWJldHdlZW47DQogIHBhZGRpbmc6MCA1JTtwb3NpdGlvbjpzdGlja3k7dG9wOjA7ei1pbmRleDoxMDsNCn0NCi5icmFuZHtkaXNwbGF5OmZsZXg7YWxpZ24taXRlbXM6Y2VudGVyO2dhcDoxMHB4O2ZvbnQtc2l6ZToxNnB4O2ZvbnQtd2VpZ2h0OjkwMDtsZXR0ZXItc3BhY2luZzouMDZlbTt3aGl0ZS1zcGFjZTpub3dyYXB9LmJyYW5kLWxvZ297d2lkdGg6NDhweDtoZWlnaHQ6NDhweDtvYmplY3QtZml0OmNvbnRhaW47ZGlzcGxheTpibG9jaztmbGV4Om5vbmU7Ym9yZGVyLXJhZGl1czoxMnB4fS5icmFuZC1jb3B5e2Rpc3BsYXk6YmxvY2s7Y29sb3I6dmFyKC0tdGV4dCl9LmJyYW5kLWNvcHkgc21hbGx7ZGlzcGxheTpibG9jaztjb2xvcjp2YXIoLS1tdXRlZCk7Zm9udC1zaXplOjlweDtsZXR0ZXItc3BhY2luZzouMTdlbTtmb250LXdlaWdodDo3MDA7bWFyZ2luLXRvcDozcHh9QG1lZGlhKG1heC13aWR0aDo1ODBweCl7LmJyYW5kLWxvZ297d2lkdGg6NDJweDtoZWlnaHQ6NDJweH19DQoubmF2IHsgZGlzcGxheTpmbGV4O2dhcDoyN3B4O2FsaWduLWl0ZW1zOmNlbnRlcjsgfQ0KLm5hdiBidXR0b24sLmljb24tYnRuIHsNCiAgYm9yZGVyOjA7YmFja2dyb3VuZDpub25lO2NvbG9yOiM3NzcxODU7cGFkZGluZzo5cHggMDsNCn0NCi5uYXYgYnV0dG9uOmhvdmVyLC5uYXYgYnV0dG9uLmFjdGl2ZSB7IGNvbG9yOnZhcigtLXB1cnBsZSk7IH0NCi50b3AtYWN0aW9ucyB7IGRpc3BsYXk6ZmxleDtnYXA6MTJweDthbGlnbi1pdGVtczpjZW50ZXI7IH0NCi5pY29uLWJ0biB7IGZvbnQtc2l6ZToyMHB4O3BhZGRpbmc6OHB4OyB9DQouYXZhdGFyIHsNCiAgd2lkdGg6NDNweDtoZWlnaHQ6NDNweDtib3JkZXItcmFkaXVzOjUwJTtkaXNwbGF5OmdyaWQ7cGxhY2UtaXRlbXM6Y2VudGVyOw0KICBiYWNrZ3JvdW5kOmxpbmVhci1ncmFkaWVudCgxNDBkZWcsI2U4ZDlmZiwjYzVhOGYxKTsNCiAgY29sb3I6IzY1NDM5Mjtmb250LXNpemU6MjJweDtmb250LXdlaWdodDpib2xkOw0KfQ0KLmxheW91dCB7DQogIG1heC13aWR0aDoxMTgwcHg7bWFyZ2luOjM1cHggYXV0bztwYWRkaW5nOjAgMjRweDsNCiAgZGlzcGxheTpncmlkO2dyaWQtdGVtcGxhdGUtY29sdW1uczoyNTVweCBtaW5tYXgoMCwxZnIpO2dhcDoyNXB4Ow0KfQ0KLnNpZGViYXIsLnBhbmVsLC5wcm9maWxlLWNhcmQsLnN0YXQsLndhbGxldCwubWVudS1jYXJkIHsNCiAgYmFja2dyb3VuZDp2YXIoLS1jYXJkKTtib3JkZXI6MXB4IHNvbGlkIHZhcigtLWJvcmRlcik7DQogIGJvcmRlci1yYWRpdXM6MTlweDsNCn0NCi5zaWRlYmFyIHsgcGFkZGluZzoyMHB4IDEzcHg7aGVpZ2h0Om1heC1jb250ZW50O3Bvc2l0aW9uOnN0aWNreTt0b3A6OTVweDsgfQ0KLnNpZGUtaGVhZGluZyB7DQogIGZvbnQtc2l6ZToxMXB4O2ZvbnQtd2VpZ2h0OjgwMDtsZXR0ZXItc3BhY2luZzoxLjVweDsNCiAgY29sb3I6I2FhYTNiNjtwYWRkaW5nOjEwcHggMTJweDsNCn0NCi5zaWRlLWl0ZW0gew0KICB3aWR0aDoxMDAlO2Rpc3BsYXk6ZmxleDthbGlnbi1pdGVtczpjZW50ZXI7Z2FwOjEycHg7DQogIHBhZGRpbmc6MTNweCAxMnB4O2JvcmRlcjowO2JvcmRlci1yYWRpdXM6MTFweDsNCiAgYmFja2dyb3VuZDp0cmFuc3BhcmVudDt0ZXh0LWFsaWduOmxlZnQ7Y29sb3I6IzcxNmI4MDsNCiAgbWFyZ2luOjJweCAwO2ZvbnQtc2l6ZToxNHB4Ow0KfQ0KLnNpZGUtaXRlbTpob3Zlciwuc2lkZS1pdGVtLmFjdGl2ZSB7IGJhY2tncm91bmQ6dmFyKC0tbGlnaHQpO2NvbG9yOnZhcigtLXB1cnBsZSk7IH0NCi5zaWRlLWl0ZW0gLmljbyB7IHdpZHRoOjIzcHg7Zm9udC1zaXplOjE5cHg7dGV4dC1hbGlnbjpjZW50ZXI7IH0NCi5zaWRlLWl0ZW0gLmFycm93IHsgbWFyZ2luLWxlZnQ6YXV0bzsgfQ0KLmNvbnRlbnQgeyBtaW4td2lkdGg6MDsgfQ0KLnBhZ2UtaGVhZGluZyB7IG1hcmdpbjowIDAgMjNweDsgfQ0KLnBhZ2UtaGVhZGluZyBoMSB7IG1hcmdpbjowIDAgN3B4O2ZvbnQtc2l6ZToyN3B4O2xldHRlci1zcGFjaW5nOi0uOHB4OyB9DQoucGFnZS1oZWFkaW5nIHAgeyBtYXJnaW46MDtjb2xvcjp2YXIoLS1tdXRlZCk7Zm9udC1zaXplOjE0cHg7IH0NCi5wcm9maWxlLWNhcmQgew0KICBiYWNrZ3JvdW5kOmxpbmVhci1ncmFkaWVudCgxMTVkZWcsIzMwMjQ0MSwjNTE0MDcxKTsNCiAgcGFkZGluZzoyNXB4O2Rpc3BsYXk6ZmxleDthbGlnbi1pdGVtczpjZW50ZXI7Z2FwOjE3cHg7Y29sb3I6d2hpdGU7DQogIHBvc2l0aW9uOnJlbGF0aXZlO292ZXJmbG93OmhpZGRlbjsNCn0NCi5wcm9maWxlLWNhcmQ6YWZ0ZXIgew0KICBjb250ZW50OiIiO3Bvc2l0aW9uOmFic29sdXRlO3dpZHRoOjIxMHB4O2hlaWdodDoyMTBweDtib3JkZXItcmFkaXVzOjUwJTsNCiAgYmFja2dyb3VuZDojZmZmZmZmMGE7cmlnaHQ6LTQ1cHg7dG9wOi0xMDVweDsNCn0NCi5wcm9maWxlLWF2YXRhciB7DQogIHdpZHRoOjc2cHg7aGVpZ2h0Ojc2cHg7ZmxleC1zaHJpbms6MDtib3JkZXItcmFkaXVzOjUwJTsNCiAgZGlzcGxheTpncmlkO3BsYWNlLWl0ZW1zOmNlbnRlcjtiYWNrZ3JvdW5kOiNlN2Q5ZmY7Y29sb3I6IzYwNDU4YzsNCiAgZm9udC1zaXplOjM1cHg7Ym9yZGVyOjNweCBzb2xpZCAjZmZmZmZmMzA7DQp9DQoucHJvZmlsZS1pbmZvIHsgZmxleDoxO21pbi13aWR0aDowOyB9DQoucHJvZmlsZS1pbmZvIGgyIHsgbWFyZ2luOjAgMCA3cHg7Zm9udC1zaXplOjIycHg7IH0NCi5wcm9maWxlLWluZm8gcCB7IG1hcmdpbjowIDAgMTBweDtjb2xvcjojZDNjN2U1O2ZvbnQtc2l6ZToxMnB4OyB9DQoubWVtYmVyLXBpbGwgew0KICBkaXNwbGF5OmlubGluZS1ibG9jaztib3JkZXI6MXB4IHNvbGlkICNmZmZmZmYzODtib3JkZXItcmFkaXVzOjIwcHg7DQogIHBhZGRpbmc6NXB4IDEwcHg7Zm9udC1zaXplOjExcHg7Y29sb3I6I2U2ZDhmZjsNCn0NCi5vdXRsaW5lLWJ0biB7DQogIHBvc2l0aW9uOnJlbGF0aXZlO3otaW5kZXg6MTtib3JkZXI6MXB4IHNvbGlkICNmZmZmZmY1NTsNCiAgYmFja2dyb3VuZDojZmZmZmZmMTI7Y29sb3I6d2hpdGU7Ym9yZGVyLXJhZGl1czoxMHB4O3BhZGRpbmc6MTBweCAxM3B4Ow0KICBmb250LXNpemU6MTJweDt3aGl0ZS1zcGFjZTpub3dyYXA7DQp9DQouc3RhdHMgew0KICBkaXNwbGF5OmdyaWQ7Z3JpZC10ZW1wbGF0ZS1jb2x1bW5zOnJlcGVhdCgzLG1pbm1heCgwLDFmcikpOw0KICBnYXA6MTRweDttYXJnaW46MjBweCAwOw0KfQ0KLnN0YXQgeyBwYWRkaW5nOjE3cHg7dHJhbnNpdGlvbjouMnM7IH0NCi5zdGF0OmhvdmVyLC5tZW51LWNhcmQ6aG92ZXIgeyBib3JkZXItY29sb3I6I2Q4YzdmNDt0cmFuc2Zvcm06dHJhbnNsYXRlWSgtMnB4KTsgfQ0KLnN0YXQtdG9wIHsgZGlzcGxheTpmbGV4O2p1c3RpZnktY29udGVudDpzcGFjZS1iZXR3ZWVuO2FsaWduLWl0ZW1zOmNlbnRlcjsgfQ0KLnN0YXQtaWNvbiB7DQogIHdpZHRoOjM4cHg7aGVpZ2h0OjM4cHg7Ym9yZGVyLXJhZGl1czoxMnB4O2JhY2tncm91bmQ6dmFyKC0tbGlnaHQpOw0KICBkaXNwbGF5OmdyaWQ7cGxhY2UtaXRlbXM6Y2VudGVyO2ZvbnQtc2l6ZToyMHB4Ow0KfQ0KLnN0YXQtbnVtYmVyIHsgZm9udC1zaXplOjI1cHg7Zm9udC13ZWlnaHQ6ODAwO21hcmdpbjoxNHB4IDAgNHB4OyB9DQouc3RhdC1sYWJlbCB7IGNvbG9yOnZhcigtLW11dGVkKTtmb250LXNpemU6MTJweDsgfQ0KLnNlY3Rpb24tdGl0bGUgew0KICBkaXNwbGF5OmZsZXg7YWxpZ24taXRlbXM6Y2VudGVyO2p1c3RpZnktY29udGVudDpzcGFjZS1iZXR3ZWVuOw0KICBtYXJnaW46MjdweCAwIDEzcHg7DQp9DQouc2VjdGlvbi10aXRsZSBoMiB7IGZvbnQtc2l6ZToxN3B4O21hcmdpbjowOyB9DQoudGV4dC1idG4geyBib3JkZXI6MDtiYWNrZ3JvdW5kOm5vbmU7Y29sb3I6dmFyKC0tcHVycGxlKTtmb250LXNpemU6MTJweDsgfQ0KLndhbGxldCB7DQogIHBhZGRpbmc6MjFweDtiYWNrZ3JvdW5kOmxpbmVhci1ncmFkaWVudCgxMTVkZWcsI2ZmZiwjZmFmN2ZmKTsNCn0NCi53YWxsZXQtdG9wIHsgZGlzcGxheTpmbGV4O2p1c3RpZnktY29udGVudDpzcGFjZS1iZXR3ZWVuO2FsaWduLWl0ZW1zOmNlbnRlcjtnYXA6MTBweDsgfQ0KLndhbGxldC1sYWJlbCB7IGNvbG9yOnZhcigtLW11dGVkKTtmb250LXNpemU6MTJweDttYXJnaW4tYm90dG9tOjhweDsgfQ0KLmNvaW4tYmFsYW5jZSB7IGZvbnQtc2l6ZToyN3B4O2ZvbnQtd2VpZ2h0Ojg1MDsgfQ0KLmNvaW4geyBjb2xvcjojYzE4YjMwOyB9DQoud2FsbGV0LWFjdGlvbnMgeyBkaXNwbGF5OmZsZXg7Z2FwOjlweDttYXJnaW4tdG9wOjE4cHg7IH0NCi5wcmltYXJ5LWJ0biwuc2Vjb25kYXJ5LWJ0biB7DQogIGJvcmRlci1yYWRpdXM6MTBweDtwYWRkaW5nOjExcHggMTdweDtib3JkZXI6MXB4IHNvbGlkIHZhcigtLWJvcmRlcik7DQogIGZvbnQtc2l6ZToxM3B4O2ZvbnQtd2VpZ2h0OjY1MDsNCn0NCi5wcmltYXJ5LWJ0biB7IGJhY2tncm91bmQ6dmFyKC0tcHVycGxlKTtjb2xvcjp3aGl0ZTtib3JkZXItY29sb3I6dmFyKC0tcHVycGxlKTsgfQ0KLnByaW1hcnktYnRuOmhvdmVyIHsgYmFja2dyb3VuZDojNjA0MDk1OyB9DQouc2Vjb25kYXJ5LWJ0biB7IGJhY2tncm91bmQ6d2hpdGU7Y29sb3I6dmFyKC0tdGV4dCk7IH0NCi52aXAtYmFubmVyIHsNCiAgbWFyZ2luLXRvcDoxM3B4O2JvcmRlci1yYWRpdXM6MTVweDtwYWRkaW5nOjE3cHggMTlweDsNCiAgYmFja2dyb3VuZDojMzAyNDQxO2NvbG9yOndoaXRlO2Rpc3BsYXk6ZmxleDthbGlnbi1pdGVtczpjZW50ZXI7Z2FwOjEzcHg7DQp9DQoudmlwLXN5bWJvbCB7IGZvbnQtc2l6ZToyN3B4OyB9DQoudmlwLWNvcHkgeyBmbGV4OjE7IH0NCi52aXAtY29weSBoMyB7IG1hcmdpbjowIDAgNXB4O2ZvbnQtc2l6ZToxNHB4OyB9DQoudmlwLWNvcHkgcCB7IG1hcmdpbjowO2NvbG9yOiNkMWMzZTU7Zm9udC1zaXplOjExcHg7IH0NCi52aXAtYmFubmVyIGJ1dHRvbiB7DQogIGJvcmRlcjowO2JhY2tncm91bmQ6I2U2ZDhmZjtjb2xvcjojNTAzNTc0Ow0KICBwYWRkaW5nOjlweCAxMnB4O2JvcmRlci1yYWRpdXM6OXB4O2ZvbnQtc2l6ZToxMnB4O2ZvbnQtd2VpZ2h0OmJvbGQ7DQp9DQoubWVudS1ncmlkIHsgZGlzcGxheTpncmlkO2dyaWQtdGVtcGxhdGUtY29sdW1uczpyZXBlYXQoMixtaW5tYXgoMCwxZnIpKTtnYXA6MTJweDsgfQ0KLm1lbnUtY2FyZCB7DQogIGRpc3BsYXk6ZmxleDthbGlnbi1pdGVtczpjZW50ZXI7Z2FwOjEzcHg7cGFkZGluZzoxNnB4Ow0KICB0ZXh0LWFsaWduOmxlZnQ7Y29sb3I6dmFyKC0tdGV4dCk7dHJhbnNpdGlvbjouMnM7bWluLXdpZHRoOjA7DQp9DQoubWVudS1pY29uIHsNCiAgZmxleC1zaHJpbms6MDt3aWR0aDo0MnB4O2hlaWdodDo0MnB4O2JvcmRlci1yYWRpdXM6MTNweDsNCiAgYmFja2dyb3VuZDojZjJlZGZhO2Rpc3BsYXk6Z3JpZDtwbGFjZS1pdGVtczpjZW50ZXI7Zm9udC1zaXplOjIwcHg7DQp9DQoubWVudS1jb3B5IHsgZmxleDoxO21pbi13aWR0aDowOyB9DQoubWVudS1jb3B5IHN0cm9uZyB7IGRpc3BsYXk6YmxvY2s7Zm9udC1zaXplOjEzcHg7bWFyZ2luLWJvdHRvbTo1cHg7IH0NCi5tZW51LWNvcHkgc21hbGwgeyBkaXNwbGF5OmJsb2NrO2ZvbnQtc2l6ZToxMXB4O2NvbG9yOnZhcigtLW11dGVkKTtsaW5lLWhlaWdodDoxLjU7IH0NCi5tZW51LWFycm93IHsgY29sb3I6I2FhYTFiNztmb250LXNpemU6MTdweDsgfQ0KLnJlY2VudC1saXN0IHsgZGlzcGxheTpmbGV4O2ZsZXgtZGlyZWN0aW9uOmNvbHVtbjtnYXA6MTJweDsgfQ0KLnJlY2VudC1pdGVtIHsNCiAgZGlzcGxheTpmbGV4O2FsaWduLWl0ZW1zOmNlbnRlcjtnYXA6MTNweDtwYWRkaW5nOjEzcHg7DQogIGJvcmRlcjoxcHggc29saWQgdmFyKC0tYm9yZGVyKTtib3JkZXItcmFkaXVzOjE0cHg7YmFja2dyb3VuZDp3aGl0ZTsNCn0NCi5jb3ZlciB7DQogIHdpZHRoOjUycHg7aGVpZ2h0OjY4cHg7ZmxleC1zaHJpbms6MDtib3JkZXItcmFkaXVzOjhweDsNCiAgZGlzcGxheTpncmlkO3BsYWNlLWl0ZW1zOmNlbnRlcjtmb250LXNpemU6MjNweDsNCiAgYmFja2dyb3VuZDpsaW5lYXItZ3JhZGllbnQoMTQ1ZGVnLCNlYWRjZmYsI2M0YjFlOSk7DQp9DQouY292ZXIuYzIgeyBiYWNrZ3JvdW5kOmxpbmVhci1ncmFkaWVudCgxNDVkZWcsI2ZmZTVkZiwjZjBiZGI1KTsgfQ0KLmNvdmVyLmMzIHsgYmFja2dyb3VuZDpsaW5lYXItZ3JhZGllbnQoMTQ1ZGVnLCNkY2VhZmEsIzllYmJlMSk7IH0NCi5yZWNlbnQtaW5mbyB7IGZsZXg6MTttaW4td2lkdGg6MDsgfQ0KLnJlY2VudC1pbmZvIHN0cm9uZyB7IGZvbnQtc2l6ZToxM3B4OyB9DQoucmVjZW50LWluZm8gcCB7IG1hcmdpbjo2cHggMDtjb2xvcjp2YXIoLS1tdXRlZCk7Zm9udC1zaXplOjExcHg7IH0NCi5wcm9ncmVzcyB7IGhlaWdodDo0cHg7Ym9yZGVyLXJhZGl1czoxMHB4O2JhY2tncm91bmQ6I2VlZWFmMztvdmVyZmxvdzpoaWRkZW47IH0NCi5wcm9ncmVzcyBzcGFuIHsgZGlzcGxheTpibG9jaztoZWlnaHQ6MTAwJTtiYWNrZ3JvdW5kOnZhcigtLXB1cnBsZSk7IH0NCi5jb250aW51ZS1idG4gew0KICBib3JkZXI6MDtiYWNrZ3JvdW5kOnZhcigtLWxpZ2h0KTtjb2xvcjp2YXIoLS1wdXJwbGUpOw0KICBib3JkZXItcmFkaXVzOjlweDtwYWRkaW5nOjlweCAxMXB4O2ZvbnQtc2l6ZToxMnB4O3doaXRlLXNwYWNlOm5vd3JhcDsNCn0NCi5ib3R0b20tbmF2IHsgZGlzcGxheTpub25lOyB9DQouZm9vdGVyIHsgdGV4dC1hbGlnbjpjZW50ZXI7Y29sb3I6I2FhYTNiNjtmb250LXNpemU6MTFweDtwYWRkaW5nOjMwcHggMCAxNXB4OyB9DQoNCi8qIEPDoWMgdHJhbmcgY29uIMSRxrDhu6NjIGThu7FuZyBi4bqxbmcgSlMgKi8NCi5zdWJwYWdlIHsgZGlzcGxheTpub25lOyB9DQouc3VicGFnZS5hY3RpdmUgeyBkaXNwbGF5OmJsb2NrOyB9DQouc3VicGFnZSAucGFuZWwgeyBwYWRkaW5nOjIzcHg7IH0NCi5zdWJwYWdlIGgyIHsgZm9udC1zaXplOjE5cHg7bWFyZ2luOjAgMCA3cHg7IH0NCi5zdWJwYWdlIC5pbnRybyB7IGNvbG9yOnZhcigtLW11dGVkKTtmb250LXNpemU6MTNweDttYXJnaW46MCAwIDIycHg7IH0NCi5maWVsZCB7DQogIHdpZHRoOjEwMCU7cGFkZGluZzoxMnB4O2JvcmRlcjoxcHggc29saWQgdmFyKC0tYm9yZGVyKTsNCiAgYm9yZGVyLXJhZGl1czoxMHB4O21hcmdpbjo3cHggMCAxN3B4O2JhY2tncm91bmQ6d2hpdGU7Y29sb3I6dmFyKC0tdGV4dCk7DQp9DQoubm90aWNlIHsNCiAgYmFja2dyb3VuZDojZjNlZWZiO2JvcmRlci1yYWRpdXM6MTJweDtwYWRkaW5nOjE0cHg7DQogIGNvbG9yOiM2MzQ5OGE7Zm9udC1zaXplOjEzcHg7bGluZS1oZWlnaHQ6MS42O21hcmdpbi1ib3R0b206MTVweDsNCn0NCi5yb3ctbGluayB7DQogIHdpZHRoOjEwMCU7cGFkZGluZzoxNXB4IDA7ZGlzcGxheTpmbGV4O2FsaWduLWl0ZW1zOmNlbnRlcjsNCiAganVzdGlmeS1jb250ZW50OnNwYWNlLWJldHdlZW47Ym9yZGVyOjA7Ym9yZGVyLWJvdHRvbToxcHggc29saWQgdmFyKC0tYm9yZGVyKTsNCiAgYmFja2dyb3VuZDpub25lO3RleHQtYWxpZ246bGVmdDtjb2xvcjp2YXIoLS10ZXh0KTtmb250LXNpemU6MTNweDsNCn0NCkBtZWRpYShtYXgtd2lkdGg6OTAwcHgpIHsNCiAgLm5hdiB7IGdhcDoxNHB4OyB9DQogIC5sYXlvdXQgeyBncmlkLXRlbXBsYXRlLWNvbHVtbnM6MjEwcHggbWlubWF4KDAsMWZyKTtnYXA6MTZweDsgfQ0KICAubWVudS1ncmlkIHsgZ3JpZC10ZW1wbGF0ZS1jb2x1bW5zOjFmcjsgfQ0KfQ0KQG1lZGlhKG1heC13aWR0aDo2NTBweCkgew0KICAudG9wYmFyIHsgaGVpZ2h0OjU4cHg7cGFkZGluZzowIDE3cHg7IH0NCiAgLmJyYW5kIHsgZm9udC1zaXplOjIwcHg7IH0NCiAgLm5hdiB7IGRpc3BsYXk6bm9uZTsgfQ0KICAudG9wLWFjdGlvbnMgLmljb24tYnRuIHsgZm9udC1zaXplOjE4cHg7IH0NCiAgLnRvcC1hY3Rpb25zIC5hdmF0YXIgeyB3aWR0aDozNXB4O2hlaWdodDozNXB4OyB9DQogIC5sYXlvdXQgeyBkaXNwbGF5OmJsb2NrO21hcmdpbjoxOXB4IGF1dG87cGFkZGluZzowIDE1cHggODhweDsgfQ0KICAuc2lkZWJhciB7IGRpc3BsYXk6bm9uZTsgfQ0KICAucGFnZS1oZWFkaW5nIHsgbWFyZ2luLWJvdHRvbToxN3B4OyB9DQogIC5wYWdlLWhlYWRpbmcgaDEgeyBmb250LXNpemU6MjRweDsgfQ0KICAucGFnZS1oZWFkaW5nIHAgeyBmb250LXNpemU6MTJweDtsaW5lLWhlaWdodDoxLjY7IH0NCiAgLnByb2ZpbGUtY2FyZCB7IHBhZGRpbmc6MThweCAxNXB4O2dhcDoxMnB4O2JvcmRlci1yYWRpdXM6MTZweDsgfQ0KICAucHJvZmlsZS1hdmF0YXIgeyB3aWR0aDo1OHB4O2hlaWdodDo1OHB4O2ZvbnQtc2l6ZToyN3B4OyB9DQogIC5wcm9maWxlLWluZm8gaDIgeyBmb250LXNpemU6MThweDsgfQ0KICAucHJvZmlsZS1pbmZvIHAgeyBmb250LXNpemU6MTFweDsgfQ0KICAub3V0bGluZS1idG4geyBwYWRkaW5nOjlweDtmb250LXNpemU6MTFweDsgfQ0KICAuc3RhdHMgeyBnYXA6OHB4O21hcmdpbjoxNHB4IDA7IH0NCiAgLnN0YXQgeyBwYWRkaW5nOjEycHggMTBweDtib3JkZXItcmFkaXVzOjE0cHg7IH0NCiAgLnN0YXQtaWNvbiB7IHdpZHRoOjMycHg7aGVpZ2h0OjMycHg7Zm9udC1zaXplOjE3cHg7IH0NCiAgLnN0YXQtbnVtYmVyIHsgZm9udC1zaXplOjIxcHg7bWFyZ2luOjExcHggMCAzcHg7IH0NCiAgLnN0YXQtbGFiZWwgeyBmb250LXNpemU6MTBweDsgfQ0KICAuc2VjdGlvbi10aXRsZSB7IG1hcmdpbjoyMnB4IDAgMTJweDsgfQ0KICAuc2VjdGlvbi10aXRsZSBoMiB7IGZvbnQtc2l6ZToxNnB4OyB9DQogIC53YWxsZXQgeyBwYWRkaW5nOjE2cHg7Ym9yZGVyLXJhZGl1czoxNXB4OyB9DQogIC5jb2luLWJhbGFuY2UgeyBmb250LXNpemU6MjRweDsgfQ0KICAud2FsbGV0LWFjdGlvbnMgYnV0dG9uIHsgZmxleDoxO3BhZGRpbmc6MTFweCA4cHg7IH0NCiAgLnZpcC1iYW5uZXIgeyBwYWRkaW5nOjE0cHg7IH0NCiAgLnZpcC1iYW5uZXIgYnV0dG9uIHsgcGFkZGluZzo5cHg7IH0NCiAgLm1lbnUtZ3JpZCB7IGdyaWQtdGVtcGxhdGUtY29sdW1uczoxZnI7Z2FwOjlweDsgfQ0KICAubWVudS1jYXJkIHsgcGFkZGluZzoxM3B4O2JvcmRlci1yYWRpdXM6MTRweDsgfQ0KICAubWVudS1pY29uIHsgd2lkdGg6MzlweDtoZWlnaHQ6MzlweDsgfQ0KICAucmVjZW50LWl0ZW0geyBwYWRkaW5nOjEwcHg7Z2FwOjEwcHg7IH0NCiAgLmNvbnRpbnVlLWJ0biB7IHBhZGRpbmc6OHB4O2ZvbnQtc2l6ZToxMXB4OyB9DQogIC5ib3R0b20tbmF2IHsNCiAgICBwb3NpdGlvbjpmaXhlZDtib3R0b206MDtsZWZ0OjA7cmlnaHQ6MDt6LWluZGV4OjIwOw0KICAgIGRpc3BsYXk6ZmxleDtqdXN0aWZ5LWNvbnRlbnQ6c3BhY2UtYXJvdW5kO2FsaWduLWl0ZW1zOmNlbnRlcjsNCiAgICBiYWNrZ3JvdW5kOiNmZmZmZmZlZjtiYWNrZHJvcC1maWx0ZXI6Ymx1cigxNHB4KTsNCiAgICBib3JkZXItdG9wOjFweCBzb2xpZCB2YXIoLS1ib3JkZXIpO3BhZGRpbmc6OHB4IDRweCBjYWxjKDhweCArIGVudihzYWZlLWFyZWEtaW5zZXQtYm90dG9tKSk7DQogIH0NCiAgLmJvdHRvbS1uYXYgYnV0dG9uIHsNCiAgICBmbGV4OjE7Ym9yZGVyOjA7YmFja2dyb3VuZDpub25lO2NvbG9yOiM5NThkYTM7DQogICAgZGlzcGxheTpmbGV4O2ZsZXgtZGlyZWN0aW9uOmNvbHVtbjthbGlnbi1pdGVtczpjZW50ZXI7Z2FwOjRweDsNCiAgICBmb250LXNpemU6MTBweDtwYWRkaW5nOjNweDsNCiAgfQ0KICAuYm90dG9tLW5hdiBidXR0b24gc3BhbiB7IGZvbnQtc2l6ZToyMHB4OyB9DQogIC5ib3R0b20tbmF2IGJ1dHRvbi5hY3RpdmUgeyBjb2xvcjp2YXIoLS1wdXJwbGUpO2ZvbnQtd2VpZ2h0Ojc1MDsgfQ0KICAuc3VicGFnZSAucGFuZWwgeyBwYWRkaW5nOjE3cHg7IH0NCn0NCjwvc3R5bGU+DQo8c3R5bGUgaWQ9InByZXZpZXctaGlkZS1wcm9maWxlLW5hdiI+LnRvcGJhcntkaXNwbGF5Om5vbmUhaW1wb3J0YW50fTwvc3R5bGU+PC9oZWFkPg0KPGJvZHk+DQoNCjxoZWFkZXIgY2xhc3M9InRvcGJhciI+DQogIDxkaXYgY2xhc3M9ImJyYW5kIj48aW1nIGNsYXNzPSJicmFuZC1sb2dvIiBzcmM9ImVsYWdpYS1jYXQtbG9nby5wbmciIGFsdD0iTG9nbyBtw6hvIEVsYWdpYSBDb21pY3MiPjxzcGFuIGNsYXNzPSJicmFuZC1jb3B5Ij5FTEFHSUEgQ09NSUNTPHNtYWxsPlJFQUQgwrcgRFJFQU0gwrcgUkVQRUFUPC9zbWFsbD48L3NwYW4+PC9kaXY+DQogIDxuYXYgY2xhc3M9Im5hdiI+DQogICAgPGJ1dHRvbiBvbmNsaWNrPSJnbygnaG9tZScpIj5LaMOhbSBwaMOhPC9idXR0b24+DQogICAgPGJ1dHRvbiBvbmNsaWNrPSJnbygnY29taWNzJykiPlRydXnhu4duIHRyYW5oPC9idXR0b24+DQogICAgPGJ1dHRvbiBvbmNsaWNrPSJnbygnbm92ZWxzJykiPlRydXnhu4duIGNo4buvPC9idXR0b24+DQogICAgPGJ1dHRvbiBvbmNsaWNrPSJnbygnbGlicmFyeScpIj5U4bunIHRydXnhu4duPC9idXR0b24+DQogIDwvbmF2Pg0KICA8ZGl2IGNsYXNzPSJ0b3AtYWN0aW9ucyI+DQogICAgPGJ1dHRvbiBjbGFzcz0iaWNvbi1idG4iIGFyaWEtbGFiZWw9IlTDrG0ga2nhur9tIiBvbmNsaWNrPSJnbygnc2VhcmNoJykiPuKMlTwvYnV0dG9uPg0KICAgIDxidXR0b24gY2xhc3M9Imljb24tYnRuIiBhcmlhLWxhYmVsPSJUaMO0bmcgYsOhbyIgb25jbGljaz0iZ28oJ25vdGlmaWNhdGlvbnMnKSI+4pmnPC9idXR0b24+DQogICAgPGRpdiBjbGFzcz0iYXZhdGFyIj5NPC9kaXY+DQogIDwvZGl2Pg0KPC9oZWFkZXI+DQoNCjxkaXYgY2xhc3M9ImxheW91dCI+DQogIDxhc2lkZSBjbGFzcz0ic2lkZWJhciI+DQogICAgPGRpdiBjbGFzcz0ic2lkZS1oZWFkaW5nIj5Uw4BJIEtIT+G6ok48L2Rpdj4NCiAgICA8YnV0dG9uIGNsYXNzPSJzaWRlLWl0ZW0gYWN0aXZlIiBkYXRhLXBhZ2U9InByb2ZpbGUiIG9uY2xpY2s9ImdvKCdwcm9maWxlJykiPjxzcGFuIGNsYXNzPSJpY28iPuKZmTwvc3Bhbj4gVOG7lW5nIHF1YW48L2J1dHRvbj4NCiAgICA8YnV0dG9uIGNsYXNzPSJzaWRlLWl0ZW0iIGRhdGEtcGFnZT0iZWRpdCIgb25jbGljaz0iZ28oJ2VkaXQnKSI+PHNwYW4gY2xhc3M9ImljbyI+4pyOPC9zcGFuPiBI4buTIHPGoSBjw6EgbmjDom48L2J1dHRvbj4NCiAgICA8ZGl2IGNsYXNzPSJzaWRlLWhlYWRpbmciPlRIxq8gVknhu4ZOIEPhu6ZBIFTDlEk8L2Rpdj4NCiAgICA8YnV0dG9uIGNsYXNzPSJzaWRlLWl0ZW0iIGRhdGEtcGFnZT0ibGlicmFyeSIgb25jbGljaz0iZ28oJ2xpYnJhcnknKSI+PHNwYW4gY2xhc3M9ImljbyI+4pakPC9zcGFuPiBU4bunIHRydXnhu4duPC9idXR0b24+DQogICAgPGJ1dHRvbiBjbGFzcz0ic2lkZS1pdGVtIiBkYXRhLXBhZ2U9InB1cmNoYXNlZCIgb25jbGljaz0iZ28oJ3B1cmNoYXNlZCcpIj48c3BhbiBjbGFzcz0iaWNvIj7ilqM8L3NwYW4+IFRydXnhu4duIMSRw6MgbXVhPC9idXR0b24+DQogICAgPGJ1dHRvbiBjbGFzcz0ic2lkZS1pdGVtIiBkYXRhLXBhZ2U9Imhpc3RvcnkiIG9uY2xpY2s9ImdvKCdoaXN0b3J5JykiPjxzcGFuIGNsYXNzPSJpY28iPuKXtzwvc3Bhbj4gTOG7i2NoIHPhu60gxJHhu41jPC9idXR0b24+DQogICAgPGRpdiBjbGFzcz0ic2lkZS1oZWFkaW5nIj5USEFOSCBUT8OBTjwvZGl2Pg0KICAgIDxidXR0b24gY2xhc3M9InNpZGUtaXRlbSIgZGF0YS1wYWdlPSJ3YWxsZXQiIG9uY2xpY2s9ImdvKCd3YWxsZXQnKSI+PHNwYW4gY2xhc3M9ImljbyI+4peJPC9zcGFuPiBWw60geHU8L2J1dHRvbj4NCiAgICA8YnV0dG9uIGNsYXNzPSJzaWRlLWl0ZW0iIGRhdGEtcGFnZT0idmlwIiBvbmNsaWNrPSJnbygndmlwJykiPjxzcGFuIGNsYXNzPSJpY28iPuKZmzwvc3Bhbj4gVGjDoG5oIHZpw6puIFZJUDwvYnV0dG9uPg0KICAgIDxidXR0b24gY2xhc3M9InNpZGUtaXRlbSIgZGF0YS1wYWdlPSJ0cmFuc2FjdGlvbnMiIG9uY2xpY2s9ImdvKCd0cmFuc2FjdGlvbnMnKSI+PHNwYW4gY2xhc3M9ImljbyI+4panPC9zcGFuPiBHaWFvIGThu4tjaDwvYnV0dG9uPg0KICAgIDxkaXYgY2xhc3M9InNpZGUtaGVhZGluZyI+S0jDgUM8L2Rpdj4NCiAgICA8YnV0dG9uIGNsYXNzPSJzaWRlLWl0ZW0iIGRhdGEtcGFnZT0ibm90aWZpY2F0aW9ucyIgb25jbGljaz0iZ28oJ25vdGlmaWNhdGlvbnMnKSI+PHNwYW4gY2xhc3M9ImljbyI+4pmnPC9zcGFuPiBUaMO0bmcgYsOhbzwvYnV0dG9uPg0KICAgIDxidXR0b24gY2xhc3M9InNpZGUtaXRlbSIgZGF0YS1wYWdlPSJzZXR0aW5ncyIgb25jbGljaz0iZ28oJ3NldHRpbmdzJykiPjxzcGFuIGNsYXNzPSJpY28iPuKamTwvc3Bhbj4gQ8OgaSDEkeG6t3Q8L2J1dHRvbj4NCiAgICA8YnV0dG9uIGNsYXNzPSJzaWRlLWl0ZW0iIGRhdGEtcGFnZT0iaGVscCIgb25jbGljaz0iZ28oJ2hlbHAnKSI+PHNwYW4gY2xhc3M9ImljbyI+Pzwvc3Bhbj4gVHLhu6MgZ2nDunA8L2J1dHRvbj4NCiAgPC9hc2lkZT4NCg0KICA8bWFpbiBjbGFzcz0iY29udGVudCI+DQogICAgPGRpdiBpZD0ib3ZlcnZpZXciPg0KICAgICAgPGRpdiBjbGFzcz0icGFnZS1oZWFkaW5nIj4NCiAgICAgICAgPGgxPlRyYW5nIGPDoSBuaMOibjwvaDE+DQogICAgICAgIDxwPkNow6BvIG3hu6tuZyBi4bqhbiB0cuG7nyBs4bqhaSB0aOG6vyBnaeG7m2kgY+G7p2Egbmjhu69uZyBjw6J1IGNodXnhu4duIOKcqDwvcD4NCiAgICAgIDwvZGl2Pg0KDQogICAgICA8c2VjdGlvbiBjbGFzcz0icHJvZmlsZS1jYXJkIj4NCiAgICAgICAgPGRpdiBjbGFzcz0icHJvZmlsZS1hdmF0YXIiPk08L2Rpdj4NCiAgICAgICAgPGRpdiBjbGFzcz0icHJvZmlsZS1pbmZvIj4NCiAgICAgICAgICA8aDI+TcOobyBuaOG7jyDwn4yZPC9oMj4NCiAgICAgICAgICA8cD5JRDogMTAwMDI4IMK3IFRow6BuaCB2acOqbiB04burIDIwMjY8L3A+DQogICAgICAgICAgPHNwYW4gY2xhc3M9Im1lbWJlci1waWxsIj7inKYgxJDhu5ljIGdp4bqjIG3hu5tpPC9zcGFuPg0KICAgICAgICA8L2Rpdj4NCiAgICAgICAgPGJ1dHRvbiBjbGFzcz0ib3V0bGluZS1idG4iIG9uY2xpY2s9ImdvKCdlZGl0JykiPkNo4buJbmggc+G7rWEg4oaXPC9idXR0b24+DQogICAgICA8L3NlY3Rpb24+DQoNCiAgICAgIDxzZWN0aW9uIGNsYXNzPSJzdGF0cyI+DQogICAgICAgIDxidXR0b24gY2xhc3M9InN0YXQiIG9uY2xpY2s9ImdvKCdsaWJyYXJ5JykiIHN0eWxlPSJ0ZXh0LWFsaWduOmxlZnQ7Y29sb3I6aW5oZXJpdDtjdXJzb3I6cG9pbnRlciI+DQogICAgICAgICAgPGRpdiBjbGFzcz0ic3RhdC10b3AiPjxzcGFuIGNsYXNzPSJzdGF0LWljb24iPvCfk5Y8L3NwYW4+PHNwYW4+4oaXPC9zcGFuPjwvZGl2Pg0KICAgICAgICAgIDxkaXYgY2xhc3M9InN0YXQtbnVtYmVyIj4xMjwvZGl2PjxkaXYgY2xhc3M9InN0YXQtbGFiZWwiPsSQYW5nIMSR4buNYzwvZGl2Pg0KICAgICAgICA8L2J1dHRvbj4NCiAgICAgICAgPGJ1dHRvbiBjbGFzcz0ic3RhdCIgb25jbGljaz0iZ28oJ2Zhdm9yaXRlcycpIiBzdHlsZT0idGV4dC1hbGlnbjpsZWZ0O2NvbG9yOmluaGVyaXQ7Y3Vyc29yOnBvaW50ZXIiPg0KICAgICAgICAgIDxkaXYgY2xhc3M9InN0YXQtdG9wIj48c3BhbiBjbGFzcz0ic3RhdC1pY29uIj7imaE8L3NwYW4+PHNwYW4+4oaXPC9zcGFuPjwvZGl2Pg0KICAgICAgICAgIDxkaXYgY2xhc3M9InN0YXQtbnVtYmVyIj4yODwvZGl2PjxkaXYgY2xhc3M9InN0YXQtbGFiZWwiPlnDqnUgdGjDrWNoPC9kaXY+DQogICAgICAgIDwvYnV0dG9uPg0KICAgICAgICA8YnV0dG9uIGNsYXNzPSJzdGF0IiBvbmNsaWNrPSJnbygnaGlzdG9yeScpIiBzdHlsZT0idGV4dC1hbGlnbjpsZWZ0O2NvbG9yOmluaGVyaXQ7Y3Vyc29yOnBvaW50ZXIiPg0KICAgICAgICAgIDxkaXYgY2xhc3M9InN0YXQtdG9wIj48c3BhbiBjbGFzcz0ic3RhdC1pY29uIj7il7c8L3NwYW4+PHNwYW4+4oaXPC9zcGFuPjwvZGl2Pg0KICAgICAgICAgIDxkaXYgY2xhc3M9InN0YXQtbnVtYmVyIj4zNjwvZGl2PjxkaXYgY2xhc3M9InN0YXQtbGFiZWwiPkzhu4tjaCBz4butIMSR4buNYzwvZGl2Pg0KICAgICAgICA8L2J1dHRvbj4NCiAgICAgIDwvc2VjdGlvbj4NCg0KICAgICAgPGRpdiBjbGFzcz0ic2VjdGlvbi10aXRsZSI+PGgyPlbDrSBj4bunYSB0w7RpPC9oMj48YnV0dG9uIGNsYXNzPSJ0ZXh0LWJ0biIgb25jbGljaz0iZ28oJ3RyYW5zYWN0aW9ucycpIj5M4buLY2ggc+G7rSBnaWFvIGThu4tjaCDihpI8L2J1dHRvbj48L2Rpdj4NCiAgICAgIDxzZWN0aW9uIGNsYXNzPSJ3YWxsZXQiPg0KICAgICAgICA8ZGl2IGNsYXNzPSJ3YWxsZXQtdG9wIj4NCiAgICAgICAgICA8ZGl2PjxkaXYgY2xhc3M9IndhbGxldC1sYWJlbCI+U+G7kSBkxrAgeHUga2jhuqMgZOG7pW5nPC9kaXY+PGRpdiBjbGFzcz0iY29pbi1iYWxhbmNlIj48c3BhbiBjbGFzcz0iY29pbiI+4peJPC9zcGFuPiA8c3BhbiBpZD0iYmFsYW5jZSI+MS4yNTA8L3NwYW4+IHh1PC9kaXY+PC9kaXY+DQogICAgICAgICAgPGRpdiBzdHlsZT0iZm9udC1zaXplOjMycHgiPvCfqpk8L2Rpdj4NCiAgICAgICAgPC9kaXY+DQogICAgICAgIDxkaXYgY2xhc3M9IndhbGxldC1hY3Rpb25zIj4NCiAgICAgICAgICA8YnV0dG9uIGNsYXNzPSJwcmltYXJ5LWJ0biIgb25jbGljaz0iZ28oJ3dhbGxldCcpIj7vvIsgTuG6oXAgeHU8L2J1dHRvbj4NCiAgICAgICAgICA8YnV0dG9uIGNsYXNzPSJzZWNvbmRhcnktYnRuIiBvbmNsaWNrPSJnbygndHJhbnNhY3Rpb25zJykiPkNoaSB0aeG6v3QgdsOtPC9idXR0b24+DQogICAgICAgIDwvZGl2Pg0KICAgICAgPC9zZWN0aW9uPg0KDQogICAgICA8c2VjdGlvbiBjbGFzcz0idmlwLWJhbm5lciI+DQogICAgICAgIDxkaXYgY2xhc3M9InZpcC1zeW1ib2wiPuKZmzwvZGl2Pg0KICAgICAgICA8ZGl2IGNsYXNzPSJ2aXAtY29weSI+PGgzPktow6FtIHBow6EgcXV54buBbiBs4bujaSBWSVA8L2gzPjxwPsSQ4buNYyB0cnV54buHbiB24bubaSB0cuG6o2kgbmdoaeG7h20gbsOibmcgY2FvLjwvcD48L2Rpdj4NCiAgICAgICAgPGJ1dHRvbiBvbmNsaWNrPSJnbygndmlwJykiPktow6FtIHBow6Eg4oaSPC9idXR0b24+DQogICAgICA8L3NlY3Rpb24+DQoNCiAgICAgIDxkaXYgY2xhc3M9InNlY3Rpb24tdGl0bGUiPjxoMj5UcnV54buHbiDEkeG7jWMgZ+G6p24gxJHDonk8L2gyPjxidXR0b24gY2xhc3M9InRleHQtYnRuIiBvbmNsaWNrPSJnbygnaGlzdG9yeScpIj5YZW0gdOG6pXQgY+G6oyDihpI8L2J1dHRvbj48L2Rpdj4NCiAgICAgIDxzZWN0aW9uIGNsYXNzPSJyZWNlbnQtbGlzdCI+DQogICAgICAgIDxkaXYgY2xhc3M9InJlY2VudC1pdGVtIj4NCiAgICAgICAgICA8ZGl2IGNsYXNzPSJjb3ZlciI+8J+MmTwvZGl2Pg0KICAgICAgICAgIDxkaXYgY2xhc3M9InJlY2VudC1pbmZvIj48c3Ryb25nPktob+G6o25nIGPDoWNoIGdp4buvYSBjaMO6bmcgdGE8L3N0cm9uZz48cD5UcnV54buHbiB0cmFuaCDCtyBDaMawxqFuZyAxMjwvcD48ZGl2IGNsYXNzPSJwcm9ncmVzcyI+PHNwYW4gc3R5bGU9IndpZHRoOjY1JSI+PC9zcGFuPjwvZGl2PjwvZGl2Pg0KICAgICAgICAgIDxidXR0b24gY2xhc3M9ImNvbnRpbnVlLWJ0biIgb25jbGljaz0iYWxlcnQoJ0RlbW86IG3hu58gY2jGsMahbmcgMTInKSI+xJDhu41jIHRp4bq/cDwvYnV0dG9uPg0KICAgICAgICA8L2Rpdj4NCiAgICAgICAgPGRpdiBjbGFzcz0icmVjZW50LWl0ZW0iPg0KICAgICAgICAgIDxkaXYgY2xhc3M9ImNvdmVyIGMyIj7wn4y4PC9kaXY+DQogICAgICAgICAgPGRpdiBjbGFzcz0icmVjZW50LWluZm8iPjxzdHJvbmc+TcO5YSBow6ggbsSDbSDhuqV5PC9zdHJvbmc+PHA+VHJ1eeG7h24gY2jhu68gwrcgQ2jGsMahbmcgMDg8L3A+PGRpdiBjbGFzcz0icHJvZ3Jlc3MiPjxzcGFuIHN0eWxlPSJ3aWR0aDo0MCUiPjwvc3Bhbj48L2Rpdj48L2Rpdj4NCiAgICAgICAgICA8YnV0dG9uIGNsYXNzPSJjb250aW51ZS1idG4iIG9uY2xpY2s9ImFsZXJ0KCdEZW1vOiBt4bufIGNoxrDGoW5nIDgnKSI+xJDhu41jIHRp4bq/cDwvYnV0dG9uPg0KICAgICAgICA8L2Rpdj4NCiAgICAgIDwvc2VjdGlvbj4NCg0KICAgICAgPGRpdiBjbGFzcz0ic2VjdGlvbi10aXRsZSI+PGgyPlRp4buHbiDDrWNoIGPDoSBuaMOibjwvaDI+PC9kaXY+DQogICAgICA8c2VjdGlvbiBjbGFzcz0ibWVudS1ncmlkIj4NCiAgICAgICAgPGJ1dHRvbiBjbGFzcz0ibWVudS1jYXJkIiBvbmNsaWNrPSJnbygnbGlicmFyeScpIj48c3BhbiBjbGFzcz0ibWVudS1pY29uIj7wn5OaPC9zcGFuPjxzcGFuIGNsYXNzPSJtZW51LWNvcHkiPjxzdHJvbmc+VOG7pyB0cnV54buHbiBj4bunYSB0w7RpPC9zdHJvbmc+PHNtYWxsPsSQYW5nIMSR4buNYywgdGhlbyBkw7VpLCB5w6p1IHRow61jaDwvc21hbGw+PC9zcGFuPjxzcGFuIGNsYXNzPSJtZW51LWFycm93Ij7igLo8L3NwYW4+PC9idXR0b24+DQogICAgICAgIDxidXR0b24gY2xhc3M9Im1lbnUtY2FyZCIgb25jbGljaz0iZ28oJ3B1cmNoYXNlZCcpIj48c3BhbiBjbGFzcz0ibWVudS1pY29uIj7wn5uN77iPPC9zcGFuPjxzcGFuIGNsYXNzPSJtZW51LWNvcHkiPjxzdHJvbmc+VHJ1eeG7h24gxJHDoyBtdWE8L3N0cm9uZz48c21hbGw+Q8OhYyBjaMawxqFuZyDEkcOjIG3hu58ga2jDs2E8L3NtYWxsPjwvc3Bhbj48c3BhbiBjbGFzcz0ibWVudS1hcnJvdyI+4oC6PC9zcGFuPjwvYnV0dG9uPg0KICAgICAgICA8YnV0dG9uIGNsYXNzPSJtZW51LWNhcmQiIG9uY2xpY2s9ImdvKCdub3RpZmljYXRpb25zJykiPjxzcGFuIGNsYXNzPSJtZW51LWljb24iPvCflJQ8L3NwYW4+PHNwYW4gY2xhc3M9Im1lbnUtY29weSI+PHN0cm9uZz5UaMO0bmcgYsOhbzwvc3Ryb25nPjxzbWFsbD5D4bqtcCBuaOG6rXQgY2jGsMahbmcgbeG7m2k8L3NtYWxsPjwvc3Bhbj48c3BhbiBjbGFzcz0ibWVudS1hcnJvdyI+4oC6PC9zcGFuPjwvYnV0dG9uPg0KICAgICAgICA8YnV0dG9uIGNsYXNzPSJtZW51LWNhcmQiIG9uY2xpY2s9ImdvKCdzZXR0aW5ncycpIj48c3BhbiBjbGFzcz0ibWVudS1pY29uIj7impnvuI88L3NwYW4+PHNwYW4gY2xhc3M9Im1lbnUtY29weSI+PHN0cm9uZz5Dw6BpIMSR4bq3dDwvc3Ryb25nPjxzbWFsbD5HaWFvIGRp4buHbiB2w6AgdMOgaSBraG/huqNuPC9zbWFsbD48L3NwYW4+PHNwYW4gY2xhc3M9Im1lbnUtYXJyb3ciPuKAujwvc3Bhbj48L2J1dHRvbj4NCiAgICAgICAgPGJ1dHRvbiBjbGFzcz0ibWVudS1jYXJkIiBvbmNsaWNrPSJnbygnaGVscCcpIj48c3BhbiBjbGFzcz0ibWVudS1pY29uIj7wn5KsPC9zcGFuPjxzcGFuIGNsYXNzPSJtZW51LWNvcHkiPjxzdHJvbmc+VHLhu6MgZ2nDunAgJiBwaOG6o24gaOG7k2k8L3N0cm9uZz48c21hbGw+R2nhuqNpIMSRw6FwIHRo4bqvYyBt4bqvYzwvc21hbGw+PC9zcGFuPjxzcGFuIGNsYXNzPSJtZW51LWFycm93Ij7igLo8L3NwYW4+PC9idXR0b24+DQogICAgICAgIDxidXR0b24gY2xhc3M9Im1lbnUtY2FyZCIgb25jbGljaz0iZ28oJ3NlY3VyaXR5JykiPjxzcGFuIGNsYXNzPSJtZW51LWljb24iPvCfm6HvuI88L3NwYW4+PHNwYW4gY2xhc3M9Im1lbnUtY29weSI+PHN0cm9uZz5C4bqjbyBt4bqtdDwvc3Ryb25nPjxzbWFsbD5N4bqtdCBraOG6qXUgdsOgIHF1eeG7gW4gcmnDqm5nIHTGsDwvc21hbGw+PC9zcGFuPjxzcGFuIGNsYXNzPSJtZW51LWFycm93Ij7igLo8L3NwYW4+PC9idXR0b24+DQogICAgICA8L3NlY3Rpb24+DQogICAgPC9kaXY+DQoNCiAgICA8c2VjdGlvbiBpZD0ic3VicGFnZSIgY2xhc3M9InN1YnBhZ2UiPg0KICAgICAgPGRpdiBjbGFzcz0icGFnZS1oZWFkaW5nIj4NCiAgICAgICAgPGgxIGlkPSJzdWItdGl0bGUiPlTDoGkga2hv4bqjbjwvaDE+DQogICAgICAgIDxwIGlkPSJzdWItZGVzYyI+UXXhuqNuIGzDvSB0w6BpIGtob+G6o24gY+G7p2EgYuG6oW4uPC9wPg0KICAgICAgPC9kaXY+DQogICAgICA8ZGl2IGNsYXNzPSJwYW5lbCIgaWQ9InN1Yi1jb250ZW50Ij48L2Rpdj4NCiAgICAgIDxidXR0b24gY2xhc3M9InNlY29uZGFyeS1idG4iIHN0eWxlPSJtYXJnaW4tdG9wOjE2cHgiIG9uY2xpY2s9ImdvKCdwcm9maWxlJykiPuKGkCBRdWF5IGzhuqFpIHRyYW5nIFTDtGk8L2J1dHRvbj4NCiAgICA8L3NlY3Rpb24+DQoNCiAgICA8ZGl2IGNsYXNzPSJmb290ZXIiPkVsYWdpYSBDb21pY3MgwrcgxJDhu41jIHRoZW8gY8OhY2ggY+G7p2EgYuG6oW4g4pymPC9kaXY+DQogIDwvbWFpbj4NCjwvZGl2Pg0KDQo8bmF2IGNsYXNzPSJib3R0b20tbmF2Ij4NCiAgPGJ1dHRvbiBvbmNsaWNrPSJnbygnaG9tZScpIj48c3Bhbj7ijII8L3NwYW4+S2jDoW0gcGjDoTwvYnV0dG9uPg0KICA8YnV0dG9uIG9uY2xpY2s9ImdvKCdzZWFyY2gnKSI+PHNwYW4+4oyVPC9zcGFuPlTDrG0ga2nhur9tPC9idXR0b24+DQogIDxidXR0b24gb25jbGljaz0iZ28oJ2xpYnJhcnknKSI+PHNwYW4+4pakPC9zcGFuPlThu6cgdHJ1eeG7h248L2J1dHRvbj4NCiAgPGJ1dHRvbiBjbGFzcz0iYWN0aXZlIiBvbmNsaWNrPSJnbygncHJvZmlsZScpIj48c3Bhbj7imZk8L3NwYW4+VMO0aTwvYnV0dG9uPg0KPC9uYXY+DQoNCjxzY3JpcHQ+DQpjb25zdCBwYWdlcyA9IHsNCiAgaG9tZTpbIktow6FtIHBow6EiLCJLaMOhbSBwaMOhIG5o4buvbmcgY8OidSBjaHV54buHbiBt4bubaS4iLCI8ZGl2IGNsYXNzPSdub3RpY2UnPsSQw6J5IGzDoCB0cmFuZyBkZW1vLiBFbSBjw7MgdGjhu4Mga+G6v3QgbuG7kWkgbsO6dCBuw6B5IHbhu5tpIHRyYW5nIGNo4bunIHNhdS48L2Rpdj4iXSwNCiAgY29taWNzOlsiVHJ1eeG7h24gdHJhbmgiLCJUaOG6vyBnaeG7m2kgdHJ1eeG7h24gdHJhbmggZMOgbmggY2hvIGLhuqFuLiIsIjxkaXYgY2xhc3M9J25vdGljZSc+S2h1IHbhu7FjIHRydXnhu4duIHRyYW5oIOKAlCBj4bqnbiBr4bq/dCBu4buRaSBkYW5oIG3hu6VjIHRydXnhu4duLjwvZGl2PiJdLA0KICBub3ZlbHM6WyJUcnV54buHbiBjaOG7ryIsIk5o4buvbmcgY8OidSBjaHV54buHbiDEkWFuZyBjaOG7nSBi4bqhbi4iLCI8ZGl2IGNsYXNzPSdub3RpY2UnPktodSB24buxYyB0cnV54buHbiBjaOG7ryDigJQgY+G6p24ga+G6v3QgbuG7kWkgZGFuaCBt4bulYyB0cnV54buHbi48L2Rpdj4iXSwNCiAgc2VhcmNoOlsiVMOsbSBraeG6v20iLCJUw6xtIHRydXnhu4duIHRyYW5oIGhv4bq3YyB0cnV54buHbiBjaOG7ry4iLCI8aW5wdXQgY2xhc3M9J2ZpZWxkJyBwbGFjZWhvbGRlcj0nTmjhuq1wIHTDqm4gdHJ1eeG7h24uLi4nPjxidXR0b24gY2xhc3M9J3ByaW1hcnktYnRuJyBvbmNsaWNrPVwiYWxlcnQoJ0RlbW8gdMOsbSBraeG6v20nKVwiPlTDrG0gdHJ1eeG7h248L2J1dHRvbj4iXSwNCiAgcHJvZmlsZTpbIlRyYW5nIGPDoSBuaMOibiIsIlThu5VuZyBxdWFuIHTDoGkga2hv4bqjbi4iLCIiXSwNCiAgZWRpdDpbIkjhu5Mgc8ahIGPDoSBuaMOibiIsIkPhuq1wIG5o4bqtdCB0aMO0bmcgdGluIGhp4buDbiB0aOG7iyBj4bunYSBi4bqhbi4iLGANCiAgICA8aDI+VGjDtG5nIHRpbiBjw6EgbmjDom48L2gyPjxwIGNsYXNzPSJpbnRybyI+Tmjhu69uZyB0aMO0bmcgdGluIG7DoHkgZ2nDunAgbmfGsOG7nWkga2jDoWMgbmjhuq1uIHJhIGLhuqFuLjwvcD4NCiAgICA8bGFiZWw+Tmlja25hbWU8L2xhYmVsPjxpbnB1dCBjbGFzcz0iZmllbGQiIGlkPSJuaWNrbmFtZSIgdmFsdWU9Ik3DqG8gbmjhu48iPg0KICAgIDxsYWJlbD5HaeG7m2kgdGhp4buHdTwvbGFiZWw+PHRleHRhcmVhIGNsYXNzPSJmaWVsZCIgaWQ9ImJpbyIgcm93cz0iMyIgcGxhY2Vob2xkZXI9Ik3hu5l0IGNow7p0IHbhu4EgYuG6oW4uLi4iPjwvdGV4dGFyZWE+DQogICAgPGxhYmVsPkF2YXRhciAoZGVtbyk8L2xhYmVsPjxzZWxlY3QgY2xhc3M9ImZpZWxkIiBpZD0iYXZhdGFyIj48b3B0aW9uPvCfjJkgTeG6t3QgdHLEg25nPC9vcHRpb24+PG9wdGlvbj7wn5CxIE3DqG88L29wdGlvbj48b3B0aW9uPvCfkIjigI3irJsgTcOobyDEkWVuPC9vcHRpb24+PG9wdGlvbj7wn5C2IENow7M8L29wdGlvbj48b3B0aW9uPvCfkLAgVGjhu488L29wdGlvbj48b3B0aW9uPvCfpoogQ8Ohbzwvb3B0aW9uPjxvcHRpb24+8J+QvCBH4bqldSB0csO6Yzwvb3B0aW9uPjxvcHRpb24+8J+QuyBH4bqldTwvb3B0aW9uPjxvcHRpb24+8J+QqCBLb2FsYTwvb3B0aW9uPjxvcHRpb24+8J+QryBI4buVPC9vcHRpb24+PG9wdGlvbj7wn6aBIFPGsCB04butPC9vcHRpb24+PG9wdGlvbj7wn5C4IOG6vmNoPC9vcHRpb24+PG9wdGlvbj7wn5CnIENoaW0gY8OhbmggY+G7pXQ8L29wdGlvbj48b3B0aW9uPvCfposgQsaw4bubbTwvb3B0aW9uPjxvcHRpb24+8J+MuCBIb2E8L29wdGlvbj48b3B0aW9uPvCfjLsgSMaw4bubbmcgZMawxqFuZzwvb3B0aW9uPjxvcHRpb24+8J+NkyBEw6J1IHTDonk8L29wdGlvbj48b3B0aW9uPuKtkCBOZ8O0aSBzYW88L29wdGlvbj48b3B0aW9uPvCfkpwgVHLDoWkgdGltPC9vcHRpb24+PG9wdGlvbj7imIHvuI8gxJDDoW0gbcOieTwvb3B0aW9uPjwvc2VsZWN0Pg0KICAgIDxidXR0b24gY2xhc3M9InByaW1hcnktYnRuIiBvbmNsaWNrPSJzYXZlUHJvZmlsZSgpIj5MxrB1IHRoYXkgxJHhu5VpPC9idXR0b24+YF0sDQogIGxpYnJhcnk6WyJU4bunIHRydXnhu4duIGPhu6dhIHTDtGkiLCJRdeG6o24gbMO9IGjDoG5oIHRyw6xuaCDEkeG7jWMgdHJ1eeG7h24uIixgDQogICAgPGRpdiBjbGFzcz0ibm90aWNlIj5UcnV54buHbiBj4bunYSBi4bqhbiDEkcaw4bujYyBjaGlhIHRoZW8gdHLhuqFuZyB0aMOhaSDEkeG7gyBk4buFIHTDrG0gbOG6oWkuPC9kaXY+DQogICAgPGJ1dHRvbiBjbGFzcz0icm93LWxpbmsiIG9uY2xpY2s9InNoZWxmKCfEkGFuZyDEkeG7jWMnKSI+8J+TliDEkGFuZyDEkeG7jWMgPHNwYW4+MTIg4oaSPC9zcGFuPjwvYnV0dG9uPg0KICAgIDxidXR0b24gY2xhc3M9InJvdy1saW5rIiBvbmNsaWNrPSJzaGVsZignVGhlbyBkw7VpJykiPvCflJQgxJBhbmcgdGhlbyBkw7VpIDxzcGFuPuKGkjwvc3Bhbj48L2J1dHRvbj4NCiAgICA8YnV0dG9uIGNsYXNzPSJyb3ctbGluayIgb25jbGljaz0ic2hlbGYoJ1nDqnUgdGjDrWNoJykiPuKZoSBZw6p1IHRow61jaCA8c3Bhbj4yOCDihpI8L3NwYW4+PC9idXR0b24+DQogICAgPGJ1dHRvbiBjbGFzcz0icm93LWxpbmsiIG9uY2xpY2s9InNoZWxmKCfEkMOjIHThuqNpIHh14buRbmcnKSI+4qyHIMSQw6MgdOG6o2kgeHXhu5FuZyA8c3Bhbj7ihpI8L3NwYW4+PC9idXR0b24+YF0sDQogIGZhdm9yaXRlczpbIlRydXnhu4duIHnDqnUgdGjDrWNoIiwiRGFuaCBzw6FjaCB0cnV54buHbiBi4bqhbiDEkcOjIMSRw6FuaCBk4bqldSB5w6p1IHRow61jaC4iLGANCiAgICA8ZGl2IGNsYXNzPSJub3RpY2UiPkLhuqFuIGPDsyB0aOG7gyBsxrB1IHRydXnhu4duIHnDqnUgdGjDrWNoIHThuqFpIHRyYW5nIGNoaSB0aeG6v3QgY+G7p2EgdOG7q25nIHRydXnhu4duLjwvZGl2Pg0KICAgIDxwPjI4IHRydXnhu4duIHnDqnUgdGjDrWNoIMK3IEThu68gbGnhu4d1IGRlbW88L3A+YF0sDQogIGhpc3Rvcnk6WyJM4buLY2ggc+G7rSDEkeG7jWMiLCJUaeG6v3AgdOG7pWMgdOG7qyBjaMawxqFuZyBn4bqnbiBuaOG6pXQuIixgDQogICAgPGJ1dHRvbiBjbGFzcz0icm93LWxpbmsiIG9uY2xpY2s9ImFsZXJ0KCdEZW1vOiBt4bufIEtob+G6o25nIGPDoWNoIGdp4buvYSBjaMO6bmcgdGEnKSI+8J+MmSBLaG/huqNuZyBjw6FjaCBnaeG7r2EgY2jDum5nIHRhIDxzcGFuPkNoxrDGoW5nIDEyIOKGkjwvc3Bhbj48L2J1dHRvbj4NCiAgICA8YnV0dG9uIGNsYXNzPSJyb3ctbGluayIgb25jbGljaz0iYWxlcnQoJ0RlbW86IG3hu58gTcO5YSBow6ggbsSDbSDhuqV5JykiPvCfjLggTcO5YSBow6ggbsSDbSDhuqV5IDxzcGFuPkNoxrDGoW5nIDA4IOKGkjwvc3Bhbj48L2J1dHRvbj4NCiAgICA8YnV0dG9uIGNsYXNzPSJzZWNvbmRhcnktYnRuIiBzdHlsZT0ibWFyZ2luLXRvcDoyMHB4IiBvbmNsaWNrPSJhbGVydCgnRGVtbzogeMOhYyBuaOG6rW4geMOzYSBs4buLY2ggc+G7rScpIj5Yw7NhIGzhu4tjaCBz4butIMSR4buNYzwvYnV0dG9uPmBdLA0KICBwdXJjaGFzZWQ6WyJUcnV54buHbiDEkcOjIG11YSIsIkPDoWMgY2jGsMahbmcgxJHDoyBt4bufIGtow7NhIGLhurFuZyB4dSBob+G6t2MgcXV54buBbiBs4bujaSBo4bujcCBs4buHLiIsYA0KICAgIDxkaXYgY2xhc3M9Im5vdGljZSI+Q2jGsMahbmcgxJHDoyBtdWEgxJHGsOG7o2MgbMawdSB0cm9uZyB0w6BpIGtob+G6o24uIFF1eeG7gW4gdHJ1eSBj4bqtcCB0aOG7sWMgdOG6vyBwaOG7pSB0aHXhu5ljIGNow61uaCBzw6FjaCBu4buBbiB04bqjbmcuPC9kaXY+DQogICAgPGJ1dHRvbiBjbGFzcz0icm93LWxpbmsiIG9uY2xpY2s9ImFsZXJ0KCdEZW1vOiBt4bufIGNoxrDGoW5nIMSRw6MgbXVhJykiPvCfk5YgVHJ1eeG7h24gQSA8c3Bhbj4zIGNoxrDGoW5nIMSRw6MgbeG7nyBraMOzYSDihpI8L3NwYW4+PC9idXR0b24+YF0sDQogIHdhbGxldDpbIlbDrSB4dSIsIlF14bqjbiBsw70gc+G7kSBkxrAgdsOgIG7huqFwIHh1LiIsYA0KICAgIDxkaXYgY2xhc3M9Im5vdGljZSI+U+G7kSBkxrAgaGnhu4duIHThuqFpOiA8c3Ryb25nIGlkPSJ3YWxsZXQtYmFsYW5jZSI+MS4yNTAgeHU8L3N0cm9uZz4uIMSQw6J5IGzDoCBz4buRIGTGsCBnaeG6oyBs4bqtcCwga2jDtG5nIGPDsyBnaWFvIGThu4tjaCB0aOG6rXQuPC9kaXY+DQogICAgPGgyPkNo4buNbiBnw7NpIHh1PC9oMj48cCBjbGFzcz0iaW50cm8iPkdpw6EgdGnhu4FuIGPhuqduIMSRxrDhu6NjIGPhuqV1IGjDrG5oIHRoZW8gc+G6o24gcGjhuqltIHRo4buxYyB04bq/LjwvcD4NCiAgICA8ZGl2IGNsYXNzPSJtZW51LWdyaWQiPg0KICAgICAgPGJ1dHRvbiBjbGFzcz0ibWVudS1jYXJkIiBvbmNsaWNrPSJidXlEZW1vKDEwMDApIj7wn6qZIDxzcGFuIGNsYXNzPSJtZW51LWNvcHkiPjxzdHJvbmc+MS4wMDAgeHU8L3N0cm9uZz48c21hbGw+R8OzaSBjxqEgYuG6o24gwrcgR2nDoSBkZW1vPC9zbWFsbD48L3NwYW4+PC9idXR0b24+DQogICAgICA8YnV0dG9uIGNsYXNzPSJtZW51LWNhcmQiIG9uY2xpY2s9ImJ1eURlbW8oMzAwMCkiPuKcqCA8c3BhbiBjbGFzcz0ibWVudS1jb3B5Ij48c3Ryb25nPjMuMDAwIHh1PC9zdHJvbmc+PHNtYWxsPkfDs2kgcGjhu5UgYmnhur9uIMK3IEdpw6EgZGVtbzwvc21hbGw+PC9zcGFuPjwvYnV0dG9uPg0KICAgICAgPGJ1dHRvbiBjbGFzcz0ibWVudS1jYXJkIiBvbmNsaWNrPSJidXlEZW1vKDEwMDAwKSI+8J+SjiA8c3BhbiBjbGFzcz0ibWVudS1jb3B5Ij48c3Ryb25nPjEwLjAwMCB4dTwvc3Ryb25nPjxzbWFsbD5Hw7NpIGzhu5tuIMK3IEdpw6EgZGVtbzwvc21hbGw+PC9zcGFuPjwvYnV0dG9uPg0KICAgIDwvZGl2Pg0KICAgIDxwIGNsYXNzPSJpbnRybyIgc3R5bGU9Im1hcmdpbi10b3A6MjBweCI+TuG6oXAgeHUgdGjhuq10IGPhuqduIHTDrWNoIGjhu6NwIGjhu4cgdGjhu5FuZyB0aGFuaCB0b8OhbiBhbiB0b8OgbiB2w6AgeMOhYyBtaW5oIGdpYW8gZOG7i2NoIOG7nyBtw6F5IGNo4bunLjwvcD5gXSwNCiAgdmlwOlsiVGjDoG5oIHZpw6puIFZJUCIsIktow6FtIHBow6EgY8OhYyBxdXnhu4FuIGzhu6NpIHRow6BuaCB2acOqbi4iLGANCiAgICA8ZGl2IGNsYXNzPSJub3RpY2UiPuKZmyBWSVAg4oCUIELhuqNuIGRlbW8gY2jGsGEgY8OzIGfDs2kgxJHEg25nIGvDvSBob+G6t2MgdGhhbmggdG/DoW4gdGjhu7FjIHThur8uPC9kaXY+DQogICAgPGgyPlF1eeG7gW4gbOG7o2kgY8OzIHRo4buDIHRyaeG7g24ga2hhaTwvaDI+DQogICAgPGJ1dHRvbiBjbGFzcz0icm93LWxpbmsiPsSQ4bq3YyBxdXnhu4FuIMSR4buNYyB0aGVvIGfDs2kgPHNwYW4+4oC6PC9zcGFuPjwvYnV0dG9uPg0KICAgIDxidXR0b24gY2xhc3M9InJvdy1saW5rIj7Gr3UgxJHDo2kgeHUgaG/hurdjIGNoxrDGoW5nIDxzcGFuPuKAujwvc3Bhbj48L2J1dHRvbj4NCiAgICA8YnV0dG9uIGNsYXNzPSJyb3ctbGluayI+UXXhuqNuIGzDvSBnaWEgaOG6oW4gPHNwYW4+4oC6PC9zcGFuPjwvYnV0dG9uPg0KICAgIDxidXR0b24gY2xhc3M9InJvdy1saW5rIj7EkGnhu4F1IGtp4buHbiB2w6AgdGjhu51pIGjhuqFuIGfDs2kgPHNwYW4+4oC6PC9zcGFuPjwvYnV0dG9uPmBdLA0KICB0cmFuc2FjdGlvbnM6WyJM4buLY2ggc+G7rSBnaWFvIGThu4tjaCIsIlRoZW8gZMO1aSBiaeG6v24gxJHhu5luZyBz4buRIGTGsCB2w6AgxJHGoW4gaMOgbmcuIixgDQogICAgPGRpdiBjbGFzcz0ibm90aWNlIj5DaMawYSBr4bq/dCBu4buRaSBiYWNrZW5kIG7Dqm4gY2jGsGEgY8OzIGThu68gbGnhu4d1IGdpYW8gZOG7i2NoIHRo4bqtdC48L2Rpdj4NCiAgICA8YnV0dG9uIGNsYXNzPSJyb3ctbGluayI+TuG6oXAgeHUgPHNwYW4+Q2jGsGEgY8OzIGThu68gbGnhu4d1PC9zcGFuPjwvYnV0dG9uPg0KICAgIDxidXR0b24gY2xhc3M9InJvdy1saW5rIj5NdWEgY2jGsMahbmcgPHNwYW4+Q2jGsGEgY8OzIGThu68gbGnhu4d1PC9zcGFuPjwvYnV0dG9uPg0KICAgIDxidXR0b24gY2xhc3M9InJvdy1saW5rIj5Hw7NpIFZJUCA8c3Bhbj5DaMawYSBjw7MgZOG7ryBsaeG7h3U8L3NwYW4+PC9idXR0b24+YF0sDQogIG5vdGlmaWNhdGlvbnM6WyJUaMO0bmcgYsOhbyIsIkPDoWMgY+G6rXAgbmjhuq10IGTDoG5oIGNobyB0w6BpIGtob+G6o24gY+G7p2EgYuG6oW4uIixgDQogICAgPGJ1dHRvbiBjbGFzcz0icm93LWxpbmsiIG9uY2xpY2s9ImFsZXJ0KCdEZW1vIHRow7RuZyBiw6FvIGNoxrDGoW5nIG3hu5tpJykiPvCflJQgQ2jGsMahbmcgbeG7m2kgPHNwYW4+4oC6PC9zcGFuPjwvYnV0dG9uPg0KICAgIDxidXR0b24gY2xhc3M9InJvdy1saW5rIiBvbmNsaWNrPSJhbGVydCgnRGVtbyB0aMO0bmcgYsOhbyBo4buHIHRo4buRbmcnKSI+4pqZ77iPIEjhu4cgdGjhu5FuZyA8c3Bhbj7igLo8L3NwYW4+PC9idXR0b24+DQogICAgPGJ1dHRvbiBjbGFzcz0ic2Vjb25kYXJ5LWJ0biIgc3R5bGU9Im1hcmdpbi10b3A6MThweCIgb25jbGljaz0iYWxlcnQoJ0RlbW86IMSRw6FuaCBk4bqldSDEkcOjIMSR4buNYycpIj7EkMOhbmggZOG6pXUgdOG6pXQgY+G6oyDEkcOjIMSR4buNYzwvYnV0dG9uPmBdLA0KICBzZXR0aW5nczpbIkPDoGkgxJHhurd0IiwiVMO5eSBjaOG7iW5oIHRy4bqjaSBuZ2hp4buHbSDEkeG7jWMuIixgDQogICAgPGxhYmVsPkdpYW8gZGnhu4duPC9sYWJlbD48c2VsZWN0IGNsYXNzPSJmaWVsZCIgaWQ9InRoZW1lIj48b3B0aW9uIHZhbHVlPSJsaWdodCI+U8Ohbmc8L29wdGlvbj48b3B0aW9uIHZhbHVlPSJkYXJrIj5U4buRaTwvb3B0aW9uPjwvc2VsZWN0Pg0KICAgIDxsYWJlbD5OZ8O0biBuZ+G7rzwvbGFiZWw+PHNlbGVjdCBjbGFzcz0iZmllbGQiPjxvcHRpb24+VGnhur9uZyBWaeG7h3Q8L29wdGlvbj48b3B0aW9uPkVuZ2xpc2g8L29wdGlvbj48L3NlbGVjdD4NCiAgICA8bGFiZWw+PGlucHV0IHR5cGU9ImNoZWNrYm94IiBjaGVja2VkPiBOaOG6rW4gdGjDtG5nIGLDoW8gY2jGsMahbmcgbeG7m2k8L2xhYmVsPjxicj48YnI+DQogICAgPGxhYmVsPjxpbnB1dCB0eXBlPSJjaGVja2JveCI+IFThu7EgxJHhu5luZyBwaMOhdCDDom0gdGhhbmggKG7hur91IGjhu5cgdHLhu6MpPC9sYWJlbD48YnI+PGJyPg0KICAgIDxidXR0b24gY2xhc3M9InByaW1hcnktYnRuIiBvbmNsaWNrPSJzYXZlU2V0dGluZ3MoKSI+TMawdSBjw6BpIMSR4bq3dDwvYnV0dG9uPmBdLA0KICBzZWN1cml0eTpbIlTDoGkga2hv4bqjbiAmIGLhuqNvIG3huq10IiwiUXXhuqNuIGzDvSBxdXnhu4FuIHRydXkgY+G6rXAgdMOgaSBraG/huqNuLiIsYA0KICAgIDxidXR0b24gY2xhc3M9InJvdy1saW5rIiBvbmNsaWNrPSJhbGVydCgnQ+G6p24gYmFja2VuZCDEkeG7gyDEkeG7lWkgbeG6rXQga2jhuql1JykiPsSQ4buVaSBt4bqtdCBraOG6qXUgPHNwYW4+4oC6PC9zcGFuPjwvYnV0dG9uPg0KICAgIDxidXR0b24gY2xhc3M9InJvdy1saW5rIiBvbmNsaWNrPSJhbGVydCgnQ+G6p24gYmFja2VuZCDEkeG7gyBsacOqbiBr4bq/dCB0w6BpIGtob+G6o24nKSI+TGnDqm4ga+G6v3QgZW1haWwgLyBz4buRIMSRaeG7h24gdGhv4bqhaSA8c3Bhbj7igLo8L3NwYW4+PC9idXR0b24+DQogICAgPGJ1dHRvbiBjbGFzcz0icm93LWxpbmsiIG9uY2xpY2s9ImFsZXJ0KCdD4bqnbiBiYWNrZW5kIMSR4buDIHF14bqjbiBsw70gdGhp4bq/dCBi4buLJykiPlRoaeG6v3QgYuG7iyDEkcSDbmcgbmjhuq1wIDxzcGFuPuKAujwvc3Bhbj48L2J1dHRvbj4NCiAgICA8YnV0dG9uIGNsYXNzPSJyb3ctbGluayIgb25jbGljaz0iYWxlcnQoJ0jDo3kgeMOieSBk4buxbmcgcXV5IHRyw6xuaCB4w6FjIG5o4bqtbiB0csaw4bubYyBraGkgeMOzYScpIj5Zw6p1IGPhuqd1IHjDs2EgdMOgaSBraG/huqNuIDxzcGFuPuKAujwvc3Bhbj48L2J1dHRvbj5gXSwNCiAgaGVscDpbIlRy4bujIGdpw7pwICYgcGjhuqNuIGjhu5NpIiwiVMOsbSBs4budaSBnaeG6o2kgxJHDoXAgaG/hurdjIGLDoW8gbOG7l2kuIixgDQogICAgPGJ1dHRvbiBjbGFzcz0icm93LWxpbmsiIG9uY2xpY2s9ImFsZXJ0KCdEZW1vOiBDw6J1IGjhu49pIHRoxrDhu51uZyBn4bq3cCcpIj5Dw6J1IGjhu49pIHRoxrDhu51uZyBn4bq3cCA8c3Bhbj7igLo8L3NwYW4+PC9idXR0b24+DQogICAgPGJ1dHRvbiBjbGFzcz0icm93LWxpbmsiIG9uY2xpY2s9ImFsZXJ0KCdEZW1vOiBIxrDhu5tuZyBk4bqrbiB0aGFuaCB0b8OhbicpIj5IxrDhu5tuZyBk4bqrbiB0aGFuaCB0b8OhbiA8c3Bhbj7igLo8L3NwYW4+PC9idXR0b24+DQogICAgPGxhYmVsPk3DtCB04bqjIHbhuqVuIMSR4buBPC9sYWJlbD48dGV4dGFyZWEgaWQ9ImZlZWRiYWNrIiBjbGFzcz0iZmllbGQiIHJvd3M9IjQiIHBsYWNlaG9sZGVyPSJFbSBn4bq3cCB24bqlbiDEkeG7gSBnw6w/Ij48L3RleHRhcmVhPg0KICAgIDxidXR0b24gY2xhc3M9InByaW1hcnktYnRuIiBvbmNsaWNrPSJzZW5kRmVlZGJhY2soKSI+R+G7rWkgcGjhuqNuIGjhu5NpIGRlbW88L2J1dHRvbj5gXQ0KfTsNCg0KZnVuY3Rpb24gZ28ocGFnZSkgew0KICBpZiAocGFnZSA9PT0gJ3Byb2ZpbGUnKSB7DQogICAgZG9jdW1lbnQuZ2V0RWxlbWVudEJ5SWQoJ292ZXJ2aWV3Jykuc3R5bGUuZGlzcGxheSA9ICdibG9jayc7DQogICAgZG9jdW1lbnQuZ2V0RWxlbWVudEJ5SWQoJ3N1YnBhZ2UnKS5jbGFzc0xpc3QucmVtb3ZlKCdhY3RpdmUnKTsNCiAgfSBlbHNlIHsNCiAgICBjb25zdCBkYXRhID0gcGFnZXNbcGFnZV0gfHwgcGFnZXMuaGVscDsNCiAgICBkb2N1bWVudC5nZXRFbGVtZW50QnlJZCgnb3ZlcnZpZXcnKS5zdHlsZS5kaXNwbGF5ID0gJ25vbmUnOw0KICAgIGRvY3VtZW50LmdldEVsZW1lbnRCeUlkKCdzdWJwYWdlJykuY2xhc3NMaXN0LmFkZCgnYWN0aXZlJyk7DQogICAgZG9jdW1lbnQuZ2V0RWxlbWVudEJ5SWQoJ3N1Yi10aXRsZScpLnRleHRDb250ZW50ID0gZGF0YVswXTsNCiAgICBkb2N1bWVudC5nZXRFbGVtZW50QnlJZCgnc3ViLWRlc2MnKS50ZXh0Q29udGVudCA9IGRhdGFbMV07DQogICAgZG9jdW1lbnQuZ2V0RWxlbWVudEJ5SWQoJ3N1Yi1jb250ZW50JykuaW5uZXJIVE1MID0gZGF0YVsyXTsNCiAgICB3aW5kb3cuc2Nyb2xsVG8oe3RvcDowLGJlaGF2aW9yOidzbW9vdGgnfSk7DQogIH0NCiAgZG9jdW1lbnQucXVlcnlTZWxlY3RvckFsbCgnLnNpZGUtaXRlbScpLmZvckVhY2goZWwgPT4gew0KICAgIGVsLmNsYXNzTGlzdC50b2dnbGUoJ2FjdGl2ZScsIGVsLmRhdGFzZXQucGFnZSA9PT0gcGFnZSk7DQogIH0pOw0KICBkb2N1bWVudC5xdWVyeVNlbGVjdG9yQWxsKCcuYm90dG9tLW5hdiBidXR0b24nKS5mb3JFYWNoKGVsID0+IGVsLmNsYXNzTGlzdC5yZW1vdmUoJ2FjdGl2ZScpKTsNCiAgaWYgKHBhZ2UgPT09ICdwcm9maWxlJykgZG9jdW1lbnQucXVlcnlTZWxlY3RvckFsbCgnLmJvdHRvbS1uYXYgYnV0dG9uJylbM10uY2xhc3NMaXN0LmFkZCgnYWN0aXZlJyk7DQogIGlmIChwYWdlID09PSAnbGlicmFyeScgfHwgcGFnZSA9PT0gJ2hpc3RvcnknIHx8IHBhZ2UgPT09ICdmYXZvcml0ZXMnKSBkb2N1bWVudC5xdWVyeVNlbGVjdG9yQWxsKCcuYm90dG9tLW5hdiBidXR0b24nKVsyXS5jbGFzc0xpc3QuYWRkKCdhY3RpdmUnKTsNCn0NCmZ1bmN0aW9uIHNhdmVQcm9maWxlKCkgew0KICBjb25zdCBuYW1lID0gZG9jdW1lbnQuZ2V0RWxlbWVudEJ5SWQoJ25pY2tuYW1lJyk/LnZhbHVlLnRyaW0oKTsNCiAgaWYgKCFuYW1lKSByZXR1cm4gYWxlcnQoJ1Z1aSBsw7JuZyBuaOG6rXAgbmlja25hbWUuJyk7DQogIGRvY3VtZW50LnF1ZXJ5U2VsZWN0b3IoJy5wcm9maWxlLWluZm8gaDInKS50ZXh0Q29udGVudCA9IG5hbWU7DQogIGNvbnN0IGF2ID0gZG9jdW1lbnQuZ2V0RWxlbWVudEJ5SWQoJ2F2YXRhcicpPy52YWx1ZSB8fCAnJzsNCiAgY29uc3QgZW1vamkgPSBhdi5zcGxpdCgnICcpWzBdOw0KICBkb2N1bWVudC5xdWVyeVNlbGVjdG9yKCcucHJvZmlsZS1hdmF0YXInKS50ZXh0Q29udGVudCA9IGVtb2ppOw0KICBkb2N1bWVudC5xdWVyeVNlbGVjdG9yKCcudG9wLWFjdGlvbnMgLmF2YXRhcicpLnRleHRDb250ZW50ID0gZW1vamk7DQogIGFsZXJ0KCfEkMOjIGPhuq1wIG5o4bqtdCB0cm9uZyBi4bqjbiBkZW1vIScpOw0KfQ0KZnVuY3Rpb24gYnV5RGVtbyhhbW91bnQpIHsNCiAgaWYgKCFjb25maXJtKCdNw7QgcGjhu49uZyBuaOG6rW4gJyArIGFtb3VudC50b0xvY2FsZVN0cmluZygndmktVk4nKSArICcgeHUgbWnhu4VuIHBow60gxJHhu4MgdGjhu60gZ2lhbyBkaeG7h24/JykpIHJldHVybjsNCiAgbGV0IGJhbGFuY2UgPSBOdW1iZXIoZG9jdW1lbnQuZ2V0RWxlbWVudEJ5SWQoJ2JhbGFuY2UnKS50ZXh0Q29udGVudC5yZXBsYWNlKC9cLi9nLCcnKSk7DQogIGJhbGFuY2UgKz0gYW1vdW50Ow0KICBkb2N1bWVudC5nZXRFbGVtZW50QnlJZCgnYmFsYW5jZScpLnRleHRDb250ZW50ID0gYmFsYW5jZS50b0xvY2FsZVN0cmluZygndmktVk4nKTsNCiAgZ28oJ3dhbGxldCcpOw0KICBhbGVydCgnxJDDoyBj4buZbmcgeHUgZGVtby4gS2jDtG5nIGPDsyB0aGFuaCB0b8OhbiB0aOG6rXQuJyk7DQp9DQpmdW5jdGlvbiBzYXZlU2V0dGluZ3MoKSB7CiAgY29uc3QgdGhlbWUgPSBkb2N1bWVudC5nZXRFbGVtZW50QnlJZCgndGhlbWUnKT8udmFsdWU7CiAgY29uc3QgcGFsZXR0ZSA9IHRoZW1lID09PSAnZGFyaycKICAgID8geyBiZzonIzEwMGQxNycsIGNhcmQ6JyMxYTE1MjInLCB0ZXh0OicjZmFmN2ZmJywgYm9yZGVyOicjM2EyYzRjJywgbXV0ZWQ6JyNiOGFkYzcnLCBwdXJwbGU6JyNjNWEwZjQnLCBsaWdodDonIzI1MWMzMScsIHNoYWRvdzonMCA4cHggMzBweCAjMDAwMycgfQogICAgOiB7IGJnOicjZmFmN2ZmJywgY2FyZDonI2ZmZmZmZicsIHRleHQ6JyMyYjIzMzUnLCBib3JkZXI6JyNlMmQ3ZWYnLCBtdXRlZDonIzc2NmI4MCcsIHB1cnBsZTonIzhiNWNjNycsIGxpZ2h0OicjZjFlYWZkJywgc2hhZG93OicwIDhweCAzMHB4ICMzMzIzNGIwOCcgfTsKICBPYmplY3QuZW50cmllcyhwYWxldHRlKS5mb3JFYWNoKChba2V5LCB2YWx1ZV0pID0+IHsKICAgIGNvbnN0IHZhcmlhYmxlID0geyBiZzonLS1iZycsIGNhcmQ6Jy0tY2FyZCcsIHRleHQ6Jy0tdGV4dCcsIGJvcmRlcjonLS1ib3JkZXInLCBtdXRlZDonLS1tdXRlZCcsIHB1cnBsZTonLS1wdXJwbGUnLCBsaWdodDonLS1saWdodCcsIHNoYWRvdzonLS1zaGFkb3cnIH1ba2V5XTsKICAgIGRvY3VtZW50LmRvY3VtZW50RWxlbWVudC5zdHlsZS5zZXRQcm9wZXJ0eSh2YXJpYWJsZSwgdmFsdWUpOwogIH0pOwogIGFsZXJ0KCfEkMOjIMSR4buVaSBnaWFvIGRp4buHbiB0cm9uZyBwaGnDqm4gZGVtby4nKTsKfQ0KZnVuY3Rpb24gc2VuZEZlZWRiYWNrKCkgew0KICBjb25zdCB2YWx1ZSA9IGRvY3VtZW50LmdldEVsZW1lbnRCeUlkKCdmZWVkYmFjaycpPy52YWx1ZS50cmltKCk7DQogIGlmICghdmFsdWUpIHJldHVybiBhbGVydCgnSMOjeSBuaOG6rXAgbuG7mWkgZHVuZyBwaOG6o24gaOG7k2kuJyk7DQogIGFsZXJ0KCfEkMOjIG5o4bqtbiBu4buZaSBkdW5nIHRyb25nIGRlbW8uIENoxrBhIGfhu61pIGzDqm4gbcOheSBjaOG7py4nKTsNCn0NCmZ1bmN0aW9uIHNoZWxmKG5hbWUpIHsNCiAgZG9jdW1lbnQuZ2V0RWxlbWVudEJ5SWQoJ3N1Yi10aXRsZScpLnRleHRDb250ZW50ID0gbmFtZTsNCiAgZG9jdW1lbnQuZ2V0RWxlbWVudEJ5SWQoJ3N1Yi1kZXNjJykudGV4dENvbnRlbnQgPSAnRGFuaCBzw6FjaCB0cnV54buHbiDCtyBE4buvIGxp4buHdSBkZW1vJzsNCiAgZG9jdW1lbnQuZ2V0RWxlbWVudEJ5SWQoJ3N1Yi1jb250ZW50JykuaW5uZXJIVE1MID0NCiAgICAnPGRpdiBjbGFzcz0ibm90aWNlIj7EkMOieSBsw6Aga2h1IHbhu7FjICcgKyBuYW1lICsgJy4gS2hpIHBow6F0IHRyaeG7g24gdGjhuq10LCBow6N5IGvhur90IG7hu5FpIGRhbmggc8OhY2ggdHJ1eeG7h24gdOG7qyBiYWNrZW5kLjwvZGl2Pic7DQp9DQo8L3NjcmlwdD4NCjwvYm9keT4NCjwvaHRtbD4NCg=='),char=>char.charCodeAt(0));personalDashboardFrame.srcdoc=new TextDecoder('utf-8').decode(personalDashboardBytes);const siteMain=document.querySelector('main.site-main');
+const siteNavLinks=[...document.querySelectorAll('.navlinks a')];
+const siteTabHashes=new Set(['#about','#top','#the-loai','#forum','#me']);
+let tabScrollTimer=null;
+let tabScrollEndHandler=null;
+function cancelPendingTabSwitch(){
+  if(tabScrollTimer){clearTimeout(tabScrollTimer);tabScrollTimer=null}
+  if(tabScrollEndHandler){window.removeEventListener('scrollend',tabScrollEndHandler);tabScrollEndHandler=null}
+}
+function applySiteTab(href){
+  siteMain.classList.toggle('about-view',href==='#about');
+  siteMain.classList.toggle('personal-view',href==='#me');
+  siteMain.classList.toggle('genre-view',href==='#the-loai');
+  siteMain.classList.toggle('community-view',href==='#forum');
+  siteNavLinks.forEach(link=>{
+    const active=link.getAttribute('href')===href;
+    link.classList.toggle('active',active);
+    if(active)link.setAttribute('aria-current','page');else link.removeAttribute('aria-current')
+  });
+  const nav=document.getElementById('navlinks');
+  if(nav)nav.classList.remove('open');
+  siteMain.classList.remove('tab-transition');
+  void siteMain.offsetWidth;
+  siteMain.classList.add('tab-transition');
+  clearTimeout(siteMain._tabTransitionTimer);
+  siteMain._tabTransitionTimer=setTimeout(()=>siteMain.classList.remove('tab-transition'),360);
+}
+function switchSiteTab(href,options={}){
+  if(!siteTabHashes.has(href))return false;
+  cancelPendingTabSwitch();
+  siteNavLinks.forEach(link=>{
+    const active=link.getAttribute('href')===href;
+    link.classList.toggle('active',active);
+    if(active)link.setAttribute('aria-current','page');else link.removeAttribute('aria-current')
+  });
+  const finish=()=>{cancelPendingTabSwitch();applySiteTab(href)};
+  if(options.scroll!==false&&window.scrollY>4){
+    window.scrollTo({top:0,behavior:'smooth'});
+    tabScrollEndHandler=finish;
+    window.addEventListener('scrollend',tabScrollEndHandler,{once:true});
+    tabScrollTimer=setTimeout(finish,850);
+  }else finish();
+  return true;
+}
+function navigateSiteTab(href,options={}){
+  if(!siteTabHashes.has(href))return;
+  if(options.history!==false&&location.hash!==href)history.pushState({siteTab:href},'',href);
+  switchSiteTab(href,{scroll:options.scroll});
+}
+siteNavLinks.forEach(link=>link.addEventListener('click',event=>{
+  const href=link.getAttribute('href');
+  if(!siteTabHashes.has(href))return;
+  event.preventDefault();
+  navigateSiteTab(href);
+}));
+const brandLink=document.querySelector('.brand[href]');
+if(brandLink)brandLink.addEventListener('click',event=>{
+  event.preventDefault();
+  navigateSiteTab('#top');
+});
+document.addEventListener('click',event=>{
+  const anchor=event.target.closest('a[href^="#"]');
+  if(!anchor||anchor===brandLink||anchor.closest('.navlinks'))return;
+  const href=anchor.getAttribute('href');
+  if(!siteTabHashes.has(href))return;
+  event.preventDefault();
+  navigateSiteTab(href);
+});
+window.addEventListener('popstate',()=>{
+  switchSiteTab(siteTabHashes.has(location.hash)?location.hash:'#top',{scroll:false});
+});
+const initialSiteTab=siteTabHashes.has(location.hash)?location.hash:'#top';
+if(initialSiteTab!=='#top')switchSiteTab(initialSiteTab,{scroll:false});const pageSearchParams=new URLSearchParams(location.search),pageSearchQuery=pageSearchParams.get('q');if(pageSearchQuery){document.getElementById('searchInput').value=pageSearchQuery;render();switchSiteTab('#truyen-moi');}
+</script></body></html>
