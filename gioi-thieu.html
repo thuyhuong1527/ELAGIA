@@ -1,0 +1,187 @@
+<!doctype html>
+<html lang="vi">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#faf7ff">
+<title>Giới thiệu | Elagia Comics</title>
+<style>
+:root{color-scheme:light;--bg:#faf7ff;--panel:#fff;--panel2:#f1eafd;--line:#e2d7ef;--purple:#8b5cc7;--purple2:#68409e;--text:#2b2335;--muted:#766b80}
+:root[data-theme="dark"]{color-scheme:dark;--bg:#17131f;--panel:#211a2b;--panel2:#2b2238;--line:#40334f;--purple:#c9a7f5;--purple2:#eadcff;--text:#f7f1ff;--muted:#b7a8c9}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:radial-gradient(ellipse at 85% -12%,#eee2ff 0,transparent 36%),var(--bg);color:var(--text);font-family:Inter,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;line-height:1.6}
+:root[data-theme="dark"] body{background:radial-gradient(ellipse at 80% -10%,#49335e 0,transparent 36%),var(--bg)}
+a{color:inherit;text-decoration:none}
+.topline{height:4px;background:linear-gradient(90deg,#b58ae9,#f0b8dc,#c9a7f5)}
+.site-header{position:sticky;top:0;z-index:20;background:rgba(250,247,255,.94);backdrop-filter:blur(16px);border-bottom:1px solid var(--line);box-shadow:0 8px 28px #38224d0d}
+:root[data-theme="dark"] .site-header{background:rgba(23,19,31,.94);border-bottom-color:#ffffff12}
+.wrap{width:min(1120px,calc(100% - 32px));margin:auto}
+.nav{min-height:76px;display:flex;align-items:center;gap:18px}
+.brand{display:flex;align-items:center;gap:10px;font-size:14px;font-weight:900;letter-spacing:.06em;white-space:nowrap}
+.brandmark{width:42px;height:42px;display:grid;place-items:center;border-radius:14px;background:linear-gradient(145deg,#eadcff,#b58ae9);color:#241a30;font-size:22px;box-shadow:0 7px 24px #b58ae933}
+.brand small{display:block;color:var(--muted);font-size:9px;letter-spacing:.17em;font-weight:700}
+.navlinks{display:flex;align-items:center;gap:clamp(10px,1.5vw,20px);margin-left:auto;color:var(--muted);font-size:14px;white-space:nowrap}
+.navlinks a{transition:color .18s}
+.navlinks a:hover,.navlinks a.active{color:var(--purple2)}
+.navlinks a.active{font-weight:800}
+.themeToggle{flex:0 0 auto;border:1px solid var(--line);background:var(--panel);color:var(--text);border-radius:12px;padding:10px 13px;font-weight:750;cursor:pointer}
+.search{display:flex;gap:8px;align-items:center;background:var(--panel);border:1px solid var(--line);border-radius:13px;padding:8px 10px;max-width:250px;min-width:190px}
+.search span{color:var(--purple);font-size:18px}
+.search input{background:transparent;border:0;outline:0;color:var(--text);width:100%;min-width:0}
+.search input::placeholder{color:var(--muted)}
+.search button{border:0;background:transparent;color:var(--purple2);font-weight:750;cursor:pointer;padding:5px}
+.menuBtn{display:none;background:var(--panel2);border:1px solid var(--line);color:var(--text);border-radius:10px;padding:8px 11px;cursor:pointer}
+.page-footer{padding:10px 16px 32px;text-align:center;color:var(--muted);font-size:13px}
+@media(max-width:980px){.nav{gap:11px}.navlinks{gap:10px;font-size:13px}.brand{font-size:12px}.brandmark{width:38px;height:38px}.search{max-width:190px;min-width:155px}}
+@media(max-width:760px){.nav{flex-wrap:wrap;min-height:68px;padding:10px 0}.brand{flex:1}.menuBtn{display:block;order:1}.themeToggle{order:2}.search{order:3;width:100%;max-width:none}.navlinks{display:none;order:4;width:100%;margin:0;padding:8px 0 3px;flex-wrap:wrap;white-space:normal}.navlinks.open{display:flex}.navlinks a{padding:6px 2px}}
+@media(max-width:420px){.wrap{width:calc(100% - 22px)}.brandmark{width:35px;height:35px}.brand{font-size:11px;gap:7px}.brand small{font-size:8px}.themeToggle{padding:8px 10px}.search{min-width:0}}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*:before,*:after{scroll-behavior:auto!important;transition:none!important}}
+</style>
+<style id="about-page-styles">
+#about.about-page{scroll-margin-top:96px;padding:clamp(22px,4vw,42px) 0 48px}
+#about .about-container{width:min(1060px,calc(100% - 40px));margin:0 auto;display:grid;gap:clamp(14px,2vw,20px)}
+#about .about-hero,#about .about-section,#about .about-closing{min-width:0;padding:clamp(22px,4vw,42px);border:1px solid var(--line);border-radius:22px;background:var(--panel);box-shadow:0 12px 32px #38224d0a}
+#about .about-hero{background:linear-gradient(135deg,var(--panel),var(--panel2))}
+#about .about-kicker{margin-bottom:9px;color:var(--purple2);font-size:11px;font-weight:850;letter-spacing:.13em;text-transform:uppercase}
+#about .about-hero h1{max-width:900px;margin:0;font-size:clamp(30px,4.5vw,50px);line-height:1.14;letter-spacing:-.035em}
+#about .about-tagline{margin:10px 0 24px!important;color:var(--purple2)!important;font-size:clamp(15px,1.8vw,18px)!important;font-style:italic}
+#about .about-container p{max-width:82ch;margin:12px 0;color:var(--muted);font-size:clamp(14px,1.2vw,16px);line-height:1.8}
+#about .about-container strong{color:var(--text)}
+#about .about-section h2{margin:0 0 9px;font-size:clamp(23px,2.7vw,32px);line-height:1.25;letter-spacing:-.025em}
+#about .about-cards{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:clamp(12px,1.6vw,18px);margin-top:20px}
+#about .about-card{min-width:0;padding:clamp(17px,2vw,23px);border:1px solid var(--line);border-radius:18px;background:var(--panel2)}
+#about .about-card h3{margin:0 0 9px;font-size:clamp(16px,1.5vw,19px);line-height:1.45;overflow-wrap:anywhere}
+#about .about-card p{margin:0;font-size:14px;line-height:1.75}
+#about .about-container p.about-after{margin-top:20px}
+#about .about-values{display:grid;gap:10px;max-width:82ch;margin:16px 0;padding-left:22px;color:var(--muted);line-height:1.75}
+#about .about-closing{text-align:center;background:linear-gradient(135deg,var(--panel2),var(--panel))}
+#about .about-closing h2{max-width:760px;margin:0 auto;font-size:clamp(22px,3.2vw,34px);line-height:1.35;overflow-wrap:anywhere}
+#about .about-closing p{margin:12px auto 0;color:var(--purple2);font-weight:750}
+@media(max-width:900px){#about .about-container{width:min(820px,calc(100% - 32px))}#about .about-hero,#about .about-section,#about .about-closing{padding:clamp(20px,3.5vw,32px)}}
+@media(max-width:640px){#about.about-page{padding:18px 0 30px}#about .about-container{width:calc(100% - 24px);gap:12px}#about .about-cards{grid-template-columns:1fr;gap:10px;margin-top:15px}#about .about-hero,#about .about-section,#about .about-closing{padding:20px 18px;border-radius:17px}#about .about-kicker{font-size:10px;letter-spacing:.1em}#about .about-hero h1{font-size:clamp(27px,8vw,36px)}#about .about-tagline{margin:8px 0 18px!important}#about .about-container p{font-size:14px;line-height:1.72}#about .about-section h2{font-size:23px}#about .about-card{padding:17px}#about .about-card h3{font-size:16px}}
+@media(max-width:380px){#about .about-container{width:calc(100% - 20px)}#about .about-hero,#about .about-section,#about .about-closing{padding:18px 15px}#about .about-hero h1{font-size:27px}#about .about-card{padding:15px}#about .about-values{padding-left:19px}}
+</style>
+</head>
+<body>
+<header class="site-header">
+  <div class="topline"></div>
+  <div class="wrap nav">
+    <a class="brand" href="v4.html#top"><span class="brandmark">✦</span><span>ELAGIA COMICS<small>READ · DREAM · REPEAT</small></span></a>
+    <button class="menuBtn" id="menuBtn" type="button" aria-expanded="false" aria-controls="navlinks">☰ Menu</button>
+    <nav class="navlinks" id="navlinks" aria-label="Điều hướng chính">
+      <a class="active" href="gioi-thieu.html" aria-current="page">Giới thiệu</a>
+      <a href="v4.html#top">Trang chủ</a>
+      <a href="v4.html#the-loai">Thể loại</a>
+      <a href="v4.html#truyen-moi">Thư viện truyện</a>
+      <a href="v4.html#forum">Cộng đồng</a>
+      <a href="v4.html#me">Tôi</a>
+    </nav>
+    <button class="themeToggle" id="themeToggle" type="button" aria-label="Đổi giao diện">☀ Sáng</button>
+    <form class="search" id="searchForm" action="v4.html#truyen-moi" method="get">
+      <span aria-hidden="true">⌕</span>
+      <input id="searchInput" name="q" type="search" placeholder="Tìm tên truyện..." aria-label="Tìm truyện">
+      <button type="submit">Tìm</button>
+    </form>
+  </div>
+</header>
+<main>
+<section id="about" class="about-page">
+  <div class="about-container">
+    <section class="about-hero">
+      <div class="about-kicker">01 · CHÚNG MÌNH LÀ AI?</div>
+      <h1>Chào mừng đến với Elagia Comics ✦</h1>
+      <p class="about-tagline">Where every story opens a new world.</p>
+      <p>Chào mừng bạn đến với <strong>Elagia Comics</strong> — một góc nhỏ dành cho những tâm hồn yêu thích truyện tranh và truyện chữ.</p>
+      <p>Chúng mình tin rằng mỗi câu chuyện đều mang trong mình một thế giới riêng. Có những thế giới rực rỡ sắc màu, nơi những cuộc phiêu lưu không có hồi kết đang chờ đón. Có những câu chuyện nhẹ nhàng, lưu giữ những khoảnh khắc bình dị mà đáng nhớ. Cũng có những câu chuyện khiến người đọc hồi hộp qua từng chương, tò mò về số phận của nhân vật và không thể ngừng lật sang trang tiếp theo.</p>
+      <p>Elagia Comics được xây dựng với mong muốn mang những thế giới ấy đến gần bạn hơn — để mỗi lần mở trang web không chỉ là một lần tìm kiếm thứ gì đó để đọc, mà còn là cơ hội khám phá một hành trình mới.</p>
+      <p>Dù bạn là người yêu thích những bộ manga kinh điển, say mê manhwa với nét vẽ cuốn hút, tò mò về thế giới manhua hay thích đắm mình trong những câu chuyện được kể bằng ngôn từ, Elagia Comics hy vọng bạn sẽ tìm thấy một góc nhỏ dành riêng cho mình.</p>
+    </section>
+
+    <section class="about-section">
+      <div class="about-kicker">02 · KHÁM PHÁ</div>
+      <h2>Một thế giới, vô vàn câu chuyện</h2>
+      <p>Tại Elagia Comics, mỗi thể loại đều mở ra một cánh cửa khác nhau.</p>
+      <div class="about-cards">
+        <article class="about-card"><h3>📚 Manga — Những câu chuyện đến từ Nhật Bản</h3><p>Từ những cuộc phiêu lưu kỳ thú, những trận chiến đầy kịch tính đến các câu chuyện đời thường ấm áp, manga luôn có cách riêng để đưa người đọc bước vào thế giới của các nhân vật.</p></article>
+        <article class="about-card"><h3>💜 Manhwa — Những khung hình đầy cảm xúc</h3><p>Khám phá những câu chuyện với phong cách minh họa đặc trưng, những tình tiết bất ngờ và hành trình trưởng thành, tình cảm hay tranh đấu của các nhân vật.</p></article>
+        <article class="about-card"><h3>🌸 Manhua — Sắc màu của những thế giới khác biệt</h3><p>Tìm hiểu những câu chuyện đa dạng về bối cảnh, văn hóa và phong cách kể chuyện, từ huyền huyễn, võ thuật đến những chuyến phiêu lưu kỳ ảo.</p></article>
+        <article class="about-card"><h3>✍️ Truyện chữ — Khi trí tưởng tượng không có giới hạn</h3><p>Không cần những khung hình minh họa, đôi khi chỉ vài dòng chữ cũng đủ mở ra cả một vũ trụ. Truyện chữ đưa bạn đến gần hơn với suy nghĩ của nhân vật, những bí mật chưa được hé lộ và các tình tiết được xây dựng qua từng chương.</p></article>
+      </div>
+      <p class="about-after">Từ lãng mạn, hài hước, giả tưởng, trinh thám đến kinh dị, hành động hay đời thường, mỗi câu chuyện đều có thể trở thành một trải nghiệm đáng nhớ theo cách riêng.</p>
+    </section>
+
+    <section class="about-section">
+      <div class="about-kicker">03 · TRẢI NGHIỆM</div>
+      <h2>Trải nghiệm đọc dành cho bạn</h2>
+      <p>Chúng mình muốn việc đọc truyện trở nên thuận tiện và thoải mái hơn, để bạn có thể tập trung vào điều quan trọng nhất: tận hưởng câu chuyện.</p>
+      <div class="about-cards">
+        <article class="about-card"><h3>🔎 Khám phá theo sở thích</h3><p>Tìm kiếm và khám phá các tác phẩm theo thể loại, tên truyện hoặc những chủ đề mà bạn quan tâm. Mục tiêu là giúp bạn dễ dàng tìm được câu chuyện phù hợp với tâm trạng của mình.</p></article>
+        <article class="about-card"><h3>📖 Lưu giữ hành trình đọc</h3><p>Tủ truyện cá nhân giúp bạn quản lý những tác phẩm đang đọc, những bộ truyện yêu thích và các chương đã xem. Khi quay lại, bạn có thể tiếp tục hành trình của mình thuận tiện hơn.</p></article>
+        <article class="about-card"><h3>📱 Đọc trên nhiều thiết bị</h3><p>Dù bạn sử dụng điện thoại, máy tính bảng hay máy tính cá nhân, Elagia Comics hướng đến một giao diện linh hoạt, dễ sử dụng và phù hợp với nhiều kích thước màn hình.</p></article>
+        <article class="about-card"><h3>🌙 Không gian đọc của riêng bạn</h3><p>Chúng mình mong muốn phát triển những tính năng hỗ trợ cá nhân hóa trải nghiệm, giúp bạn quản lý thư viện truyện và lựa chọn cách đọc phù hợp với thói quen của mình.</p></article>
+      </div>
+    </section>
+
+    <section class="about-section">
+      <div class="about-kicker">04 · CẢM HỨNG</div>
+      <h2>Không chỉ là đọc truyện</h2>
+      <p>Đằng sau mỗi tác phẩm là sự sáng tạo, thời gian và tâm huyết của những người kể chuyện.</p>
+      <p>Một nhân vật có thể khiến chúng ta bật cười, một tình tiết có thể làm thay đổi cách nhìn về một vấn đề, hay một câu chuyện tưởng chừng đơn giản lại khiến chúng ta nhớ mãi sau khi đã đọc xong.</p>
+      <p>Với Elagia Comics, giá trị của việc đọc không chỉ nằm ở số lượng chương đã hoàn thành. Đó còn là cảm xúc, trí tưởng tượng và những trải nghiệm mà mỗi câu chuyện để lại.</p>
+      <p>Chúng mình hy vọng Elagia Comics sẽ trở thành nơi bạn có thể tìm thấy những tác phẩm mới, quay lại với những câu chuyện yêu thích và dành cho bản thân một khoảng thời gian thư giãn giữa nhịp sống bận rộn.</p>
+    </section>
+
+    <section class="about-section">
+      <div class="about-kicker">05 · ĐỊNH HƯỚNG</div>
+      <h2>Tầm nhìn và sứ mệnh</h2>
+      <p>Elagia Comics hướng đến việc xây dựng một nền tảng đọc truyện trực tuyến thân thiện, dễ tiếp cận và thuận tiện cho cộng đồng độc giả.</p>
+      <p>Chúng mình mong muốn từng bước hoàn thiện trải nghiệm khám phá, đọc và quản lý truyện; đồng thời tạo nên một không gian có tổ chức, nơi nội dung được trình bày rõ ràng và người đọc có thể dễ dàng tìm thấy điều mình quan tâm.</p>
+      <p>Trong quá trình phát triển, Elagia Comics hướng đến những giá trị sau:</p>
+      <ul class="about-values">
+        <li><strong>Trải nghiệm người đọc:</strong> Ưu tiên sự thuận tiện, dễ sử dụng và khả năng tiếp cận trên nhiều thiết bị.</li>
+        <li><strong>Khám phá sáng tạo:</strong> Mở ra cơ hội tiếp cận nhiều thể loại và phong cách kể chuyện.</li>
+        <li><strong>Cộng đồng tích cực:</strong> Khuyến khích sự chia sẻ, tôn trọng và giao tiếp văn minh giữa những người yêu truyện.</li>
+        <li><strong>Tôn trọng tác giả:</strong> Đề cao công sức sáng tạo, quyền sở hữu trí tuệ và việc sử dụng nội dung một cách có trách nhiệm.</li>
+        <li><strong>Phát triển bền vững:</strong> Không ngừng cải thiện nền tảng dựa trên nhu cầu thực tế và phản hồi của người dùng.</li>
+      </ul>
+      <p>Đây không phải là đích đến trong một ngày, mà là hành trình mà Elagia Comics mong muốn từng bước thực hiện.</p>
+    </section>
+
+    <section class="about-section">
+      <div class="about-kicker">06 · CỘNG ĐỒNG</div>
+      <h2>Dành cho cộng đồng yêu truyện</h2>
+      <p>Mỗi độc giả đến với truyện bằng một lý do khác nhau.</p>
+      <p>Có người tìm kiếm những phút giây thư giãn sau một ngày dài. Có người yêu cảm giác hồi hộp khi chờ chương mới. Có người muốn khám phá những thế giới chưa từng biết đến. Và cũng có người đơn giản chỉ muốn tìm lại một câu chuyện đã từng khiến mình rung động.</p>
+      <p>Dù bạn đến đây vì lý do nào, chúng mình hy vọng Elagia Comics có thể mang đến cho bạn một trải nghiệm đáng nhớ.</p>
+      <p>Hãy khám phá những thể loại mới, tìm kiếm những nhân vật khiến bạn yêu thích và chia sẻ niềm đam mê đọc truyện theo cách của riêng mình.</p>
+    </section>
+
+    <section class="about-section">
+      <div class="about-kicker">07 · LỜI NHẮN</div>
+      <h2>Lời nhắn từ Elagia Comics</h2>
+      <p>Cảm ơn bạn đã ghé thăm Elagia Comics.</p>
+      <p>Một nền tảng đọc truyện không chỉ được tạo nên từ những trang truyện, mà còn từ những người dành thời gian khám phá, theo dõi và yêu mến chúng.</p>
+      <p>Mỗi lượt đọc, mỗi câu chuyện được khám phá và mỗi lần bạn quay trở lại đều là một phần của hành trình ấy.</p>
+      <p>Elagia Comics hy vọng sẽ đồng hành cùng bạn qua những chuyến phiêu lưu kỳ thú, những câu chuyện dịu dàng, những bí mật chưa được giải đáp và vô vàn thế giới vẫn đang chờ được khám phá.</p>
+    </section>
+
+    <section class="about-closing">
+      <h2>Hãy chọn một câu chuyện. Mở ra một thế giới. Và bắt đầu hành trình của riêng bạn.</h2>
+      <p>Elagia Comics — Mỗi câu chuyện là một thế giới. ✦</p>
+    </section>
+  </div>
+</section>
+</main>
+<footer class="page-footer">Elagia Comics · Mỗi câu chuyện là một thế giới ✦</footer>
+<script>
+const nav=document.getElementById('navlinks');
+const menuButton=document.getElementById('menuBtn');
+menuButton.addEventListener('click',()=>{const open=nav.classList.toggle('open');menuButton.setAttribute('aria-expanded',String(open));});
+const themeButton=document.getElementById('themeToggle');
+document.documentElement.dataset.theme=localStorage.getItem('elagiaTheme')||'light';
+function syncThemeButton(){const dark=document.documentElement.dataset.theme==='dark';themeButton.textContent=dark?'☾ Tối':'☀ Sáng';themeButton.setAttribute('aria-label',dark?'Chuyển sang giao diện sáng':'Chuyển sang giao diện tối');}
+syncThemeButton();
+themeButton.addEventListener('click',()=>{const next=document.documentElement.dataset.theme==='dark'?'light':'dark';document.documentElement.dataset.theme=next;localStorage.setItem('elagiaTheme',next);syncThemeButton();});
+</script></body>
+</html>
